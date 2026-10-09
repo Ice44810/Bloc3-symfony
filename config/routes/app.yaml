@@ -1,0 +1,11 @@
+# Routing configuration for Budget_App API
+
+# Controllers are imported with #[Route] attributes
+# See App\src\Controller\*
+
+# Login route for form login
+# Handled by App\Controller\AuthController
+
+# Logout route
+# Handled by App\Controller\AuthController
+

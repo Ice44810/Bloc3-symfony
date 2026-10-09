@@ -1,0 +1,77 @@
+# Legacy page aliases referenced by templates
+app_my_qr:
+    path: /my-qr
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: app_qr
+        permanent: false
+
+app_contacts_legacy:
+    path: /contacts-legacy
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: app_contact
+        permanent: false
+
+app_contact_detail_legacy:
+    path: /contact/{id}
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: app_contact_detail
+        permanent: false
+
+app_payment_sources:
+    path: /payment-sources
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: app_card_index
+        permanent: false
+
+app_edit_profile:
+    path: /profile/edit
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: app_profile
+        permanent: false
+
+app_security:
+    path: /security
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: app_settings_change_password
+        permanent: false
+
+app_notifications:
+    path: /notifications
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: app_settings
+        permanent: false
+
+app_about:
+    path: /about
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: app_help
+        permanent: false
+
+app_settings_notification:
+    path: /settings/notification
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: app_settings
+        permanent: false
+
+app_settings_security:
+    path: /settings/security
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: app_settings_change_password
+        permanent: false
+
+app_forgot_password:
+    path: /forgot-password
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: app_reset_password_view
+        permanent: false

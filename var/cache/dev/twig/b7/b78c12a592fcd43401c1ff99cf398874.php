@@ -1,0 +1,1330 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+use Twig\TemplateWrapper;
+
+/* bankhistory/index.html.twig */
+class __TwigTemplate_3300b04a51ac057a76d2c38e665e4c51 extends Template
+{
+    private Source $source;
+    /**
+     * @var array<string, Template>
+     */
+    private array $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->blocks = [
+            'title' => [$this, 'block_title'],
+            'body' => [$this, 'block_body'],
+        ];
+    }
+
+    protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
+    {
+        // line 1
+        return "base.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "bankhistory/index.html.twig"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "bankhistory/index.html.twig"));
+
+        $this->parent = $this->load("base.html.twig", 1);
+        yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    // line 3
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_title(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        yield "Historique Bancaire - Budget App";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 5
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_body(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        // line 6
+        yield "    <div class=\"container pb-5\">
+        <div class=\"breadcrumb mt-3 d-flex justify-content-between align-items-center\">
+            <nav aria-label=\"breadcrumb\">
+                <ol class=\"breadcrumb mb-0\">
+                    <li class=\"breadcrumb-item\"><a href=\"";
+        // line 10
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\">Accueil</a></li>
+                    <li class=\"breadcrumb-item active\" aria-current=\"page\">
+                        <span class=\"bi bi-graph-up text-success\" style=\"font-size: 15px;\"></span>
+                        Historique
+                    </li>
+                </ol>
+            </nav>
+            <a href=\"#\" class=\"text-dark\" data-bs-toggle=\"offcanvas\" data-bs-target=\"#offcanvasFilter\">
+                <i class=\"bi bi-sliders fs-5\"></i>
+            </a>
+        </div>
+
+        <div class=\"row g-3 mb-4\">
+            <div class=\"col-6\">
+                <div class=\"card border-0 shadow-sm p-3 rounded-4\">
+                    <div class=\"d-flex align-items-center\">
+                        <div class=\"bg-success-subtle rounded-circle p-2 me-2\">
+                            <i class=\"bi bi-arrow-up text-success fs-5\"></i>
+                        </div>
+                        <div>
+                            <small class=\"text-muted d-block\">Entrées</small>
+                            <span class=\"fw-bold text-success\" id=\"totalIncome\">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=\"col-6\">
+                <div class=\"card border-0 shadow-sm p-3 rounded-4\">
+                    <div class=\"d-flex align-items-center\">
+                        <div class=\"bg-danger-subtle rounded-circle p-2 me-2\">
+                            <i class=\"bi bi-arrow-down text-danger fs-5\"></i>
+                        </div>
+                        <div>
+                            <small class=\"text-muted d-block\">Sorties</small>
+                            <span class=\"fw-bold text-danger\" id=\"totalExpense\">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ul class=\"nav nav-pills nav-fill mb-3 bg-light p-1 rounded-4 shadow-sm\" id=\"historyTabs\" role=\"tablist\">
+            <li class=\"nav-item\">
+                <button class=\"nav-link active rounded-4\" id=\"7days-tab\" data-bs-toggle=\"tab\" data-bs-target=\"#tab7\" type=\"button\" role=\"tab\">7J</button>
+            </li>
+            <li class=\"nav-item\">
+                <button class=\"nav-link rounded-4\" id=\"30days-tab\" data-bs-toggle=\"tab\" data-bs-target=\"#tab30\" type=\"button\" role=\"tab\">30J</button>
+            </li>
+            <li class=\"nav-item\">
+                <button class=\"nav-link rounded-4\" id=\"custom-tab\" data-bs-toggle=\"tab\" data-bs-target=\"#custom\" type=\"button\" role=\"tab\">Perso</button>
+            </li>
+        </ul>
+        <div class=\"tab-content mb-4 px-3\">
+            <div class=\"tab-pane fade show active\" id=\"tab7\" role=\"tabpanel\">
+                <div class=\"bg-white p-3 rounded-4 shadow-sm\">
+            <div class=\"d-flex align-items-end justify-content-around border-bottom pb-2\" id=\"chart7days\" style=\"height: 150px;\">
+                <div class=\"y-axis fs-6 small d-flex flex-column justify-content-space-between text-muted\"
+                     style=\"width: 40px; min-width: 40px; height: 150px; padding-bottom: 10px;\">
+                    <span>400</span>
+                    <span>200</span>
+                    <span>0</span>
+                    <span>-200</span>
+                    <span>-400</span>
+                </div>
+            </div>
+                    <div class=\"d-flex justify-content-between text-muted small mt-2 px-2\" id=\"labels7days\">
+                    </div>
+                </div>
+            </div>
+
+            <div class=\"tab-pane fade\" id=\"tab30\" role=\"tabpanel\">
+                <div class=\"bg-white p-3 rounded-4 shadow-sm\">
+                    <div class=\"d-flex align-items-end justify-content-around border-bottom pb-2\" id=\"chart30days\" style=\"height: 150px;\">
+                        <div class=\"y-axis fs-6 small d-flex flex-column justify-content-space-between text-muted\"
+                             style=\"width: 40px; min-width: 40px; height: 150px; padding-bottom: 10px;\">
+                            <span>400</span>
+                            <span>200</span>
+                            <span>0</span>
+                            <span>-200</span>
+                            <span>-400</span>
+                            div class=\"chart-content flex-grow-1 position-relative\" style=\"height: 150px;\">
+                            <div class=\"grid-lines position-absolute w-100 h-100\">
+                                <div class=\"border-bottom w-100\" style=\"height: 33%;\"></div>
+                                <div class=\"border-bottom w-100\" style=\"height: 33%;\"></div>
+                                <div class=\"border-bottom w-100\" style=\"height: 33%;\"></div>
+                            </div>
+                            <div class=\"d-flex justify-content-around align-items-end h-100 w-100 px-2 gap-1\">
+                                <!-- Barres simulées pour 30 jours -->
+                                ";
+        // line 98
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(range(1, 10));
+        foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+            // line 99
+            yield "                                    <div class=\"bg-primary opacity-75 rounded-top\" style=\"height: ";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::random($this->env->getCharset(), 30, 90), "html", null, true);
+            yield "%; width: 6px;\"></div>
+                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['i'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 101
+        yield "                            </div>
+                        </div>
+                    </div>
+                    <div class=\"text-center text-muted small mt-2\">Vue mensuelle</div>
+                </div>
+            </div>            
+            <div class=\"tab-pane fade\" id=\"custom\" role=\"tabpanel\">
+                <div class=\"bg-white p-3 rounded-4 shadow-sm\">
+                    <div class=\"d-flex align-items-end justify-content-around border-bottom pb-2\" id=\"chartCustom\" style=\"height: 150px;\">
+                        <div class=\"y-axis fs-6 small d-flex flex-column justify-content-space-between text-muted\"
+                             style=\"width: 40px; min-width: 40px; height: 150px; padding-bottom: 10px;\">
+                            <span>400</span>
+                            <span>200</span>
+                            <span>0</span>
+                            <span>-200</span>
+                            <span>-400</span>
+                        </div>
+                    </div>
+                    <div class=\"d-flex justify-content-between text-muted small mt-2 px-2\" id=\"labelsCustom\">
+                        <span></span><span></span>
+                    </div>
+                    <div class=\"row g-2 mt-3\">
+                        <div class=\"col-5\">
+                            <input type=\"date\" class=\"form-control form-control-sm\" id=\"customStartDate\">
+                        </div>
+                        <div class=\"col-5\">
+                            <input type=\"date\" class=\"form-control form-control-sm\" id=\"customEndDate\">
+                        </div>
+                        <div class=\"col-2 d-grid\">
+                            <button class=\"btn btn-primary btn-sm h-100\" id=\"applyCustomDates\">OK</button>
+                        </div>
+                    </div>
+    <div class=\"text-center text-muted small mt-2\" id=\"customPeriodText\">Période personnalisée</div>
+                </div>
+            </div>
+        </div>
+
+        <h6 class=\"fw-bold mb-3 px-2\">Détails des opérations</h6>
+        <div id=\"dynamicTransactionsContainer\" class=\"px-2\">
+            <div class=\"text-center py-4\"><div class=\"spinner-border text-primary shadow-sm\"></div></div>
+        </div>
+    </div>
+
+    <!-- Offcanvas Filtre -->
+    <div class=\"offcanvas offcanvas-start border-0\" tabindex=\"-1\" id=\"offcanvasFilter\" style=\"width: 75%;\">
+        <div class=\"offcanvas-header border-bottom\">
+            <button type=\"button\" class=\"btn border-0 p-0\" data-bs-dismiss=\"offcanvas\"><i class=\"bi bi-chevron-left fs-5\"></i></button>
+            <h6 class=\"offcanvas-title fw-bold m-auto\">Filtres</h6>
+            <div style=\"width: 24px;\"></div>
+        </div>
+        <div class=\"offcanvas-body\">
+            <p class=\"fw-bold mb-2 small\">Mensuel</p>
+            <div class=\"row g-2 mb-4\" id=\"monthFilterGroup\">
+                <div class=\"col-4\"><button class=\"btn btn-outline-secondary w-100 btn-filter-choice active\" data-type=\"month\" data-value=\"all\">Tout</button></div>
+                ";
+        // line 155
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(range(1, 12));
+        foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+            // line 156
+            yield "                    <div class=\"col-4\">
+                        <button class=\"btn btn-outline-secondary w-100 btn-filter-choice\" data-type=\"month\" data-value=\"";
+            // line 157
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["i"], "html", null, true);
+            yield "\">
+                            ";
+            // line 158
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ["Jan", "Fev", "Mar", "Avr", "Mai", "Juin", "Juil", "Aou", "Sep", "Oct", "Nov", "Dec"], ($context["i"] - 1), [], "array", false, false, false, 158), "html", null, true);
+            yield "
+                        </button>
+                    </div>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['i'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 162
+        yield "            </div>
+
+            <p class=\"fw-bold mb-2 small\">Type</p>
+            <div class=\"row g-2 mb-5\" id=\"typeFilterGroup\">
+                <div class=\"col-4\"><button class=\"btn btn-outline-secondary w-100 btn-filter-choice active\" data-type=\"type\" data-value=\"all\">Tout</button></div>
+                <div class=\"col-4\"><button class=\"btn btn-outline-secondary w-100 btn-filter-choice\" data-type=\"type\" data-value=\"income\">Entrées</button></div>
+                <div class=\"col-4\"><button class=\"btn btn-outline-secondary w-100 btn-filter-choice\" data-type=\"type\" data-value=\"expense\">Sorties</button></div>
+            </div>
+
+            <button class=\"btn btn-primary w-25 py-2 fw-bold rounded-4 shadow mt-auto\" id=\"applyFiltersBtn\">Appliquer</button>
+        </div>
+    </div>
+
+    <script>
+        let rawTransactions = [];
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const refreshTransactions = sessionStorage.getItem('refreshTransactions');
+            if (refreshTransactions) {
+                sessionStorage.removeItem('refreshTransactions');
+                window.location.reload();
+                return; // Arrête l'exécution pour éviter de charger les données deux fois lors du rafraîchissement
+            }
+
+            await loadData();
+            setupFilterUI();
+        });
+
+        async function loadData() {
+            try {
+                const [statsRes, transRes] = await Promise.all([
+                    fetch('";
+        // line 193
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("get_dashboard");
+        yield "'),
+                    fetch('";
+        // line 194
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("get_transactions");
+        yield "')
+                ]);
+
+                if (!statsRes.ok || !transRes.ok) throw new Error('Erreur API');
+
+                const stats = await statsRes.json();
+                const trans = await transRes.json();
+
+                // Initial chart tab7
+                const chartData7 = stats.daily_evolution_7 || stats.daily_evolution || generateMockChartData();
+                renderBarChart('chart7days', 'labels7days', chartData7);
+
+                rawTransactions = Array.isArray(trans) ? trans : (trans.transactions || []);
+
+                // Liste des Rendues initial de transactions
+                displayTransactions(rawTransactions);
+                updateTotals(rawTransactions);
+
+                // Configure le changement d'onglet et les commandes personnalisées
+                setupTabCharts();
+                if (Array.isArray(trans)) {
+                    rawTransactions = trans;
+                } else if (trans.transactions) {
+                    rawTransactions = trans.transactions;
+                } else {
+                    rawTransactions = [];
+                }
+
+                // Affichage initial
+                displayTransactions(rawTransactions);
+                updateTotals(rawTransactions);
+
+            } catch (e) {
+                console.error(\"Erreur chargement données:\", e);
+                document.getElementById('dynamicTransactionsContainer').innerHTML =
+                    '<p class=\"text-center text-danger py-4\">Erreur de chargement des données.</p>';
+            }
+        }
+
+        function updateTotals(transactions) {
+            let totalIncome = 0;
+            let totalExpense = 0;
+
+            transactions.forEach(tx => {
+                const amount = Math.abs(parseFloat(tx.amount));
+                const title = (tx.title || '').toLowerCase();
+
+                // Logique de catégorisation : c'est une sortie si...
+                // 1. Le type est explicitement 'expense'
+                // 2. OU le titre contient un mot-clé de facture
+                // 3. OU le montant brut est négatif
+                const isExpense = tx.type === 'expense' ||
+                    title.includes('facture') ||
+                    title.includes('paiement') ||
+                    title.includes('mobile') ||
+                    title.includes('eau') ||
+                    title.includes('electricité') ||
+                    title.includes('internet') ||
+                    parseFloat(tx.amount) < 0;
+
+                if (isExpense) {
+                    totalExpense += amount;
+                } else {
+                    totalIncome += amount;
+                }
+            });
+
+            document.getElementById('totalIncome').textContent = totalIncome.toFixed(2) + ' €';
+            document.getElementById('totalExpense').textContent = totalExpense.toFixed(2) + ' €';
+        }
+
+        function displayTransactions(list) {
+            const container = document.getElementById('dynamicTransactionsContainer');
+
+            if (!list || list.length === 0) {
+                container.innerHTML = '<p class=\"text-center text-muted py-5\">Aucune opération trouvée.</p>';
+                return;
+            }
+
+            // Tri par date décroissante
+            list.sort((a, b) => new Date(b.created_at || b.date) - new Date(a.created_at || a.date));
+
+            const grouped = {};
+            list.forEach(tx => {
+                const date = new Date(tx.created_at || tx.date);
+                const monthYear = date.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' });
+                const key = monthYear.charAt(0).toUpperCase() + monthYear.slice(1);
+                if (!grouped[key]) grouped[key] = [];
+                grouped[key].push(tx);
+            });
+
+            let html = '';
+            for (const [month, txs] of Object.entries(grouped)) {
+                html += `<h6 class=\"mb-3 mt-4 text-muted small fw-bold text-uppercase ps-2\">\${month}</h6>`;
+
+                html += txs.map(tx => {
+                    const amountVal = Math.abs(parseFloat(tx.amount));
+                    const title = (tx.title || '').toLowerCase();
+                    const dateObj = new Date(tx.created_at || tx.date);
+                    const timeStr = dateObj.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+
+                    // Détermination si c'est une entrée ou sortie pour le style
+                    const isForcedExpense = title.includes('facture') ||
+                        title.includes('paiement') ||
+                        title.includes('mobile') ||
+                        title.includes('eau') ||
+                        title.includes('electricité');
+                        title.includes('internet') ||
+                    const isIncome = (tx.type === 'income' || parseFloat(tx.amount) > 0) && !isForcedExpense;
+
+                    // Icône et couleur selon le titre
+                    let icon = 'bi-receipt';
+                    let colorClass = 'text-primary';
+
+                    if (title.includes('electricité') || title.includes('facture')) { icon = 'bi-lightning-charge-fill'; colorClass = 'text-warning'; }
+                    else if (title.includes('mobile') || title.includes('tel')) { icon = 'bi-phone'; colorClass = 'text-info'; }
+                    else if (title.includes('eau')) { icon = 'bi-droplet-fill'; colorClass = 'text-info'; }
+                    else if (title.includes('wifi') || title.includes('internet')) { icon = 'bi-wifi'; colorClass = 'text-primary'; }
+                    else if (title.includes('course') || title.includes('market')) { icon = 'bi-cart-fill'; colorClass = 'text-warning'; }
+                    else if (isIncome) { icon = 'bi-arrow-down-left'; colorClass = 'text-success'; }
+                    else { icon = 'bi-arrow-up-right'; colorClass = 'text-danger'; }
+
+                    const amountClass = isIncome ? 'text-success' : 'text-danger';
+                    const sign = isIncome ? '+' : '-';
+
+                    return `
+                <div class=\"d-flex align-items-center justify-content-between mb-3 bg-white p-3 rounded-4 shadow-sm border-0\">
+                    <div class=\"d-flex align-items-center\">
+                        <div class=\"transaction-icon me-3 bg-light rounded-circle p-2 d-flex align-items-center justify-content-center\" style=\"width: 45px; height: 45px;\">
+                            <i class=\"bi \${icon} \${colorClass} fs-5\"></i>
+                        </div>
+                        <div>
+                            <div class=\"fw-bold text-dark text-capitalize\">\${tx.title}</div>
+                            <div class=\"text-muted small\">Le \${dateObj.toLocaleDateString('fr-FR')} à \${timeStr}</div>
+                        </div>
+                    </div>
+                    <div class=\"fw-bold \${amountClass}\">
+                        \${sign} \${amountVal.toFixed(2)} €
+                    </div>
+                </div>
+                `;
+                }).join(''); // Joint les transactions du même mois avec un séparateur
+            }
+            container.innerHTML = html;
+        }
+
+        // --- Fonctions de filtrage et graphiques ---
+
+        function renderBarChart(containerId, labelId, data) {
+            const container = document.getElementById(containerId);
+            if (!container || !data || data.length === 0) return;
+
+            const SCALE_MAX = 400;
+            const SCALE_MIN = -400;
+
+            // Mise à jour des labels de l'axe y
+            const yAxis = container.parentElement.querySelector('.y-axis');
+            if (yAxis) {
+                // Fixed y-axis labels as per requirement
+                yAxis.innerHTML = `
+                    <span>400</span>
+                    <span>200</span>
+                    <span>0</span>
+                    <span>-200</span>
+                    <span>-400</span>
+                `;
+            }
+
+            container.innerHTML = data.map(d => {
+                const net = parseFloat(d.net || 0);
+                const heightPercent = ((net - SCALE_MIN) / (SCALE_MAX - SCALE_MIN)) * 100;
+                const barHeight = Math.max(Math.abs(heightPercent - 50) * 2, 2); // Scale to full height around 50%
+                const isPositive = net >= 0;
+                const translateY = isPositive ? `calc(50% - \${barHeight / 2}%)` : `calc(50% + \${barHeight / 2}%)`;
+
+                return `
+                <div class=\"d-flex flex-column align-items-center h-100 position-relative\" style=\"width: \${100/data.length}%;\">
+                    <div class=\"\${isPositive ? 'bg-success' : 'bg-danger'} rounded\" style=\"height:\${barHeight}%; width:80%; transform: translateY(\${translateY}); opacity: 0.8; position: absolute;\"></div>
+                </div>`;
+            }).join('');
+
+            const startDate = new Date(data[0].date);
+            const endDate = new Date(data[data.length-1].date);
+            const labelEl = document.getElementById(labelId);
+            if (labelEl) {
+                labelEl.innerHTML = `<span>\${startDate.getDate()}/\${(startDate.getMonth()+1)}</span><span>\${endDate.getDate()}/\${(endDate.getMonth()+1)}</span>`;
+            }
+        }
+
+        function isExpenseTransaction(tx) {
+            const amount = parseFloat(tx.amount);
+            const title = (tx.title || '').toLowerCase();
+            return tx.type === 'expense' ||
+                   title.includes('facture') ||
+                   title.includes('paiement') ||
+                   title.includes('mobile') ||
+                   title.includes('eau') ||
+                   title.includes('electricité') ||
+                   amount < 0;
+        }
+
+        function aggregateDailyData(transactions, days) {
+            const now = new Date();
+            now.setHours(0,0,0,0);
+            const data = [];
+            for (let i = days - 1; i >= 0; i--) {
+                const date = new Date(now);
+                date.setDate(now.getDate() - i);
+                const dateStr = date.toISOString().split('T')[0];
+                data.push({ date: dateStr, net: 0 });
+            }
+
+            transactions.forEach(tx => {
+                const txDate = new Date(tx.created_at || tx.date);
+                txDate.setHours(0,0,0,0);
+                const dateStr = txDate.toISOString().split('T')[0];
+                const signedAmount = parseFloat(tx.amount);
+                if (data.some(d => d.date === dateStr)) {
+                    const dayData = data.find(d => d.date === dateStr);
+                    dayData.net += signedAmount;
+                }
+            });
+            return data;
+        }
+
+        function getCustomDateRangeData(startDate, endDate) {
+            const data = [];
+            const start = new Date(startDate + 'T00:00:00');
+            const end = new Date(endDate + 'T23:59:59');
+            let current = new Date(start);
+            
+            while (current <= end) {
+                const dateStr = current.toISOString().split('T')[0];
+                data.push({ date: dateStr, net: 0 });
+                current.setDate(current.getDate() + 1);
+            }
+
+            rawTransactions.forEach(tx => {
+                const txDate = new Date(tx.created_at || tx.date);
+                if (txDate >= start && txDate <= end) {
+                    const dateStr = txDate.toISOString().split('T')[0];
+                    const signedAmount = parseFloat(tx.amount);
+                    const dayData = data.find(d => d.date === dateStr);
+                    if (dayData && dayData.date === dateStr) {
+                        dayData.net += signedAmount;
+                    }
+                }
+            });
+            return data;
+        }
+
+        function setupTabCharts() {
+            // Tab switch listeners
+            document.querySelectorAll('[data-bs-toggle=\"tab\"]').forEach(tabBtn => {
+                tabBtn.addEventListener('shown.bs.tab', function (e) {
+                    const targetId = e.target.getAttribute('data-bs-target');
+                    renderChartForTab(targetId);
+                });
+            });
+
+            // Custom date controls
+            document.getElementById('applyCustomDates').addEventListener('click', async function() {
+                const start = document.getElementById('customStartDate').value;
+                const end = document.getElementById('customEndDate').value;
+                if (start && end) {
+                    // Show loading
+                    const btn = this;
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Chargement...';
+                    btn.disabled = true;
+
+                    try {
+                        const response = await fetch(`";
+        // line 466
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("get_transactions");
+        yield "?start_date=\${start}&end_date=\${end}`);
+                        const result = await response.json();
+                        rawTransactions = result.transactions || [];
+                        
+                        // Update chart
+                        const data = getCustomDateRangeData(start, end);
+                        renderBarChart('chartCustom', 'labelsCustom', data);
+                        
+                        // Update list and totals
+                        displayTransactions(rawTransactions);
+                        updateTotals(rawTransactions);
+                        
+                        // Update period text
+                        const periodDiv = document.querySelector('#custom .text-center.text-muted.small.mt-2');
+                        const startFormatted = new Date(start).toLocaleDateString('fr-FR', {day: 'numeric', month: 'short'});
+                        const endFormatted = new Date(end).toLocaleDateString('fr-FR', {day: 'numeric', month: 'short'});
+                        periodDiv.textContent = `Du \${startFormatted} au \${endFormatted}`;
+
+                        // Activate custom tab
+                        const customTab = new bootstrap.Tab(document.getElementById('custom-tab'));
+                        customTab.show();
+
+                    } catch (error) {
+                        console.error('Erreur fetch:', error);
+                        alert('Erreur lors du chargement des transactions');
+                    } finally {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                    }
+                }
+            });
+
+            // Set default custom dates (last 30 days)
+            const now = new Date();
+            const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+            document.getElementById('customStartDate').value = thirtyDaysAgo.toISOString().split('T')[0];
+            document.getElementById('customEndDate').value = now.toISOString().split('T')[0];
+        }
+
+        function renderChartForTab(tabId) {
+            let chartData = [];
+            if (tabId === '#tab7') {
+                // Use dashboard data or aggregate 7 days
+                chartData = aggregateDailyData(rawTransactions, 7);
+            } else if (tabId === '#tab30') {
+                chartData = aggregateDailyData(rawTransactions, 30);
+            } else if (tabId === '#custom') {
+                const start = document.getElementById('customStartDate').value;
+                const end = document.getElementById('customEndDate').value;
+                if (start && end) {
+                    chartData = getCustomDateRangeData(start, end);
+                } else {
+                    chartData = aggregateDailyData(rawTransactions, 30);
+                }
+                renderBarChart('chartCustom', 'labelsCustom', chartData);
+                return;
+            }
+
+            // Render based on tab
+            if (tabId === '#tab7') {
+                renderBarChart('chart7days', 'labels7days', chartData);
+            } else if (tabId === '#tab30') {
+                renderBarChart('chart30days', 'labels30days', chartData);
+            }
+        }
+
+        function setupFilterUI() {
+            document.querySelectorAll('.btn-filter-choice').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const group = this.closest('.row');
+                    group.querySelectorAll('.btn-filter-choice').forEach(b => {
+                        b.classList.remove('active', 'bg-primary', 'text-white', 'border-primary');
+                        b.classList.add('btn-outline-secondary', 'text-dark');
+                    });
+                    this.classList.remove('btn-outline-secondary', 'text-dark');
+                    this.classList.add('active', 'bg-primary', 'text-white', 'border-primary');
+                });
+            });
+            document.getElementById('applyFiltersBtn').addEventListener('click', applyFilters);
+            setupTabCharts(); // Initial setup
+        }
+
+        function applyFilters() {
+            const monthBtn = document.querySelector('#monthFilterGroup .active');
+            const typeBtn = document.querySelector('#typeFilterGroup .active');
+            const monthVal = monthBtn ? monthBtn.dataset.value : 'all';
+            const typeVal = typeBtn ? typeBtn.dataset.value : 'all';
+
+            let filtered = [...rawTransactions];
+
+            if (monthVal !== 'all') {
+                const targetMonth = parseInt(monthVal);
+                filtered = filtered.filter(tx => (new Date(tx.created_at || tx.date).getMonth() + 1) === targetMonth);
+            }
+
+            if (typeVal !== 'all') {
+                filtered = filtered.filter(tx => {
+                    const title = (tx.title || '').toLowerCase();
+                    const isForcedExpense = title.includes('facture') || title.includes('paiement');
+                    const isIncome = (tx.type === 'income' || parseFloat(tx.amount) > 0) && !isForcedExpense;
+                    return typeVal === 'income' ? isIncome : !isIncome;
+                });
+            }
+
+            const offcanvasEl = document.getElementById('offcanvasFilter');
+            const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
+            if (offcanvas) offcanvas.hide();
+
+            displayTransactions(filtered);
+            updateTotals(filtered);
+        }
+
+    </script>
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName(): string
+    {
+        return "bankhistory/index.html.twig";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function isTraitable(): bool
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo(): array
+    {
+        return array (  599 => 466,  324 => 194,  320 => 193,  287 => 162,  277 => 158,  273 => 157,  270 => 156,  266 => 155,  210 => 101,  201 => 99,  197 => 98,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+    }
+
+    public function getSourceContext(): Source
+    {
+        return new Source("{% extends 'base.html.twig' %}
+
+{% block title %}Historique Bancaire - Budget App{% endblock %}
+
+{% block body %}
+    <div class=\"container pb-5\">
+        <div class=\"breadcrumb mt-3 d-flex justify-content-between align-items-center\">
+            <nav aria-label=\"breadcrumb\">
+                <ol class=\"breadcrumb mb-0\">
+                    <li class=\"breadcrumb-item\"><a href=\"{{ path('app_home') }}\">Accueil</a></li>
+                    <li class=\"breadcrumb-item active\" aria-current=\"page\">
+                        <span class=\"bi bi-graph-up text-success\" style=\"font-size: 15px;\"></span>
+                        Historique
+                    </li>
+                </ol>
+            </nav>
+            <a href=\"#\" class=\"text-dark\" data-bs-toggle=\"offcanvas\" data-bs-target=\"#offcanvasFilter\">
+                <i class=\"bi bi-sliders fs-5\"></i>
+            </a>
+        </div>
+
+        <div class=\"row g-3 mb-4\">
+            <div class=\"col-6\">
+                <div class=\"card border-0 shadow-sm p-3 rounded-4\">
+                    <div class=\"d-flex align-items-center\">
+                        <div class=\"bg-success-subtle rounded-circle p-2 me-2\">
+                            <i class=\"bi bi-arrow-up text-success fs-5\"></i>
+                        </div>
+                        <div>
+                            <small class=\"text-muted d-block\">Entrées</small>
+                            <span class=\"fw-bold text-success\" id=\"totalIncome\">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=\"col-6\">
+                <div class=\"card border-0 shadow-sm p-3 rounded-4\">
+                    <div class=\"d-flex align-items-center\">
+                        <div class=\"bg-danger-subtle rounded-circle p-2 me-2\">
+                            <i class=\"bi bi-arrow-down text-danger fs-5\"></i>
+                        </div>
+                        <div>
+                            <small class=\"text-muted d-block\">Sorties</small>
+                            <span class=\"fw-bold text-danger\" id=\"totalExpense\">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ul class=\"nav nav-pills nav-fill mb-3 bg-light p-1 rounded-4 shadow-sm\" id=\"historyTabs\" role=\"tablist\">
+            <li class=\"nav-item\">
+                <button class=\"nav-link active rounded-4\" id=\"7days-tab\" data-bs-toggle=\"tab\" data-bs-target=\"#tab7\" type=\"button\" role=\"tab\">7J</button>
+            </li>
+            <li class=\"nav-item\">
+                <button class=\"nav-link rounded-4\" id=\"30days-tab\" data-bs-toggle=\"tab\" data-bs-target=\"#tab30\" type=\"button\" role=\"tab\">30J</button>
+            </li>
+            <li class=\"nav-item\">
+                <button class=\"nav-link rounded-4\" id=\"custom-tab\" data-bs-toggle=\"tab\" data-bs-target=\"#custom\" type=\"button\" role=\"tab\">Perso</button>
+            </li>
+        </ul>
+        <div class=\"tab-content mb-4 px-3\">
+            <div class=\"tab-pane fade show active\" id=\"tab7\" role=\"tabpanel\">
+                <div class=\"bg-white p-3 rounded-4 shadow-sm\">
+            <div class=\"d-flex align-items-end justify-content-around border-bottom pb-2\" id=\"chart7days\" style=\"height: 150px;\">
+                <div class=\"y-axis fs-6 small d-flex flex-column justify-content-space-between text-muted\"
+                     style=\"width: 40px; min-width: 40px; height: 150px; padding-bottom: 10px;\">
+                    <span>400</span>
+                    <span>200</span>
+                    <span>0</span>
+                    <span>-200</span>
+                    <span>-400</span>
+                </div>
+            </div>
+                    <div class=\"d-flex justify-content-between text-muted small mt-2 px-2\" id=\"labels7days\">
+                    </div>
+                </div>
+            </div>
+
+            <div class=\"tab-pane fade\" id=\"tab30\" role=\"tabpanel\">
+                <div class=\"bg-white p-3 rounded-4 shadow-sm\">
+                    <div class=\"d-flex align-items-end justify-content-around border-bottom pb-2\" id=\"chart30days\" style=\"height: 150px;\">
+                        <div class=\"y-axis fs-6 small d-flex flex-column justify-content-space-between text-muted\"
+                             style=\"width: 40px; min-width: 40px; height: 150px; padding-bottom: 10px;\">
+                            <span>400</span>
+                            <span>200</span>
+                            <span>0</span>
+                            <span>-200</span>
+                            <span>-400</span>
+                            div class=\"chart-content flex-grow-1 position-relative\" style=\"height: 150px;\">
+                            <div class=\"grid-lines position-absolute w-100 h-100\">
+                                <div class=\"border-bottom w-100\" style=\"height: 33%;\"></div>
+                                <div class=\"border-bottom w-100\" style=\"height: 33%;\"></div>
+                                <div class=\"border-bottom w-100\" style=\"height: 33%;\"></div>
+                            </div>
+                            <div class=\"d-flex justify-content-around align-items-end h-100 w-100 px-2 gap-1\">
+                                <!-- Barres simulées pour 30 jours -->
+                                {% for i in 1..10 %}
+                                    <div class=\"bg-primary opacity-75 rounded-top\" style=\"height: {{ random(30, 90) }}%; width: 6px;\"></div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class=\"text-center text-muted small mt-2\">Vue mensuelle</div>
+                </div>
+            </div>            
+            <div class=\"tab-pane fade\" id=\"custom\" role=\"tabpanel\">
+                <div class=\"bg-white p-3 rounded-4 shadow-sm\">
+                    <div class=\"d-flex align-items-end justify-content-around border-bottom pb-2\" id=\"chartCustom\" style=\"height: 150px;\">
+                        <div class=\"y-axis fs-6 small d-flex flex-column justify-content-space-between text-muted\"
+                             style=\"width: 40px; min-width: 40px; height: 150px; padding-bottom: 10px;\">
+                            <span>400</span>
+                            <span>200</span>
+                            <span>0</span>
+                            <span>-200</span>
+                            <span>-400</span>
+                        </div>
+                    </div>
+                    <div class=\"d-flex justify-content-between text-muted small mt-2 px-2\" id=\"labelsCustom\">
+                        <span></span><span></span>
+                    </div>
+                    <div class=\"row g-2 mt-3\">
+                        <div class=\"col-5\">
+                            <input type=\"date\" class=\"form-control form-control-sm\" id=\"customStartDate\">
+                        </div>
+                        <div class=\"col-5\">
+                            <input type=\"date\" class=\"form-control form-control-sm\" id=\"customEndDate\">
+                        </div>
+                        <div class=\"col-2 d-grid\">
+                            <button class=\"btn btn-primary btn-sm h-100\" id=\"applyCustomDates\">OK</button>
+                        </div>
+                    </div>
+    <div class=\"text-center text-muted small mt-2\" id=\"customPeriodText\">Période personnalisée</div>
+                </div>
+            </div>
+        </div>
+
+        <h6 class=\"fw-bold mb-3 px-2\">Détails des opérations</h6>
+        <div id=\"dynamicTransactionsContainer\" class=\"px-2\">
+            <div class=\"text-center py-4\"><div class=\"spinner-border text-primary shadow-sm\"></div></div>
+        </div>
+    </div>
+
+    <!-- Offcanvas Filtre -->
+    <div class=\"offcanvas offcanvas-start border-0\" tabindex=\"-1\" id=\"offcanvasFilter\" style=\"width: 75%;\">
+        <div class=\"offcanvas-header border-bottom\">
+            <button type=\"button\" class=\"btn border-0 p-0\" data-bs-dismiss=\"offcanvas\"><i class=\"bi bi-chevron-left fs-5\"></i></button>
+            <h6 class=\"offcanvas-title fw-bold m-auto\">Filtres</h6>
+            <div style=\"width: 24px;\"></div>
+        </div>
+        <div class=\"offcanvas-body\">
+            <p class=\"fw-bold mb-2 small\">Mensuel</p>
+            <div class=\"row g-2 mb-4\" id=\"monthFilterGroup\">
+                <div class=\"col-4\"><button class=\"btn btn-outline-secondary w-100 btn-filter-choice active\" data-type=\"month\" data-value=\"all\">Tout</button></div>
+                {% for i in 1..12 %}
+                    <div class=\"col-4\">
+                        <button class=\"btn btn-outline-secondary w-100 btn-filter-choice\" data-type=\"month\" data-value=\"{{ i }}\">
+                            {{ ['Jan','Fev','Mar','Avr','Mai','Juin','Juil','Aou','Sep','Oct','Nov','Dec'][i-1] }}
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <p class=\"fw-bold mb-2 small\">Type</p>
+            <div class=\"row g-2 mb-5\" id=\"typeFilterGroup\">
+                <div class=\"col-4\"><button class=\"btn btn-outline-secondary w-100 btn-filter-choice active\" data-type=\"type\" data-value=\"all\">Tout</button></div>
+                <div class=\"col-4\"><button class=\"btn btn-outline-secondary w-100 btn-filter-choice\" data-type=\"type\" data-value=\"income\">Entrées</button></div>
+                <div class=\"col-4\"><button class=\"btn btn-outline-secondary w-100 btn-filter-choice\" data-type=\"type\" data-value=\"expense\">Sorties</button></div>
+            </div>
+
+            <button class=\"btn btn-primary w-25 py-2 fw-bold rounded-4 shadow mt-auto\" id=\"applyFiltersBtn\">Appliquer</button>
+        </div>
+    </div>
+
+    <script>
+        let rawTransactions = [];
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const refreshTransactions = sessionStorage.getItem('refreshTransactions');
+            if (refreshTransactions) {
+                sessionStorage.removeItem('refreshTransactions');
+                window.location.reload();
+                return; // Arrête l'exécution pour éviter de charger les données deux fois lors du rafraîchissement
+            }
+
+            await loadData();
+            setupFilterUI();
+        });
+
+        async function loadData() {
+            try {
+                const [statsRes, transRes] = await Promise.all([
+                    fetch('{{ path('get_dashboard') }}'),
+                    fetch('{{ path('get_transactions') }}')
+                ]);
+
+                if (!statsRes.ok || !transRes.ok) throw new Error('Erreur API');
+
+                const stats = await statsRes.json();
+                const trans = await transRes.json();
+
+                // Initial chart tab7
+                const chartData7 = stats.daily_evolution_7 || stats.daily_evolution || generateMockChartData();
+                renderBarChart('chart7days', 'labels7days', chartData7);
+
+                rawTransactions = Array.isArray(trans) ? trans : (trans.transactions || []);
+
+                // Liste des Rendues initial de transactions
+                displayTransactions(rawTransactions);
+                updateTotals(rawTransactions);
+
+                // Configure le changement d'onglet et les commandes personnalisées
+                setupTabCharts();
+                if (Array.isArray(trans)) {
+                    rawTransactions = trans;
+                } else if (trans.transactions) {
+                    rawTransactions = trans.transactions;
+                } else {
+                    rawTransactions = [];
+                }
+
+                // Affichage initial
+                displayTransactions(rawTransactions);
+                updateTotals(rawTransactions);
+
+            } catch (e) {
+                console.error(\"Erreur chargement données:\", e);
+                document.getElementById('dynamicTransactionsContainer').innerHTML =
+                    '<p class=\"text-center text-danger py-4\">Erreur de chargement des données.</p>';
+            }
+        }
+
+        function updateTotals(transactions) {
+            let totalIncome = 0;
+            let totalExpense = 0;
+
+            transactions.forEach(tx => {
+                const amount = Math.abs(parseFloat(tx.amount));
+                const title = (tx.title || '').toLowerCase();
+
+                // Logique de catégorisation : c'est une sortie si...
+                // 1. Le type est explicitement 'expense'
+                // 2. OU le titre contient un mot-clé de facture
+                // 3. OU le montant brut est négatif
+                const isExpense = tx.type === 'expense' ||
+                    title.includes('facture') ||
+                    title.includes('paiement') ||
+                    title.includes('mobile') ||
+                    title.includes('eau') ||
+                    title.includes('electricité') ||
+                    title.includes('internet') ||
+                    parseFloat(tx.amount) < 0;
+
+                if (isExpense) {
+                    totalExpense += amount;
+                } else {
+                    totalIncome += amount;
+                }
+            });
+
+            document.getElementById('totalIncome').textContent = totalIncome.toFixed(2) + ' €';
+            document.getElementById('totalExpense').textContent = totalExpense.toFixed(2) + ' €';
+        }
+
+        function displayTransactions(list) {
+            const container = document.getElementById('dynamicTransactionsContainer');
+
+            if (!list || list.length === 0) {
+                container.innerHTML = '<p class=\"text-center text-muted py-5\">Aucune opération trouvée.</p>';
+                return;
+            }
+
+            // Tri par date décroissante
+            list.sort((a, b) => new Date(b.created_at || b.date) - new Date(a.created_at || a.date));
+
+            const grouped = {};
+            list.forEach(tx => {
+                const date = new Date(tx.created_at || tx.date);
+                const monthYear = date.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' });
+                const key = monthYear.charAt(0).toUpperCase() + monthYear.slice(1);
+                if (!grouped[key]) grouped[key] = [];
+                grouped[key].push(tx);
+            });
+
+            let html = '';
+            for (const [month, txs] of Object.entries(grouped)) {
+                html += `<h6 class=\"mb-3 mt-4 text-muted small fw-bold text-uppercase ps-2\">\${month}</h6>`;
+
+                html += txs.map(tx => {
+                    const amountVal = Math.abs(parseFloat(tx.amount));
+                    const title = (tx.title || '').toLowerCase();
+                    const dateObj = new Date(tx.created_at || tx.date);
+                    const timeStr = dateObj.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+
+                    // Détermination si c'est une entrée ou sortie pour le style
+                    const isForcedExpense = title.includes('facture') ||
+                        title.includes('paiement') ||
+                        title.includes('mobile') ||
+                        title.includes('eau') ||
+                        title.includes('electricité');
+                        title.includes('internet') ||
+                    const isIncome = (tx.type === 'income' || parseFloat(tx.amount) > 0) && !isForcedExpense;
+
+                    // Icône et couleur selon le titre
+                    let icon = 'bi-receipt';
+                    let colorClass = 'text-primary';
+
+                    if (title.includes('electricité') || title.includes('facture')) { icon = 'bi-lightning-charge-fill'; colorClass = 'text-warning'; }
+                    else if (title.includes('mobile') || title.includes('tel')) { icon = 'bi-phone'; colorClass = 'text-info'; }
+                    else if (title.includes('eau')) { icon = 'bi-droplet-fill'; colorClass = 'text-info'; }
+                    else if (title.includes('wifi') || title.includes('internet')) { icon = 'bi-wifi'; colorClass = 'text-primary'; }
+                    else if (title.includes('course') || title.includes('market')) { icon = 'bi-cart-fill'; colorClass = 'text-warning'; }
+                    else if (isIncome) { icon = 'bi-arrow-down-left'; colorClass = 'text-success'; }
+                    else { icon = 'bi-arrow-up-right'; colorClass = 'text-danger'; }
+
+                    const amountClass = isIncome ? 'text-success' : 'text-danger';
+                    const sign = isIncome ? '+' : '-';
+
+                    return `
+                <div class=\"d-flex align-items-center justify-content-between mb-3 bg-white p-3 rounded-4 shadow-sm border-0\">
+                    <div class=\"d-flex align-items-center\">
+                        <div class=\"transaction-icon me-3 bg-light rounded-circle p-2 d-flex align-items-center justify-content-center\" style=\"width: 45px; height: 45px;\">
+                            <i class=\"bi \${icon} \${colorClass} fs-5\"></i>
+                        </div>
+                        <div>
+                            <div class=\"fw-bold text-dark text-capitalize\">\${tx.title}</div>
+                            <div class=\"text-muted small\">Le \${dateObj.toLocaleDateString('fr-FR')} à \${timeStr}</div>
+                        </div>
+                    </div>
+                    <div class=\"fw-bold \${amountClass}\">
+                        \${sign} \${amountVal.toFixed(2)} €
+                    </div>
+                </div>
+                `;
+                }).join(''); // Joint les transactions du même mois avec un séparateur
+            }
+            container.innerHTML = html;
+        }
+
+        // --- Fonctions de filtrage et graphiques ---
+
+        function renderBarChart(containerId, labelId, data) {
+            const container = document.getElementById(containerId);
+            if (!container || !data || data.length === 0) return;
+
+            const SCALE_MAX = 400;
+            const SCALE_MIN = -400;
+
+            // Mise à jour des labels de l'axe y
+            const yAxis = container.parentElement.querySelector('.y-axis');
+            if (yAxis) {
+                // Fixed y-axis labels as per requirement
+                yAxis.innerHTML = `
+                    <span>400</span>
+                    <span>200</span>
+                    <span>0</span>
+                    <span>-200</span>
+                    <span>-400</span>
+                `;
+            }
+
+            container.innerHTML = data.map(d => {
+                const net = parseFloat(d.net || 0);
+                const heightPercent = ((net - SCALE_MIN) / (SCALE_MAX - SCALE_MIN)) * 100;
+                const barHeight = Math.max(Math.abs(heightPercent - 50) * 2, 2); // Scale to full height around 50%
+                const isPositive = net >= 0;
+                const translateY = isPositive ? `calc(50% - \${barHeight / 2}%)` : `calc(50% + \${barHeight / 2}%)`;
+
+                return `
+                <div class=\"d-flex flex-column align-items-center h-100 position-relative\" style=\"width: \${100/data.length}%;\">
+                    <div class=\"\${isPositive ? 'bg-success' : 'bg-danger'} rounded\" style=\"height:\${barHeight}%; width:80%; transform: translateY(\${translateY}); opacity: 0.8; position: absolute;\"></div>
+                </div>`;
+            }).join('');
+
+            const startDate = new Date(data[0].date);
+            const endDate = new Date(data[data.length-1].date);
+            const labelEl = document.getElementById(labelId);
+            if (labelEl) {
+                labelEl.innerHTML = `<span>\${startDate.getDate()}/\${(startDate.getMonth()+1)}</span><span>\${endDate.getDate()}/\${(endDate.getMonth()+1)}</span>`;
+            }
+        }
+
+        function isExpenseTransaction(tx) {
+            const amount = parseFloat(tx.amount);
+            const title = (tx.title || '').toLowerCase();
+            return tx.type === 'expense' ||
+                   title.includes('facture') ||
+                   title.includes('paiement') ||
+                   title.includes('mobile') ||
+                   title.includes('eau') ||
+                   title.includes('electricité') ||
+                   amount < 0;
+        }
+
+        function aggregateDailyData(transactions, days) {
+            const now = new Date();
+            now.setHours(0,0,0,0);
+            const data = [];
+            for (let i = days - 1; i >= 0; i--) {
+                const date = new Date(now);
+                date.setDate(now.getDate() - i);
+                const dateStr = date.toISOString().split('T')[0];
+                data.push({ date: dateStr, net: 0 });
+            }
+
+            transactions.forEach(tx => {
+                const txDate = new Date(tx.created_at || tx.date);
+                txDate.setHours(0,0,0,0);
+                const dateStr = txDate.toISOString().split('T')[0];
+                const signedAmount = parseFloat(tx.amount);
+                if (data.some(d => d.date === dateStr)) {
+                    const dayData = data.find(d => d.date === dateStr);
+                    dayData.net += signedAmount;
+                }
+            });
+            return data;
+        }
+
+        function getCustomDateRangeData(startDate, endDate) {
+            const data = [];
+            const start = new Date(startDate + 'T00:00:00');
+            const end = new Date(endDate + 'T23:59:59');
+            let current = new Date(start);
+            
+            while (current <= end) {
+                const dateStr = current.toISOString().split('T')[0];
+                data.push({ date: dateStr, net: 0 });
+                current.setDate(current.getDate() + 1);
+            }
+
+            rawTransactions.forEach(tx => {
+                const txDate = new Date(tx.created_at || tx.date);
+                if (txDate >= start && txDate <= end) {
+                    const dateStr = txDate.toISOString().split('T')[0];
+                    const signedAmount = parseFloat(tx.amount);
+                    const dayData = data.find(d => d.date === dateStr);
+                    if (dayData && dayData.date === dateStr) {
+                        dayData.net += signedAmount;
+                    }
+                }
+            });
+            return data;
+        }
+
+        function setupTabCharts() {
+            // Tab switch listeners
+            document.querySelectorAll('[data-bs-toggle=\"tab\"]').forEach(tabBtn => {
+                tabBtn.addEventListener('shown.bs.tab', function (e) {
+                    const targetId = e.target.getAttribute('data-bs-target');
+                    renderChartForTab(targetId);
+                });
+            });
+
+            // Custom date controls
+            document.getElementById('applyCustomDates').addEventListener('click', async function() {
+                const start = document.getElementById('customStartDate').value;
+                const end = document.getElementById('customEndDate').value;
+                if (start && end) {
+                    // Show loading
+                    const btn = this;
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Chargement...';
+                    btn.disabled = true;
+
+                    try {
+                        const response = await fetch(`{{ path('get_transactions') }}?start_date=\${start}&end_date=\${end}`);
+                        const result = await response.json();
+                        rawTransactions = result.transactions || [];
+                        
+                        // Update chart
+                        const data = getCustomDateRangeData(start, end);
+                        renderBarChart('chartCustom', 'labelsCustom', data);
+                        
+                        // Update list and totals
+                        displayTransactions(rawTransactions);
+                        updateTotals(rawTransactions);
+                        
+                        // Update period text
+                        const periodDiv = document.querySelector('#custom .text-center.text-muted.small.mt-2');
+                        const startFormatted = new Date(start).toLocaleDateString('fr-FR', {day: 'numeric', month: 'short'});
+                        const endFormatted = new Date(end).toLocaleDateString('fr-FR', {day: 'numeric', month: 'short'});
+                        periodDiv.textContent = `Du \${startFormatted} au \${endFormatted}`;
+
+                        // Activate custom tab
+                        const customTab = new bootstrap.Tab(document.getElementById('custom-tab'));
+                        customTab.show();
+
+                    } catch (error) {
+                        console.error('Erreur fetch:', error);
+                        alert('Erreur lors du chargement des transactions');
+                    } finally {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                    }
+                }
+            });
+
+            // Set default custom dates (last 30 days)
+            const now = new Date();
+            const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+            document.getElementById('customStartDate').value = thirtyDaysAgo.toISOString().split('T')[0];
+            document.getElementById('customEndDate').value = now.toISOString().split('T')[0];
+        }
+
+        function renderChartForTab(tabId) {
+            let chartData = [];
+            if (tabId === '#tab7') {
+                // Use dashboard data or aggregate 7 days
+                chartData = aggregateDailyData(rawTransactions, 7);
+            } else if (tabId === '#tab30') {
+                chartData = aggregateDailyData(rawTransactions, 30);
+            } else if (tabId === '#custom') {
+                const start = document.getElementById('customStartDate').value;
+                const end = document.getElementById('customEndDate').value;
+                if (start && end) {
+                    chartData = getCustomDateRangeData(start, end);
+                } else {
+                    chartData = aggregateDailyData(rawTransactions, 30);
+                }
+                renderBarChart('chartCustom', 'labelsCustom', chartData);
+                return;
+            }
+
+            // Render based on tab
+            if (tabId === '#tab7') {
+                renderBarChart('chart7days', 'labels7days', chartData);
+            } else if (tabId === '#tab30') {
+                renderBarChart('chart30days', 'labels30days', chartData);
+            }
+        }
+
+        function setupFilterUI() {
+            document.querySelectorAll('.btn-filter-choice').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const group = this.closest('.row');
+                    group.querySelectorAll('.btn-filter-choice').forEach(b => {
+                        b.classList.remove('active', 'bg-primary', 'text-white', 'border-primary');
+                        b.classList.add('btn-outline-secondary', 'text-dark');
+                    });
+                    this.classList.remove('btn-outline-secondary', 'text-dark');
+                    this.classList.add('active', 'bg-primary', 'text-white', 'border-primary');
+                });
+            });
+            document.getElementById('applyFiltersBtn').addEventListener('click', applyFilters);
+            setupTabCharts(); // Initial setup
+        }
+
+        function applyFilters() {
+            const monthBtn = document.querySelector('#monthFilterGroup .active');
+            const typeBtn = document.querySelector('#typeFilterGroup .active');
+            const monthVal = monthBtn ? monthBtn.dataset.value : 'all';
+            const typeVal = typeBtn ? typeBtn.dataset.value : 'all';
+
+            let filtered = [...rawTransactions];
+
+            if (monthVal !== 'all') {
+                const targetMonth = parseInt(monthVal);
+                filtered = filtered.filter(tx => (new Date(tx.created_at || tx.date).getMonth() + 1) === targetMonth);
+            }
+
+            if (typeVal !== 'all') {
+                filtered = filtered.filter(tx => {
+                    const title = (tx.title || '').toLowerCase();
+                    const isForcedExpense = title.includes('facture') || title.includes('paiement');
+                    const isIncome = (tx.type === 'income' || parseFloat(tx.amount) > 0) && !isForcedExpense;
+                    return typeVal === 'income' ? isIncome : !isIncome;
+                });
+            }
+
+            const offcanvasEl = document.getElementById('offcanvasFilter');
+            const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
+            if (offcanvas) offcanvas.hide();
+
+            displayTransactions(filtered);
+            updateTotals(filtered);
+        }
+
+    </script>
+{% endblock %}
+", "bankhistory/index.html.twig", "/home/yangue/Documents/ProjetFilRougeIlaria2025/Backend_bloc3/templates/bankhistory/index.html.twig");
+    }
+}

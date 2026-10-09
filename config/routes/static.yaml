@@ -1,0 +1,133 @@
+
+app_bill:
+    path: /bill
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'bill/index.html.twig'
+
+app_card:
+    path: /card
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'card/index.html.twig'
+
+app_card_new:
+    path: /card/new
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'card/new.html.twig'
+
+app_contact:
+    path: /contact
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'contact/index.html.twig'
+
+app_contact_new:
+    path: /contact/new
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'contact/new.html.twig'
+
+app_market:
+    path: /market
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'market/index.html.twig'
+
+app_profile:
+    path: /profile
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'profile/index.html.twig'
+
+app_rewards:
+    path: /rewards
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'rewards/index.html.twig'
+
+app_settings:
+    path: /settings
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'settings/index.html.twig'
+
+app_settings_password:
+    path: /settings/password
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'settings/change_password.html.twig'
+
+app_stats:
+    path: /stats
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'stats/index.html.twig'
+
+app_transactions:
+    path: /transactions
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'transactions/index.html.twig'
+
+app_transfert:
+    path: /transfert
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'transfert/index.html.twig'
+
+app_topup:
+    path: /topup
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'topup/index.html.twig'
+
+app_bankhistory:
+    path: /bankhistory
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'bankhistory/index.html.twig'
+
+app_qr:
+    path: /qr
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'qr/index.html.twig'
+
+app_help:
+    path: /help
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'help/index.html.twig'
+
+# Services
+app_service_electricity:
+    path: /services/electricity
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'services/electricity.html.twig'
+
+app_service_film:
+    path: /services/film
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'services/film.html.twig'
+
+app_service_internet:
+    path: /services/internet
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'services/internet.html.twig'
+
+app_service_mobile:
+    path: /services/mobile
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'services/mobile.html.twig'
+
+app_service_water:
+    path: /services/water
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'services/water.html.twig'

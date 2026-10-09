@@ -1,0 +1,139 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paramètres de Notification - Budget App{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="breadcrumb mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('app_home') }}">Accueil</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('app_settings') }}">Paramètres</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <span class="bi bi-gear-fill text-black" style="font-size: 15px;"></span>
+                        Paramètres de notification
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="list-group mb-4">
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-arrow-left-right me-3 text-primary"></i> Notifications Générales</span>
+                <div class="form-check form-switch">
+                    <input class="form-check-input fs-4 notification-switch" type="checkbox" role="switch" id="generalsnotification" checked>
+                </div>
+            </div>
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-music-note-beamed me-3 text-primary"></i> Son</span>
+                <div class="form-check form-switch">
+                    <input class="form-check-input fs-4 notification-switch" type="checkbox" role="switch" id="song" checked>
+                </div>
+            </div>
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-phone-vibrate me-3 text-primary"></i> Vibreur</span>
+                <div class="form-check form-switch">
+                    <input class="form-check-input fs-4 notification-switch" type="checkbox" role="switch" id="vibrate">
+                </div>
+            </div>
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-phone me-3 text-primary"></i> Mise à jour Appli</span>
+                <div class="form-check form-switch">
+                    <input class="form-check-input fs-4 notification-switch" type="checkbox" role="switch" id="update" checked>
+                </div>
+            </div>
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-envelope me-3 text-primary"></i> Rappel facture</span>
+                <div class="form-check form-switch">
+                    <input class="form-check-input fs-4 notification-switch" type="checkbox" role="switch" id="billreminder" checked>
+                </div>
+            </div>
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-tag me-3 text-primary"></i> Promotion</span>
+                <div class="form-check form-switch">
+                    <input class="form-check-input fs-4 notification-switch" type="checkbox" role="switch" id="voucher">
+                </div>
+            </div>
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-cash-coin me-3 text-primary"></i> Soldes Disponibles</span>
+                <div class="form-check form-switch">
+                    <input class="form-check-input fs-4 notification-switch" type="checkbox" role="switch" id="balance">
+                </div>
+            </div>
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-credit-card me-3 text-primary"></i> Paiement Requis</span>
+                <div class="form-check form-switch">
+                    <input class="form-check-input fs-4 notification-switch" type="checkbox" role="switch" id="paymentrequire">
+                </div>
+            </div>
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-stars me-3 text-primary"></i> Nouveau service disponible</span>
+                <div class="form-check form-switch">
+                    <input class="form-check-input fs-4 notification-switch" type="checkbox" role="switch" id="newservice">
+                </div>
+            </div>
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-lightbulb me-3 text-primary"></i> Nouveautés astuces</span>
+                <div class="form-check form-switch">
+                    <input class="form-check-input fs-4 notification-switch" type="checkbox" role="switch" id="newstips">
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast de sauvegarde -->
+        <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
+            <div id="saveToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        <i class="bi bi-check-circle me-2"></i> Préférences enregistrées
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Charger les préférences stockées
+            const settings = JSON.parse(localStorage.getItem('notificationSettings') || '{}');
+
+            // Appliquer les préférences stockées aux switchs
+            document.querySelectorAll('.notification-switch').forEach(switchEl => {
+                const id = switchEl.id;
+                if (settings.hasOwnProperty(id)) {
+                    switchEl.checked = settings[id];
+                }
+
+                // Ajouter un écouteur d'événement pour sauvegarder les changements
+                switchEl.addEventListener('change', function() {
+                    const id = this.id;
+                    const checked = this.checked;
+
+                    // Mise à jour de l'objet settings
+                    settings[id] = checked;
+
+                    // Sauvegarde dans localStorage
+                    localStorage.setItem('notificationSettings', JSON.stringify(settings));
+
+                    // Afficher le toast de confirmation
+                    const toastEl = document.getElementById('saveToast');
+                    const toast = new bootstrap.Toast(toastEl);
+                    toast.show();
+
+                    // Simulation d'appel API pour sauvegarder côté serveur
+                    /*
+                    fetch('{{ path('update_notification_setting') }}', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest'
+                        },
+                        body: JSON.stringify({ key: id, value: checked })
+                    });
+                    */
+                });
+            });
+        });
+    </script>
+{% endblock %}

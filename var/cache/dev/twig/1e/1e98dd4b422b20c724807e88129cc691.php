@@ -1,0 +1,1822 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+use Twig\TemplateWrapper;
+
+/* home/index.html.twig */
+class __TwigTemplate_61b2859901c60091863e285153bd1a8d extends Template
+{
+    private Source $source;
+    /**
+     * @var array<string, Template>
+     */
+    private array $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->blocks = [
+            'title' => [$this, 'block_title'],
+            'body' => [$this, 'block_body'],
+        ];
+    }
+
+    protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
+    {
+        // line 1
+        return "base.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/index.html.twig"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/index.html.twig"));
+
+        $this->parent = $this->load("base.html.twig", 1);
+        yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    // line 3
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_title(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        yield "Accueil - Budget App";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 5
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_body(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        // line 6
+        yield "    <header class=\"mobile-header\">
+        <div class=\"container-fluid\">
+            <div class=\"header-top d-flex justify-content-between align-items-center p-3\">
+                <div class=\"user-info d-flex align-items-center\">
+                    <img src=\"";
+        // line 10
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "avatar", [], "any", true, true, false, 10)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 10, $this->source); })()), "avatar", [], "any", false, false, false, 10), $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/profil.jpg"))) : ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/profil.jpg"))), "html", null, true);
+        yield "\" alt=\"Profile\" class=\"rounded-circle me-3\" width=\"50\"
+                        height=\"50\">
+                    <div>
+                        <a href=\"";
+        // line 13
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_profile");
+        yield "\" class=\"text-decoration-none text-dark\">
+                            <h6 class=\"username fw-bold mb-0 text-white\">";
+        // line 14
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "fullName", [], "any", true, true, false, 14)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 14, $this->source); })()), "fullName", [], "any", false, false, false, 14), CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 14, $this->source); })()), "email", [], "any", false, false, false, 14))) : (CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 14, $this->source); })()), "email", [], "any", false, false, false, 14))), "html", null, true);
+        yield "</h6>
+                        </a>
+                        <p class=\"slogan mb-0\">Economisons votre argent!</p>
+                    </div>
+                </div>
+                <div class=\"header-icons\">
+                    <a href=\"#offcanvasMenu\" class=\"menu-link text-white\" data-bs-toggle=\"offcanvas\" role=\"button\">
+                        <i class=\"bi bi-grid fs-4 me-2\"></i>
+                    </a>
+                    <!-- Offcanvas Menu -->
+                    <div class=\"offcanvas Menu offcanvas-start\" tabindex=\"-1\" id=\"offcanvasMenu\">
+                        <div class=\"offcanvas-header text-white d-flex justify-content-between\"
+                            style=\"background: linear-gradient(135deg, #5e35b1, #4a3cc9); border-radius: 0 0 12px 0; padding: 10px;\">
+                            <i class=\"bi bi-wallet fs-4 me-2\"></i>
+                            <span class=\"fw-bold fs-5\">Budget App</span>
+                            <button type=\"button\" class=\"btn-close btn-close-white\"
+                                data-bs-dismiss=\"offcanvas\"></button>
+                        </div>
+                        <div class=\"offcanvas-body\">
+                            <p class=\"text-muted small fw-bold\">MENU</p>
+                            <ul class=\"list-group list-group-flush\">
+                                <li class=\"list-group-item border-0 d-flex justify-content-between align-items-center\">
+                                    <a href=\"";
+        // line 36
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\">
+                                        <span><i class=\"bi bi-house me-3\"></i>Accueil</span></a>
+                                    <i class=\"bi bi-chevron-right small text-muted\"></i>
+                                </li>
+                                <li class=\"list-group-item border-0 d-flex justify-content-between align-items-center\">
+                                    <a href=\"";
+        // line 41
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ui_pages");
+        yield "\">
+                                        <span><i class=\"bi bi-book me-3\"></i>Pages</span></a>
+                                    <i class=\"bi bi-chevron-right small text-muted\"></i>
+                                </li>
+                                <li class=\"list-group-item border-0 d-flex justify-content-between align-items-center\">
+                                    <span><i class=\"bi bi-grid me-3\">
+                                        </i>Composants</span>
+                                    <i class=\"bi bi-chevron-right small text-muted\"></i>
+                                </li>
+                                <li class=\"list-group-item border-0 d-flex justify-content-between align-items-center\">
+                                    <a href=\"";
+        // line 51
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_profile");
+        yield "\">
+                                        <span><i class=\"bi bi-person-circle me-3\"></i>Profile</span></a>
+                                    <i class=\"bi bi-chevron-right small text-muted\"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href=\"#offcanvasNotification\" class=\"notification-link position-relative text-dark\"
+                        data-bs-toggle=\"offcanvas\" role=\"button\" id=\"bellIcon\">
+                        <i class=\"bi bi-bell-fill text-white fs-4\"></i>
+                        <span id=\"notificationBadge\"
+                            class=\"notification-badge position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger p-1 border border-light\">
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class=\"stats-section p-3 mx-2 mb-3\">
+                <div class=\"row g-0\">
+                    <div class=\"col-6 pe-2\">
+                        <p class=\"stat-label mb-1\">Votre solde:</p>
+                        ";
+        // line 72
+        yield "                        ";
+        if (((array_key_exists("dashboard", $context) && CoreExtension::getAttribute($this->env, $this->source, ($context["dashboard"] ?? null), "success", [], "any", true, true, false, 72)) && (CoreExtension::getAttribute($this->env, $this->source, (isset($context["dashboard"]) || array_key_exists("dashboard", $context) ? $context["dashboard"] : (function () { throw new RuntimeError('Variable "dashboard" does not exist.', 72, $this->source); })()), "success", [], "any", false, false, false, 72) == false))) {
+            // line 73
+            yield "                            <p class=\"text-danger small mb-0\">Erreur chargement</p>
+                        ";
+        } else {
+            // line 75
+            yield "                            <p class=\"stat-value text-black\" id=\"balance\">
+                                ";
+            // line 76
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatNumber(((CoreExtension::getAttribute($this->env, $this->source, ($context["dashboard"] ?? null), "balance", [], "any", true, true, false, 76)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["dashboard"]) || array_key_exists("dashboard", $context) ? $context["dashboard"] : (function () { throw new RuntimeError('Variable "dashboard" does not exist.', 76, $this->source); })()), "balance", [], "any", false, false, false, 76), 0)) : (0)), 2, ",", " "), "html", null, true);
+            yield " €
+                            </p>
+                        ";
+        }
+        // line 79
+        yield "                    </div>
+                    <div class=\"col-6 ps-2 text-end\">
+                        <a href=\"";
+        // line 81
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_rewards");
+        yield "\" class=\"text-decoration-none text-dark\">
+                            <p class=\"stat-label mb-1\">Vos recompenses:</p>
+                            <p class=\"stat-value\">
+                                <i class=\"bi bi-gift-fill text-danger me-2\"></i>
+                                <span id=\"rewards\">";
+        // line 85
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["dashboard"] ?? null), "rewards", [], "any", true, true, false, 85)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["dashboard"]) || array_key_exists("dashboard", $context) ? $context["dashboard"] : (function () { throw new RuntimeError('Variable "dashboard" does not exist.', 85, $this->source); })()), "rewards", [], "any", false, false, false, 85), 0)) : (0)), "html", null, true);
+        yield "</span> Point
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <!-- Quick Actions -->
+        <div class=\"quick-actions-section container-fluid mt-4 mb-4\">
+            <div class=\"row text-center\">
+                <div class=\"col-3\">
+                    <a href=\"javascript:void(0)\" class=\"action-item\" data-bs-toggle=\"modal\"
+                        data-bs-target=\"#manageTransferModal\">
+                        <div class=\"action-icon-wrapper\">
+                            <i class=\"bi bi-currency-dollar fs-4\"></i>
+                            <i class=\"bi bi-arrow-down-up fs-6 transfer-arrow\"></i>
+                        </div>
+                        <p class=\"mt-2 action-text\">Transfert</p>
+                    </a>
+                </div>
+                <div class=\"col-3\">
+                    <a href=\"";
+        // line 110
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_topup_view");
+        yield "\" class=\"action-item\">
+                        <div class=\"action-icon-wrapper\">
+                            <i class=\"bi bi-wallet fs-4\"></i>
+                            <i class=\"bi bi-currency-dollar fs-6 topup-dollar\"></i>
+                        </div>
+                        <p class=\"mt-2 action-text\">Recharges</p>
+                    </a>
+                </div>
+                <div class=\"col-3\">
+                    <a href=\"javascript:void(0)\" class=\"action-item\" data-bs-toggle=\"modal\"
+                        data-bs-target=\"#manageCardModal\">
+                        <div class=\"action-icon-wrapper\">
+                            <i class=\"bi bi-credit-card fs-4\"></i>
+                            <i class=\"bi bi-pencil-fill fs-6 card-fill\" style=\"font-size: 0.7rem !important;\"></i>
+                        </div>
+                        <div class=\"mt-2 action-text\">Cartes</div>
+                    </a>
+                </div>
+                <div class=\" col-3\">
+                    <a href=\"";
+        // line 129
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_qr");
+        yield "\" class=\"action-item\">
+                        <div class=\"action-icon-wrapper\">
+                            <i class=\"bi bi-qr-code fs-4\"></i>
+                            <i class=\"bi bi-qr-code-scan fs-6 qr-scan\"></i>
+                        </div>
+                        <p class=\"mt-2 action-text\">Mon QR</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div class=\"container-fluid service-header mt-4 px-4\">
+            <div class=\"d-flex justify-content-between align-items-center\">
+                <h4 class=\"service-title mb-0\">Vos services</h4>
+                <a href=\"";
+        // line 144
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_bill");
+        yield "\" class=\"view-all-link\">
+                    Tout voir
+                </a>
+            </div>
+        </div>
+        <div class=\"container-fluid service-grid mt-3 px-4 collapse show\" id=\"collapseServices\">
+            <div class=\"row g-3\">
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"";
+        // line 152
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_services_mobile");
+        yield "\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-phone fs-1 text-info\"></i>
+                        <p class=\"mt-2 mb-0\">Mobile</p>
+                    </a>
+                </div>
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"";
+        // line 158
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_services_internet");
+        yield "\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-wifi fs-1 text-primary\"></i>
+                        <p class=\"mt-2 mb-0\">Internet</p>
+                    </a>
+                </div>
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"";
+        // line 164
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_bill");
+        yield "\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-file-earmark-text fs-1 text-info\"></i>
+                        <p class=\"mt-2 mb-0\">Facture</p>
+                    </a>
+                </div>
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"";
+        // line 170
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_services_electricity");
+        yield "\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-lightning-charge fs-1 text-warning\"></i>
+                        <p class=\"mt-2 mb-0\">Electricité</p>
+                    </a>
+                </div>
+
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"";
+        // line 177
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_services_film");
+        yield "\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-film fs-1 text-danger\"></i>
+                        <p class=\"mt-2 mb-0\">Film</p>
+                    </a>
+                </div>
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"";
+        // line 183
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_services_water");
+        yield "\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-droplet fs-1 text-info\"></i>
+                        <p class=\"mt-2 mb-0\">Facture Eau</p>
+                    </a>
+                </div>
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"";
+        // line 189
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_rewards");
+        yield "\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-percent fs-1 text-success\"></i>
+                        <p class=\"mt-2 mb-0\">Bons de reduction</p>
+                    </a>
+                </div>
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"";
+        // line 195
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_market");
+        yield "\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-cart fs-1 text-warning\"></i>
+                        <p class=\"mt-2 mb-0\">Marché</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contacts Récents -->
+        <div class=\"container-fluid service-header mt-4 px-4\">
+            <div class=\"d-flex justify-content-between align-items-center\">
+                <h4 class=\"service-title mb-3\">Contacts Récents</h4>
+                <a href=\"javascript:void(0)\" class=\"view-all-link\" data-bs-toggle=\"offcanvas\"
+                    data-bs-target=\"#offcanvasSavedRecipients\" aria-controls=\"offcanvasSavedRecipients\"
+                    aria-expanded=\"false\">
+                    Tout voir
+                </a>
+            </div>
+        </div>
+        <div class=\"container-fluid service-grid mt-3 px-4\">
+            <div class=\"row row-cols-3 row-cols-sm-4 row-cols-md-6 g-3 mb-4\">
+                ";
+        // line 216
+        if ((array_key_exists("recentRecipients", $context) && (Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["recentRecipients"]) || array_key_exists("recentRecipients", $context) ? $context["recentRecipients"] : (function () { throw new RuntimeError('Variable "recentRecipients" does not exist.', 216, $this->source); })())) > 0))) {
+            // line 217
+            yield "                    ";
+            $context['_parent'] = $context;
+            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["recentRecipients"]) || array_key_exists("recentRecipients", $context) ? $context["recentRecipients"] : (function () { throw new RuntimeError('Variable "recentRecipients" does not exist.', 217, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["recipient"]) {
+                // line 218
+                yield "                        <div class=\"col text-center\">
+                            <a href=\"";
+                // line 219
+                yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_transfert");
+                yield "?recipient=";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipient"], "identifier", [], "any", false, false, false, 219), "html", null, true);
+                yield "\" class=\"text-decoration-none\">
+                                <img src=\"";
+                // line 220
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, $context["recipient"], "avatar", [], "any", true, true, false, 220)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, $context["recipient"], "avatar", [], "any", false, false, false, 220), $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/profil.jpg"))) : ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/profil.jpg"))), "html", null, true);
+                yield "\" alt=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipient"], "name", [], "any", false, false, false, 220), "html", null, true);
+                yield "\"
+                                    class=\"rounded-circle mb-1\" style=\"width: 60px; height: 60px; object-fit: cover; border: 3px solid transparent; padding: 2px; box-shadow: 0 0 0 1px #d3d3d3;\">
+                                <p class=\"small text-truncate mb-0 text-dark\">";
+                // line 222
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipient"], "name", [], "any", false, false, false, 222), "html", null, true);
+                yield "</p>
+                            </a>
+                        </div>
+                    ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_key'], $context['recipient'], $context['_parent']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 226
+            yield "                ";
+        } else {
+            // line 227
+            yield "                    <div class=\"col text-center\">
+                        <a href=\"";
+            // line 228
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_transfert");
+            yield "\" class=\"text-decoration-none\">
+                            <img src=\"";
+            // line 229
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/esther.jpg"), "html", null, true);
+            yield "\" alt=\"Esther\" class=\"rounded-circle mb-1\" style=\"width: 60px; height: 60px; object-fit: cover; border: 3px solid transparent; padding: 2px; box-shadow: 0 0 0 1px #d3d3d3;\">
+                            <p class=\"small text-truncate mb-0 text-dark\">Esther</p>
+                        </a>
+                    </div>
+                    <div class=\"col text-center\">
+                        <a href=\"";
+            // line 234
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_transfert");
+            yield "\" class=\"text-decoration-none\">
+                            <img src=\"";
+            // line 235
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/hawkins.jpg"), "html", null, true);
+            yield "\" alt=\"Hawkins\" class=\"rounded-circle mb-1\" style=\"width: 60px; height: 60px; object-fit: cover; border: 3px solid transparent; padding: 2px; box-shadow: 0 0 0 1px #d3d3d3;\">
+                            <p class=\"small text-truncate mb-0 text-dark\">Hawkins</p>
+                        </a>
+                    </div>
+                ";
+        }
+        // line 240
+        yield "            </div>
+        </div>
+
+        <!-- Bons Plans -->
+        <div class=\"container-fluid service-header mt-4 px-4\">
+            <div class=\"d-flex justify-content-between align-items-center\">
+                <h4 class=\"service-title mb-0\">Bons Plans</h4>
+                <a href=\"";
+        // line 247
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_rewards");
+        yield "\" class=\"view-all-link\">
+                    Tout voir
+                </a>
+            </div>
+        </div>
+
+      <div class=\"scroll-container px-4\">
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #68c0d1; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center\">
+                    <div class=\"text-center\">
+                        <img src=\"";
+        // line 259
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/iconeshopping.jpg"), "html", null, true);
+        yield "\" alt=\"Mode\" class=\"rounded-3 bg-white\"
+                            style=\"width: 60px; height: 60px; object-fit: contain;\">
+                        <p class=\"small mb-0 fw-bold mt-1 text-dark\">Mode</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2 text-dark\">SHOPPING EN<br>LIGNE</h5>
+                        <button class=\"btn btn-sm btn-dark rounded-pill px-3\">Plus</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #131921; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-white\">
+                    <div>
+                        <i class=\"bi bi-amazon fs-1 text-warning\"></i>
+                        <p class=\"small mb-0 fw-bold\">Amazon</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h6 class=\"fw-bold mb-2\">PRIME DAY<br>DISPONIBLE</h6><a href=\"https://www.amazon.fr\"
+                            class=\"btn btn-sm btn-warning rounded-pill px-3 fw-bold\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #e1bc2a; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-dark\">
+                    <div class=\"text-center\">
+                        <img src=\"";
+        // line 290
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logofnac.png"), "html", null, true);
+        yield "\" alt=\"FNAC\" class=\"rounded-3 bg-white p-1\"
+                            style=\"width: 50px;\">
+                        <p class=\"small mb-0 fw-bold mt-1\">FNAC</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2\">OFFRES<br>ADHÉRENTS</h5><a href=\"https://www.fnac.com\"
+                            class=\"btn btn-sm btn-dark rounded-pill px-3\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #3142ac; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-white\">
+                    <div class=\"text-center\">
+                        <img src=\"";
+        // line 306
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logocdiscount.png"), "html", null, true);
+        yield "\" alt=\"Cdiscount\"
+                            style=\"width: 100px; background-color: white;\" class=\"rounded-3 p-1\">
+                        <p class=\"small mb-0 fw-bold mt-1\">Cdiscount</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2\">Ventes<br>Flash</h5>
+                        <a href=\"https://www.cdiscount.com\"
+                            class=\"btn btn-sm btn-light text-primary rounded-pill px-3 fw-bold\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #e38556; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-white\">
+                    <div class=\"text-center\">
+                        <img src=\"";
+        // line 323
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logoboulanger.png"), "html", null, true);
+        yield "\" alt=\"Boulanger\"
+                            style=\"width: 100px; background-color: white;\" class=\"rounded-3 p-1\">
+                        <p class=\"small mb-0 fw-bold mt-1\">Boulanger</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2\">Ventes<br>Flash</h5>
+                        <a href=\"https://www.boulanger.com\"
+                            class=\"btn btn-sm btn-light text-primary rounded-pill px-3 fw-bold\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #e38556; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-white\">
+                    <div class=\"text-center\">
+                        <img src=\"";
+        // line 340
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logo-leboncoin.png"), "html", null, true);
+        yield "\" alt=\"Leboncoin\"
+                            style=\"width: 100px; background-color: white;\" class=\"rounded-3 p-1\">
+                        <p class=\"small mb-0 fw-bold mt-1\">Leboncoin</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2\">Vendre et<br> Rechercher</h5>
+                        <a href=\"https://www.leboncoin.fr/\"
+                            class=\"btn btn-sm btn-light text-primary rounded-pill px-3 fw-bold\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scroll ... -->
+    <div class=\"scroll-dots d-flex justify-content-center gap-2\">
+        <div class=\"dot active\"></div>
+        <div class=\"dot\"></div>
+        <div class=\"dot\"></div>
+    </div>
+    </main>
+
+    <!-- Modal Carte : Gérer Votre Carte -->
+    <div class=\"modal fade modal-top\" id=\"manageCardModal\" tabindex=\"-1\" aria-labelledby=\"manageCardModalLabel\"
+        aria-hidden=\"true\">
+        <div class=\"modal-dialog m-0 shadow-lg\">
+            <div class=\"modal-content border-0 rounded-0 rounded-bottom-4\">
+                <div class=\"modal-header border-0 align-items-center\">
+                    <button type=\"button\" class=\"btn border-0 p-0\" data-bs-dismiss=\"modal\">
+                        <i class=\"bi bi-chevron-left fs-4\"></i>
+                    </button>
+                    <h6 class=\"modal-title w-100 text-center fw-bold fs-6\" id=\"manageCardModalLabel\">Gérer Votre Carte
+                    </h6>
+                    <div style=\"width: 30px;\"></div>
+                </div>
+
+                <div class=\"modal-body px-4 pt-0\">
+                    <!-- Carte sélectionnée (Simulation) -->
+                    <div class=\"card-selected p-3 mb-4 d-flex align-items-center shadow-sm border border-primary bg-light\">
+                        <div class=\"card-logo bg-white p-2 rounded me-3\">
+                            <img src=\"https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg\"
+                                width=\"35\" alt=\"Mastercard\">
+                        </div>
+                        <div class=\"flex-grow-1\">
+                            <p class=\"mb-0 fw-bold small\">Mastercard</p>
+                            <p class=\"mb-0 text-muted extra-small\">**** **** **** 7576</p>
+                        </div>
+                        <i class=\"bi bi-check-circle-fill text-success active fs-4\"></i>
+                    </div>
+
+                    <style>
+                    .card-selected {
+                        cursor: pointer;
+                        transition: transform 0.2s ease, box-shadow 0.2s ease;
+                    }
+                    .card-selected:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 8px 25px rgba(0,123,255,0.15) !important;
+                    }
+                    </style>
+
+                    <div class=\"d-flex align-items-center my-4\">
+                        <hr class=\"flex-grow-1 text-muted opacity-25\">
+                        <span class=\"px-3 text-muted extra-small text-center\">Autres Moyens de Paiement</span>
+                        <hr class=\"flex-grow-1 text-muted opacity-25\">
+                    </div>
+
+                    <div class=\"other-cards-list mb-4\">
+                        <div class=\"d-flex align-items-center py-3 border-bottom\" onclick=\"selectCard(this)\">
+                            <img src=\"https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg\" width=\"35\"
+                                class=\"me-3\" alt=\"Visa\">
+                            <div class=\"flex-grow-1\">
+                                <p class=\"mb-0 fw-bold small text-dark\">Visacard</p>
+                                <p class=\"mb-0 text-muted extra-small\">**** **** **** 3245</p>
+                            </div>
+                            <i class=\"bi bi-circle text-muted fs-5 check-icon\"></i>
+                        </div>
+                    </div>
+                    <a href=\"";
+        // line 417
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_card_new");
+        yield "\"><button
+                            class=\"btn add-dashed btn-outline-light w-100 py-3 mb-4 text-center text-black fw-bold rounded-3\">Ajout
+                            nouvelle carte +</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal chosir Méthode de transfert -->
+    <div class=\"modal fade modal-top\" id=\"manageTransferModal\" tabindex=\"-1\" aria-labelledby=\"manageTransferModalLabel\"
+        aria-hidden=\"true\">
+        <div class=\"modal-dialog m-0 shadow-lg\" style=\"max-width: 100%;\">
+            <div class=\"modal-content border-0 rounded-0 rounded-bottom-4\">
+                <div class=\"modal-header border-0 d-flex align-items-center justify-content-between px-3\">
+                    <button type=\"button\" class=\"btn border-0 p-0\" data-bs-dismiss=\"modal\">
+                        <i class=\"bi bi-x-lg fs-5\"></i>
+                    </button>
+                    <h6 class=\"modal-title fw-bold fs-6 text-dark\" id=\"manageTransferModalLabel\">Méthode Transfert</h6>
+                    <button class=\"btn border-0 p-0\">
+                        <i class=\"bi bi-qr-code-scan fs-5\"></i>
+                    </button>
+                </div>
+                <div class=\"modal-body p-0\">
+                    <div class=\"transfer-options px-3 mb-4\">
+                        <div class=\"d-flex align-items-center py-3 border-bottom\" role=\"button\" onclick=\"window.location.href='";
+        // line 442
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact");
+        yield "'\">
+                            <div
+                                class=\"icon-circle bg-light-purple d-flex align-items-center justify-content-center me-3\">
+                                <i class=\"bi bi-people-fill text-primary\"></i>
+                            </div>
+                            <div class=\"flex-grow-1\">
+                                <p class=\"mb-0 fw-bold small text-dark\">Transfert vers amis</p>
+                                <p class=\"mb-0 text-muted extra-small\" style=\"font-size: 0.75rem;\">Gratuit, Numéro
+                                    de téléphone</p>
+                            </div>
+                        </div>
+                        <div class=\"d-flex align-items-center py-3 border-bottom\" role=\"button\" onclick=\"window.location.href='";
+        // line 453
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_transfer_by_bank");
+        yield "'\">
+                            <div
+                                class=\"icon-circle bg-light-purple d-flex align-items-center justify-content-center me-3\">
+                                <i class=\"bi bi-bank2 text-primary\"></i>
+                            </div>
+                            <div class=\"flex-grow-1\">
+                                <p class=\"mb-0 fw-bold small text-dark\">Transfert vers banque</p>
+                                <p class=\"mb-0 text-muted extra-small\" style=\"font-size: 0.75rem;\">Transfert vers
+                                    compte bancaire, Carte bancaire</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OFF CANVAS Notification -->
+    <div class=\"offcanvas offcanvas-start-lg top-0\" tabindex=\"1\" id=\"offcanvasNotification\">
+        <div class=\"offcanvas-header-rewards bg-white border-bottom\">
+            <div class=\"d-flex align-items-center\">
+                <button type=\"button\" class=\"btn-close border-0 p-2 me-2\" data-bs-dismiss=\"offcanvas\"
+                    aria-label=\"Close\"></button>
+                <h5 class=\"mb-2 mt-2 fw-semibold flex-grow-1 text-center me-4\">Notification</h5>
+            </div>
+        </div>
+        <div class=\"offcanvas-body\">
+            <ul class=\"nav nav-pills mb-3\" id=\"pills-tab\" role=\"tablist\">
+                <li class=\"nav-item\" role=\"presentation\">
+                    <button class=\"nav-link active\" id=\"pills-allnotification-tab\" data-bs-toggle=\"pill\"
+                        data-bs-target=\"#pills-allnotification\" type=\"button\" role=\"tab\">Toutes</button>
+                </li>
+                <!-- Autres onglets... -->
+            </ul>
+            <div class=\"tab-content d-flex justify-content-center\" id=\"pills-tabContent\">
+                <div class=\"tab-pane fade show active\" id=\"pills-allnotification\" role=\"tabpanel\">
+                    <div class=\"list-group-item d-flex flex-column border rounded p-2\">
+                        <div class=\"d-flex justify-content-between align-items-center mb-1\">
+                            <i class=\"bi bi-bell\"></i>
+                            <span class=\"fw-bold\">Toutes notifications</span>
+                            <small class=\"text-muted\">5 Min</small>
+                        </div>
+                        <p class=\"small mb-0\">Bienvenue sur Budget App !</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OFF CANVAS Saved Recipients -->
+    <div class=\"offcanvas offcanvas-start offcanvas-custom-width\" tabindex=\"-1\" id=\"offcanvasSavedRecipients\"
+        aria-labelledby=\"offcanvasSavedRecipientsLabel\">
+        <div class=\"offcanvas-header border-bottom shadow-sm py-3\">
+            <div class=\"d-flex align-items-center w-100\">
+                <button type=\"button\" class=\"btn border-0 p-0\" data-bs-dismiss=\"offcanvas\" aria-label=\"Close\">
+                    <i class=\"bi bi-chevron-left fs-6 text-dark\"></i>
+                </button>
+                <h5 class=\"offcanvas-title mb-0 fw-bold flex-grow-1 text-center me-4\"
+                    id=\"offcanvasSavedRecipientsLabel\">
+                    Destinataires Sauvegardés
+                </h5>
+                <a href=\"";
+        // line 514
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_new");
+        yield "\"><i class=\"bi bi-plus fs-4 text-dark\"></i></a>
+            </div>
+        </div>
+
+        <div class=\"offcanvas-body p-0\">
+            <!-- Liste contacts -->
+            <div class=\"tab-content px-3\" id=\"recipientTabsContent\">
+                <div class=\"tab-pane fade show active\" id=\"phone\" role=\"tabpanel\">
+                    ";
+        // line 522
+        if (array_key_exists("recentRecipients", $context)) {
+            // line 523
+            yield "                        ";
+            $context['_parent'] = $context;
+            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["recentRecipients"]) || array_key_exists("recentRecipients", $context) ? $context["recentRecipients"] : (function () { throw new RuntimeError('Variable "recentRecipients" does not exist.', 523, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["recipient"]) {
+                // line 524
+                yield "                            <div class=\"contact-item d-flex align-items-center mb-3\">
+                                <img src=\"";
+                // line 525
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, $context["recipient"], "avatar", [], "any", true, true, false, 525)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, $context["recipient"], "avatar", [], "any", false, false, false, 525), $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/profil.jpg"))) : ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/profil.jpg"))), "html", null, true);
+                yield "\" alt=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipient"], "name", [], "any", false, false, false, 525), "html", null, true);
+                yield "\"
+                                    class=\"img-fluid rounded-circle me-3\"
+                                    style=\"width: 50px; height: 50px; object-fit: cover;\" />
+                                <div>
+                                    <a href=\"#\" class=\"text-decoration-none text-dark\">
+                                        <strong>";
+                // line 530
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipient"], "name", [], "any", false, false, false, 530), "html", null, true);
+                yield "</strong><br />
+                                        <small class=\"text-muted\">";
+                // line 531
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipient"], "identifier", [], "any", false, false, false, 531), "html", null, true);
+                yield "</small>
+                                    </a>
+                                </div>
+                            </div>
+                        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_key'], $context['recipient'], $context['_parent']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 536
+            yield "                    ";
+        }
+        // line 537
+        yield "                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Autorisation Notification -->
+    <div class=\"modal fade\" id=\"notificationModal\" tabindex=\"-1\" aria-hidden=\"true\">
+        <div class=\"modal-dialog modal-dialog-centered mx-auto\" style=\"max-width: 300px;\">
+            <div class=\"modal-content border-0 shadow-lg rounded-4 overflow-hidden\">
+                <div class=\"modal-body p-4 text-center\">
+                    <p class=\"fw-bold mb-0 text-dark fs-5\">\"BudgetApp\" voudrait vous envoyer des Notifications</p><br>
+                    <p class=\"small text-muted\">Les Notifications incluent alertes, sons et icônes.</p>
+                </div>
+                <div class=\"d-flex border-top border-secondary-subtle\">
+                    <button type=\"button\" class=\"btn btn-ios-action border-end text-muted w-50\" id=\"denyNotifications\" data-bs-dismiss=\"modal\">
+                        Ne pas autoriser
+                    </button>
+                    <button type=\"button\" class=\"btn btn-ios-action text-primary fw-semibold w-50\" id=\"allowNotifications\" data-bs-dismiss=\"modal\">
+                        Autoriser
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER NAVIGATION -->
+    <footer class=\"footer py-2\">
+        <div class=\"d-flex justify-content-around align-items-center\">
+            <a href=\"";
+        // line 565
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\" class=\"active-link\">
+                <i class=\"bi bi-house-door-fill\"></i>
+                <span>Accueil</span>
+            </a>
+            <a href=\"";
+        // line 569
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_bank_history");
+        yield "\" class=\"footer-link\">
+                <i class=\"bi bi-clock-history\"></i>
+                <span>Historique</span>
+            </a>
+            <a href=\"";
+        // line 573
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_my_qr");
+        yield "\" class=\"footer-link\">
+                <i class=\"bi bi-qr-code-scan\"></i>
+                <span>QR</span>
+            </a>
+            <a href=\"";
+        // line 577
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_rewards");
+        yield "\" class=\"footer-link\">
+                <i class=\"bi bi-gift\"></i>
+                <span>Récompenses</span>
+            </a>
+            <a href=\"";
+        // line 581
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_profile");
+        yield "\" class=\"footer-link\">
+                <i class=\"bi bi-person\"></i><span>Profil</span></a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const newBalance = sessionStorage.getItem('newBalance');
+            if (newBalance) {
+                const balanceEl = document.getElementById('balance');
+                if (balanceEl) {
+                    balanceEl.textContent = parseFloat(newBalance).toLocaleString('fr-FR', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €';
+                }
+                sessionStorage.removeItem('newBalance');
+            }
+
+            const refreshTransactions = sessionStorage.getItem('refreshTransactions');
+            if (refreshTransactions) {
+                sessionStorage.removeItem('refreshTransactions');
+                window.location.reload();
+            }
+
+            loadManagedCard();
+            // Notifications
+            const badge = document.querySelector('.notification-badge');
+            const notificationLink = document.querySelector('.notification-link');
+
+            function toggleNotificationBadge(show) {
+                if (!badge) return;
+                badge.classList.toggle('d-none', !show);
+            }
+            toggleNotificationBadge(true);
+
+            if (notificationLink) {
+                notificationLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    toggleNotificationBadge(false);
+                    const offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasNotification'));
+                    offcanvas.show();
+                });
+            }
+
+            // Gestion modal autorisation notification
+            const hasMadeChoice = localStorage.getItem(\"notificationChoiceMade\");
+            if (!hasMadeChoice) {
+                const notificationModal = new bootstrap.Modal(document.getElementById('notificationModal'));
+                notificationModal.show();
+            }
+            document.getElementById('allowNotifications').addEventListener('click', () => localStorage.setItem(\"notificationChoiceMade\", \"true\"));
+            document.getElementById('denyNotifications').addEventListener('click', () => localStorage.setItem(\"notificationChoiceMade\", \"true\"));
+
+            // SCROLL DOTS
+            const scrollContainers = document.querySelectorAll(\".scroll-container\");
+            const allDotsGroups = document.querySelectorAll(\".scroll-dots\");
+
+            scrollContainers.forEach((container, index) => {
+                const dotsGroup = allDotsGroups[index];
+                if (!dotsGroup) return;
+
+                const dots = dotsGroup.querySelectorAll(\".dot\");
+                if (!container || !dots.length) return;
+
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                container.addEventListener(\"scroll\", () => {
+                    const maxScroll = container.scrollWidth - container.offsetWidth;
+                    if (maxScroll <= 0) return;
+
+                    const scrollPercentage = container.scrollLeft / maxScroll;
+                    const activeIndex = Math.round(scrollPercentage * (dots.length - 1));
+
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle(\"active\", i === activeIndex);
+                    });
+                });
+
+                container.addEventListener(\"mousedown\", (e) => {
+                    isDown = true;
+                    startX = e.pageX - container.offsetLeft;
+                    scrollLeft = container.scrollLeft;
+                    container.style.cursor = 'grabbing';
+                });
+
+                container.addEventListener(\"mouseleave\", () => {
+                    isDown = false;
+                    container.style.cursor = 'grab';
+                });
+
+                container.addEventListener(\"mouseup\", () => {
+                    isDown = false;
+                    container.style.cursor = 'grab';
+                });
+
+
+                container.addEventListener(\"mousemove\", (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - container.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    container.scrollLeft = scrollLeft - walk;
+                });
+            });
+
+            // Sélection de carte (visuel uniquement pour l'instant)
+            window.selectCard = function(element) {
+                // Désélectionner les autres
+                document.querySelectorAll('.other-cards-list .check-icon').forEach(icon => {
+                    icon.classList.remove('bi-check-circle-fill', 'text-success');
+                    icon.classList.add('bi-circle', 'text-muted');
+                });
+
+                // Sélectionner l'élément cliqué
+                const icon = element.querySelector('.check-icon');
+                if (icon) {
+                    icon.classList.remove('bi-circle', 'text-muted');
+                    icon.classList.add('bi-check-circle-fill', 'text-success');
+                }
+            };
+        });
+
+        async function loadManagedCard() {
+            try {
+                const response = await fetch('";
+        // line 705
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("get_cards");
+        yield "');
+                if (!response.ok) {
+                    throw new Error('Could not fetch cards');
+                }
+                const data = await response.json();
+
+                const cardSelectedDiv = document.querySelector('#manageCardModal .card-selected');
+
+                if (data.success && data.cards && data.cards.length > 0) {
+                    const card = data.cards[0]; // Take the first card
+
+                    const brand = card.card_brand ? card.card_brand.toLowerCase() : '';
+                    const cardLogoSrc = brand.includes('master')
+                      ? 'https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg'
+                      : 'https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg';
+
+                    cardSelectedDiv.innerHTML = `
+                        <div class=\"card-logo bg-white p-2 rounded me-3\">
+                            <img src=\"\${cardLogoSrc}\"
+                                width=\"35\" alt=\"\${card.card_brand}\">
+                        </div>
+                        <div class=\"flex-grow-1\">
+                            <p class=\"mb-0 fw-bold small\">\${card.card_brand}</p>
+                            <p class=\"mb-0 text-muted extra-small\">**** **** **** \${card.last_4_digits}</p>
+                        </div>
+                        <i class=\"bi bi-check-circle-fill text-success active fs-4\"></i>
+                    `;
+                    cardSelectedDiv.style.cursor = 'pointer';
+                    cardSelectedDiv.addEventListener('click', function() {
+                        window.location.href = \"";
+        // line 734
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_card_index");
+        yield "\";
+                    });
+                } else {
+                    // No cards found, display a message or hide
+                cardSelectedDiv.innerHTML = '<p class=\"text-muted text-center w-100\" style=\"cursor: pointer;\" onclick=\"window.location.href=\\'' + \"";
+        // line 738
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_card_index");
+        yield "\" + '\\';\">Aucune carte trouvée. Gérer vos cartes <i class=\"bi bi-arrow-right\"></i></p>';
+                }
+
+            } catch (error) {
+                console.error('Error loading card for modal:', error);
+                const cardSelectedDiv = document.querySelector('#manageCardModal .card-selected');
+                if (cardSelectedDiv) {
+                    cardSelectedDiv.innerHTML = '<p class=\"text-danger text-center w-100\" style=\"cursor: pointer;\" onclick=\"window.location.href=\\'' + \"";
+        // line 745
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_card_index");
+        yield "\" + '\\';\">Erreur de chargement de la carte. <i class=\"bi bi-arrow-right\"></i></p>';
+                }
+            }
+        }
+    </script>
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName(): string
+    {
+        return "home/index.html.twig";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function isTraitable(): bool
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo(): array
+    {
+        return array (  1028 => 745,  1018 => 738,  1011 => 734,  979 => 705,  852 => 581,  845 => 577,  838 => 573,  831 => 569,  824 => 565,  794 => 537,  791 => 536,  780 => 531,  776 => 530,  766 => 525,  763 => 524,  758 => 523,  756 => 522,  745 => 514,  681 => 453,  667 => 442,  639 => 417,  559 => 340,  539 => 323,  519 => 306,  500 => 290,  466 => 259,  451 => 247,  442 => 240,  434 => 235,  430 => 234,  422 => 229,  418 => 228,  415 => 227,  412 => 226,  402 => 222,  395 => 220,  389 => 219,  386 => 218,  381 => 217,  379 => 216,  355 => 195,  346 => 189,  337 => 183,  328 => 177,  318 => 170,  309 => 164,  300 => 158,  291 => 152,  280 => 144,  262 => 129,  240 => 110,  212 => 85,  205 => 81,  201 => 79,  195 => 76,  192 => 75,  188 => 73,  185 => 72,  162 => 51,  149 => 41,  141 => 36,  116 => 14,  112 => 13,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+    }
+
+    public function getSourceContext(): Source
+    {
+        return new Source("{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Budget App{% endblock %}
+
+{% block body %}
+    <header class=\"mobile-header\">
+        <div class=\"container-fluid\">
+            <div class=\"header-top d-flex justify-content-between align-items-center p-3\">
+                <div class=\"user-info d-flex align-items-center\">
+                    <img src=\"{{ user.avatar|default(asset('assets/images/profil.jpg')) }}\" alt=\"Profile\" class=\"rounded-circle me-3\" width=\"50\"
+                        height=\"50\">
+                    <div>
+                        <a href=\"{{ path('app_profile') }}\" class=\"text-decoration-none text-dark\">
+                            <h6 class=\"username fw-bold mb-0 text-white\">{{ user.fullName|default(user.email) }}</h6>
+                        </a>
+                        <p class=\"slogan mb-0\">Economisons votre argent!</p>
+                    </div>
+                </div>
+                <div class=\"header-icons\">
+                    <a href=\"#offcanvasMenu\" class=\"menu-link text-white\" data-bs-toggle=\"offcanvas\" role=\"button\">
+                        <i class=\"bi bi-grid fs-4 me-2\"></i>
+                    </a>
+                    <!-- Offcanvas Menu -->
+                    <div class=\"offcanvas Menu offcanvas-start\" tabindex=\"-1\" id=\"offcanvasMenu\">
+                        <div class=\"offcanvas-header text-white d-flex justify-content-between\"
+                            style=\"background: linear-gradient(135deg, #5e35b1, #4a3cc9); border-radius: 0 0 12px 0; padding: 10px;\">
+                            <i class=\"bi bi-wallet fs-4 me-2\"></i>
+                            <span class=\"fw-bold fs-5\">Budget App</span>
+                            <button type=\"button\" class=\"btn-close btn-close-white\"
+                                data-bs-dismiss=\"offcanvas\"></button>
+                        </div>
+                        <div class=\"offcanvas-body\">
+                            <p class=\"text-muted small fw-bold\">MENU</p>
+                            <ul class=\"list-group list-group-flush\">
+                                <li class=\"list-group-item border-0 d-flex justify-content-between align-items-center\">
+                                    <a href=\"{{ path('app_home') }}\">
+                                        <span><i class=\"bi bi-house me-3\"></i>Accueil</span></a>
+                                    <i class=\"bi bi-chevron-right small text-muted\"></i>
+                                </li>
+                                <li class=\"list-group-item border-0 d-flex justify-content-between align-items-center\">
+                                    <a href=\"{{ path('app_ui_pages') }}\">
+                                        <span><i class=\"bi bi-book me-3\"></i>Pages</span></a>
+                                    <i class=\"bi bi-chevron-right small text-muted\"></i>
+                                </li>
+                                <li class=\"list-group-item border-0 d-flex justify-content-between align-items-center\">
+                                    <span><i class=\"bi bi-grid me-3\">
+                                        </i>Composants</span>
+                                    <i class=\"bi bi-chevron-right small text-muted\"></i>
+                                </li>
+                                <li class=\"list-group-item border-0 d-flex justify-content-between align-items-center\">
+                                    <a href=\"{{ path('app_profile') }}\">
+                                        <span><i class=\"bi bi-person-circle me-3\"></i>Profile</span></a>
+                                    <i class=\"bi bi-chevron-right small text-muted\"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href=\"#offcanvasNotification\" class=\"notification-link position-relative text-dark\"
+                        data-bs-toggle=\"offcanvas\" role=\"button\" id=\"bellIcon\">
+                        <i class=\"bi bi-bell-fill text-white fs-4\"></i>
+                        <span id=\"notificationBadge\"
+                            class=\"notification-badge position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger p-1 border border-light\">
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class=\"stats-section p-3 mx-2 mb-3\">
+                <div class=\"row g-0\">
+                    <div class=\"col-6 pe-2\">
+                        <p class=\"stat-label mb-1\">Votre solde:</p>
+                        {# Affichage sécurisé du solde #}
+                        {% if dashboard is defined and dashboard.success is defined and dashboard.success == false %}
+                            <p class=\"text-danger small mb-0\">Erreur chargement</p>
+                        {% else %}
+                            <p class=\"stat-value text-black\" id=\"balance\">
+                                {{ dashboard.balance|default(0)|number_format(2, ',', ' ') }} €
+                            </p>
+                        {% endif %}
+                    </div>
+                    <div class=\"col-6 ps-2 text-end\">
+                        <a href=\"{{ path('app_rewards') }}\" class=\"text-decoration-none text-dark\">
+                            <p class=\"stat-label mb-1\">Vos recompenses:</p>
+                            <p class=\"stat-value\">
+                                <i class=\"bi bi-gift-fill text-danger me-2\"></i>
+                                <span id=\"rewards\">{{ dashboard.rewards|default(0) }}</span> Point
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <!-- Quick Actions -->
+        <div class=\"quick-actions-section container-fluid mt-4 mb-4\">
+            <div class=\"row text-center\">
+                <div class=\"col-3\">
+                    <a href=\"javascript:void(0)\" class=\"action-item\" data-bs-toggle=\"modal\"
+                        data-bs-target=\"#manageTransferModal\">
+                        <div class=\"action-icon-wrapper\">
+                            <i class=\"bi bi-currency-dollar fs-4\"></i>
+                            <i class=\"bi bi-arrow-down-up fs-6 transfer-arrow\"></i>
+                        </div>
+                        <p class=\"mt-2 action-text\">Transfert</p>
+                    </a>
+                </div>
+                <div class=\"col-3\">
+                    <a href=\"{{ path('app_topup_view') }}\" class=\"action-item\">
+                        <div class=\"action-icon-wrapper\">
+                            <i class=\"bi bi-wallet fs-4\"></i>
+                            <i class=\"bi bi-currency-dollar fs-6 topup-dollar\"></i>
+                        </div>
+                        <p class=\"mt-2 action-text\">Recharges</p>
+                    </a>
+                </div>
+                <div class=\"col-3\">
+                    <a href=\"javascript:void(0)\" class=\"action-item\" data-bs-toggle=\"modal\"
+                        data-bs-target=\"#manageCardModal\">
+                        <div class=\"action-icon-wrapper\">
+                            <i class=\"bi bi-credit-card fs-4\"></i>
+                            <i class=\"bi bi-pencil-fill fs-6 card-fill\" style=\"font-size: 0.7rem !important;\"></i>
+                        </div>
+                        <div class=\"mt-2 action-text\">Cartes</div>
+                    </a>
+                </div>
+                <div class=\" col-3\">
+                    <a href=\"{{ path('app_qr') }}\" class=\"action-item\">
+                        <div class=\"action-icon-wrapper\">
+                            <i class=\"bi bi-qr-code fs-4\"></i>
+                            <i class=\"bi bi-qr-code-scan fs-6 qr-scan\"></i>
+                        </div>
+                        <p class=\"mt-2 action-text\">Mon QR</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div class=\"container-fluid service-header mt-4 px-4\">
+            <div class=\"d-flex justify-content-between align-items-center\">
+                <h4 class=\"service-title mb-0\">Vos services</h4>
+                <a href=\"{{ path('app_bill') }}\" class=\"view-all-link\">
+                    Tout voir
+                </a>
+            </div>
+        </div>
+        <div class=\"container-fluid service-grid mt-3 px-4 collapse show\" id=\"collapseServices\">
+            <div class=\"row g-3\">
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"{{ path('app_services_mobile') }}\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-phone fs-1 text-info\"></i>
+                        <p class=\"mt-2 mb-0\">Mobile</p>
+                    </a>
+                </div>
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"{{ path('app_services_internet') }}\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-wifi fs-1 text-primary\"></i>
+                        <p class=\"mt-2 mb-0\">Internet</p>
+                    </a>
+                </div>
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"{{ path('app_bill') }}\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-file-earmark-text fs-1 text-info\"></i>
+                        <p class=\"mt-2 mb-0\">Facture</p>
+                    </a>
+                </div>
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"{{ path('app_services_electricity') }}\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-lightning-charge fs-1 text-warning\"></i>
+                        <p class=\"mt-2 mb-0\">Electricité</p>
+                    </a>
+                </div>
+
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"{{ path('app_services_film') }}\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-film fs-1 text-danger\"></i>
+                        <p class=\"mt-2 mb-0\">Film</p>
+                    </a>
+                </div>
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"{{ path('app_services_water') }}\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-droplet fs-1 text-info\"></i>
+                        <p class=\"mt-2 mb-0\">Facture Eau</p>
+                    </a>
+                </div>
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"{{ path('app_rewards') }}\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-percent fs-1 text-success\"></i>
+                        <p class=\"mt-2 mb-0\">Bons de reduction</p>
+                    </a>
+                </div>
+                <div class=\"col-6 col-md-3\">
+                    <a href=\"{{ path('app_market') }}\" class=\"service-card text-center d-block p-3\">
+                        <i class=\"bi bi-cart fs-1 text-warning\"></i>
+                        <p class=\"mt-2 mb-0\">Marché</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contacts Récents -->
+        <div class=\"container-fluid service-header mt-4 px-4\">
+            <div class=\"d-flex justify-content-between align-items-center\">
+                <h4 class=\"service-title mb-3\">Contacts Récents</h4>
+                <a href=\"javascript:void(0)\" class=\"view-all-link\" data-bs-toggle=\"offcanvas\"
+                    data-bs-target=\"#offcanvasSavedRecipients\" aria-controls=\"offcanvasSavedRecipients\"
+                    aria-expanded=\"false\">
+                    Tout voir
+                </a>
+            </div>
+        </div>
+        <div class=\"container-fluid service-grid mt-3 px-4\">
+            <div class=\"row row-cols-3 row-cols-sm-4 row-cols-md-6 g-3 mb-4\">
+                {% if recentRecipients is defined and recentRecipients|length > 0 %}
+                    {% for recipient in recentRecipients %}
+                        <div class=\"col text-center\">
+                            <a href=\"{{ path('app_transfert') }}?recipient={{ recipient.identifier }}\" class=\"text-decoration-none\">
+                                <img src=\"{{ recipient.avatar|default(asset('assets/images/profil.jpg')) }}\" alt=\"{{ recipient.name }}\"
+                                    class=\"rounded-circle mb-1\" style=\"width: 60px; height: 60px; object-fit: cover; border: 3px solid transparent; padding: 2px; box-shadow: 0 0 0 1px #d3d3d3;\">
+                                <p class=\"small text-truncate mb-0 text-dark\">{{ recipient.name }}</p>
+                            </a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class=\"col text-center\">
+                        <a href=\"{{ path('app_transfert') }}\" class=\"text-decoration-none\">
+                            <img src=\"{{ asset('assets/images/esther.jpg') }}\" alt=\"Esther\" class=\"rounded-circle mb-1\" style=\"width: 60px; height: 60px; object-fit: cover; border: 3px solid transparent; padding: 2px; box-shadow: 0 0 0 1px #d3d3d3;\">
+                            <p class=\"small text-truncate mb-0 text-dark\">Esther</p>
+                        </a>
+                    </div>
+                    <div class=\"col text-center\">
+                        <a href=\"{{ path('app_transfert') }}\" class=\"text-decoration-none\">
+                            <img src=\"{{ asset('assets/images/hawkins.jpg') }}\" alt=\"Hawkins\" class=\"rounded-circle mb-1\" style=\"width: 60px; height: 60px; object-fit: cover; border: 3px solid transparent; padding: 2px; box-shadow: 0 0 0 1px #d3d3d3;\">
+                            <p class=\"small text-truncate mb-0 text-dark\">Hawkins</p>
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Bons Plans -->
+        <div class=\"container-fluid service-header mt-4 px-4\">
+            <div class=\"d-flex justify-content-between align-items-center\">
+                <h4 class=\"service-title mb-0\">Bons Plans</h4>
+                <a href=\"{{ path('app_rewards') }}\" class=\"view-all-link\">
+                    Tout voir
+                </a>
+            </div>
+        </div>
+
+      <div class=\"scroll-container px-4\">
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #68c0d1; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center\">
+                    <div class=\"text-center\">
+                        <img src=\"{{ asset('assets/images/iconeshopping.jpg') }}\" alt=\"Mode\" class=\"rounded-3 bg-white\"
+                            style=\"width: 60px; height: 60px; object-fit: contain;\">
+                        <p class=\"small mb-0 fw-bold mt-1 text-dark\">Mode</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2 text-dark\">SHOPPING EN<br>LIGNE</h5>
+                        <button class=\"btn btn-sm btn-dark rounded-pill px-3\">Plus</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #131921; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-white\">
+                    <div>
+                        <i class=\"bi bi-amazon fs-1 text-warning\"></i>
+                        <p class=\"small mb-0 fw-bold\">Amazon</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h6 class=\"fw-bold mb-2\">PRIME DAY<br>DISPONIBLE</h6><a href=\"https://www.amazon.fr\"
+                            class=\"btn btn-sm btn-warning rounded-pill px-3 fw-bold\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #e1bc2a; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-dark\">
+                    <div class=\"text-center\">
+                        <img src=\"{{ asset('assets/images/logofnac.png') }}\" alt=\"FNAC\" class=\"rounded-3 bg-white p-1\"
+                            style=\"width: 50px;\">
+                        <p class=\"small mb-0 fw-bold mt-1\">FNAC</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2\">OFFRES<br>ADHÉRENTS</h5><a href=\"https://www.fnac.com\"
+                            class=\"btn btn-sm btn-dark rounded-pill px-3\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #3142ac; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-white\">
+                    <div class=\"text-center\">
+                        <img src=\"{{ asset('assets/images/logocdiscount.png') }}\" alt=\"Cdiscount\"
+                            style=\"width: 100px; background-color: white;\" class=\"rounded-3 p-1\">
+                        <p class=\"small mb-0 fw-bold mt-1\">Cdiscount</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2\">Ventes<br>Flash</h5>
+                        <a href=\"https://www.cdiscount.com\"
+                            class=\"btn btn-sm btn-light text-primary rounded-pill px-3 fw-bold\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #e38556; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-white\">
+                    <div class=\"text-center\">
+                        <img src=\"{{ asset('assets/images/logoboulanger.png') }}\" alt=\"Boulanger\"
+                            style=\"width: 100px; background-color: white;\" class=\"rounded-3 p-1\">
+                        <p class=\"small mb-0 fw-bold mt-1\">Boulanger</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2\">Ventes<br>Flash</h5>
+                        <a href=\"https://www.boulanger.com\"
+                            class=\"btn btn-sm btn-light text-primary rounded-pill px-3 fw-bold\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #e38556; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-white\">
+                    <div class=\"text-center\">
+                        <img src=\"{{ asset('assets/images/logo-leboncoin.png') }}\" alt=\"Leboncoin\"
+                            style=\"width: 100px; background-color: white;\" class=\"rounded-3 p-1\">
+                        <p class=\"small mb-0 fw-bold mt-1\">Leboncoin</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2\">Vendre et<br> Rechercher</h5>
+                        <a href=\"https://www.leboncoin.fr/\"
+                            class=\"btn btn-sm btn-light text-primary rounded-pill px-3 fw-bold\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scroll ... -->
+    <div class=\"scroll-dots d-flex justify-content-center gap-2\">
+        <div class=\"dot active\"></div>
+        <div class=\"dot\"></div>
+        <div class=\"dot\"></div>
+    </div>
+    </main>
+
+    <!-- Modal Carte : Gérer Votre Carte -->
+    <div class=\"modal fade modal-top\" id=\"manageCardModal\" tabindex=\"-1\" aria-labelledby=\"manageCardModalLabel\"
+        aria-hidden=\"true\">
+        <div class=\"modal-dialog m-0 shadow-lg\">
+            <div class=\"modal-content border-0 rounded-0 rounded-bottom-4\">
+                <div class=\"modal-header border-0 align-items-center\">
+                    <button type=\"button\" class=\"btn border-0 p-0\" data-bs-dismiss=\"modal\">
+                        <i class=\"bi bi-chevron-left fs-4\"></i>
+                    </button>
+                    <h6 class=\"modal-title w-100 text-center fw-bold fs-6\" id=\"manageCardModalLabel\">Gérer Votre Carte
+                    </h6>
+                    <div style=\"width: 30px;\"></div>
+                </div>
+
+                <div class=\"modal-body px-4 pt-0\">
+                    <!-- Carte sélectionnée (Simulation) -->
+                    <div class=\"card-selected p-3 mb-4 d-flex align-items-center shadow-sm border border-primary bg-light\">
+                        <div class=\"card-logo bg-white p-2 rounded me-3\">
+                            <img src=\"https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg\"
+                                width=\"35\" alt=\"Mastercard\">
+                        </div>
+                        <div class=\"flex-grow-1\">
+                            <p class=\"mb-0 fw-bold small\">Mastercard</p>
+                            <p class=\"mb-0 text-muted extra-small\">**** **** **** 7576</p>
+                        </div>
+                        <i class=\"bi bi-check-circle-fill text-success active fs-4\"></i>
+                    </div>
+
+                    <style>
+                    .card-selected {
+                        cursor: pointer;
+                        transition: transform 0.2s ease, box-shadow 0.2s ease;
+                    }
+                    .card-selected:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 8px 25px rgba(0,123,255,0.15) !important;
+                    }
+                    </style>
+
+                    <div class=\"d-flex align-items-center my-4\">
+                        <hr class=\"flex-grow-1 text-muted opacity-25\">
+                        <span class=\"px-3 text-muted extra-small text-center\">Autres Moyens de Paiement</span>
+                        <hr class=\"flex-grow-1 text-muted opacity-25\">
+                    </div>
+
+                    <div class=\"other-cards-list mb-4\">
+                        <div class=\"d-flex align-items-center py-3 border-bottom\" onclick=\"selectCard(this)\">
+                            <img src=\"https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg\" width=\"35\"
+                                class=\"me-3\" alt=\"Visa\">
+                            <div class=\"flex-grow-1\">
+                                <p class=\"mb-0 fw-bold small text-dark\">Visacard</p>
+                                <p class=\"mb-0 text-muted extra-small\">**** **** **** 3245</p>
+                            </div>
+                            <i class=\"bi bi-circle text-muted fs-5 check-icon\"></i>
+                        </div>
+                    </div>
+                    <a href=\"{{ path('app_card_new') }}\"><button
+                            class=\"btn add-dashed btn-outline-light w-100 py-3 mb-4 text-center text-black fw-bold rounded-3\">Ajout
+                            nouvelle carte +</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal chosir Méthode de transfert -->
+    <div class=\"modal fade modal-top\" id=\"manageTransferModal\" tabindex=\"-1\" aria-labelledby=\"manageTransferModalLabel\"
+        aria-hidden=\"true\">
+        <div class=\"modal-dialog m-0 shadow-lg\" style=\"max-width: 100%;\">
+            <div class=\"modal-content border-0 rounded-0 rounded-bottom-4\">
+                <div class=\"modal-header border-0 d-flex align-items-center justify-content-between px-3\">
+                    <button type=\"button\" class=\"btn border-0 p-0\" data-bs-dismiss=\"modal\">
+                        <i class=\"bi bi-x-lg fs-5\"></i>
+                    </button>
+                    <h6 class=\"modal-title fw-bold fs-6 text-dark\" id=\"manageTransferModalLabel\">Méthode Transfert</h6>
+                    <button class=\"btn border-0 p-0\">
+                        <i class=\"bi bi-qr-code-scan fs-5\"></i>
+                    </button>
+                </div>
+                <div class=\"modal-body p-0\">
+                    <div class=\"transfer-options px-3 mb-4\">
+                        <div class=\"d-flex align-items-center py-3 border-bottom\" role=\"button\" onclick=\"window.location.href='{{ path('app_contact') }}'\">
+                            <div
+                                class=\"icon-circle bg-light-purple d-flex align-items-center justify-content-center me-3\">
+                                <i class=\"bi bi-people-fill text-primary\"></i>
+                            </div>
+                            <div class=\"flex-grow-1\">
+                                <p class=\"mb-0 fw-bold small text-dark\">Transfert vers amis</p>
+                                <p class=\"mb-0 text-muted extra-small\" style=\"font-size: 0.75rem;\">Gratuit, Numéro
+                                    de téléphone</p>
+                            </div>
+                        </div>
+                        <div class=\"d-flex align-items-center py-3 border-bottom\" role=\"button\" onclick=\"window.location.href='{{ path('app_transfer_by_bank') }}'\">
+                            <div
+                                class=\"icon-circle bg-light-purple d-flex align-items-center justify-content-center me-3\">
+                                <i class=\"bi bi-bank2 text-primary\"></i>
+                            </div>
+                            <div class=\"flex-grow-1\">
+                                <p class=\"mb-0 fw-bold small text-dark\">Transfert vers banque</p>
+                                <p class=\"mb-0 text-muted extra-small\" style=\"font-size: 0.75rem;\">Transfert vers
+                                    compte bancaire, Carte bancaire</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OFF CANVAS Notification -->
+    <div class=\"offcanvas offcanvas-start-lg top-0\" tabindex=\"1\" id=\"offcanvasNotification\">
+        <div class=\"offcanvas-header-rewards bg-white border-bottom\">
+            <div class=\"d-flex align-items-center\">
+                <button type=\"button\" class=\"btn-close border-0 p-2 me-2\" data-bs-dismiss=\"offcanvas\"
+                    aria-label=\"Close\"></button>
+                <h5 class=\"mb-2 mt-2 fw-semibold flex-grow-1 text-center me-4\">Notification</h5>
+            </div>
+        </div>
+        <div class=\"offcanvas-body\">
+            <ul class=\"nav nav-pills mb-3\" id=\"pills-tab\" role=\"tablist\">
+                <li class=\"nav-item\" role=\"presentation\">
+                    <button class=\"nav-link active\" id=\"pills-allnotification-tab\" data-bs-toggle=\"pill\"
+                        data-bs-target=\"#pills-allnotification\" type=\"button\" role=\"tab\">Toutes</button>
+                </li>
+                <!-- Autres onglets... -->
+            </ul>
+            <div class=\"tab-content d-flex justify-content-center\" id=\"pills-tabContent\">
+                <div class=\"tab-pane fade show active\" id=\"pills-allnotification\" role=\"tabpanel\">
+                    <div class=\"list-group-item d-flex flex-column border rounded p-2\">
+                        <div class=\"d-flex justify-content-between align-items-center mb-1\">
+                            <i class=\"bi bi-bell\"></i>
+                            <span class=\"fw-bold\">Toutes notifications</span>
+                            <small class=\"text-muted\">5 Min</small>
+                        </div>
+                        <p class=\"small mb-0\">Bienvenue sur Budget App !</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OFF CANVAS Saved Recipients -->
+    <div class=\"offcanvas offcanvas-start offcanvas-custom-width\" tabindex=\"-1\" id=\"offcanvasSavedRecipients\"
+        aria-labelledby=\"offcanvasSavedRecipientsLabel\">
+        <div class=\"offcanvas-header border-bottom shadow-sm py-3\">
+            <div class=\"d-flex align-items-center w-100\">
+                <button type=\"button\" class=\"btn border-0 p-0\" data-bs-dismiss=\"offcanvas\" aria-label=\"Close\">
+                    <i class=\"bi bi-chevron-left fs-6 text-dark\"></i>
+                </button>
+                <h5 class=\"offcanvas-title mb-0 fw-bold flex-grow-1 text-center me-4\"
+                    id=\"offcanvasSavedRecipientsLabel\">
+                    Destinataires Sauvegardés
+                </h5>
+                <a href=\"{{ path('app_contact_new') }}\"><i class=\"bi bi-plus fs-4 text-dark\"></i></a>
+            </div>
+        </div>
+
+        <div class=\"offcanvas-body p-0\">
+            <!-- Liste contacts -->
+            <div class=\"tab-content px-3\" id=\"recipientTabsContent\">
+                <div class=\"tab-pane fade show active\" id=\"phone\" role=\"tabpanel\">
+                    {% if recentRecipients is defined %}
+                        {% for recipient in recentRecipients %}
+                            <div class=\"contact-item d-flex align-items-center mb-3\">
+                                <img src=\"{{ recipient.avatar|default(asset('assets/images/profil.jpg')) }}\" alt=\"{{ recipient.name }}\"
+                                    class=\"img-fluid rounded-circle me-3\"
+                                    style=\"width: 50px; height: 50px; object-fit: cover;\" />
+                                <div>
+                                    <a href=\"#\" class=\"text-decoration-none text-dark\">
+                                        <strong>{{ recipient.name }}</strong><br />
+                                        <small class=\"text-muted\">{{ recipient.identifier }}</small>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Autorisation Notification -->
+    <div class=\"modal fade\" id=\"notificationModal\" tabindex=\"-1\" aria-hidden=\"true\">
+        <div class=\"modal-dialog modal-dialog-centered mx-auto\" style=\"max-width: 300px;\">
+            <div class=\"modal-content border-0 shadow-lg rounded-4 overflow-hidden\">
+                <div class=\"modal-body p-4 text-center\">
+                    <p class=\"fw-bold mb-0 text-dark fs-5\">\"BudgetApp\" voudrait vous envoyer des Notifications</p><br>
+                    <p class=\"small text-muted\">Les Notifications incluent alertes, sons et icônes.</p>
+                </div>
+                <div class=\"d-flex border-top border-secondary-subtle\">
+                    <button type=\"button\" class=\"btn btn-ios-action border-end text-muted w-50\" id=\"denyNotifications\" data-bs-dismiss=\"modal\">
+                        Ne pas autoriser
+                    </button>
+                    <button type=\"button\" class=\"btn btn-ios-action text-primary fw-semibold w-50\" id=\"allowNotifications\" data-bs-dismiss=\"modal\">
+                        Autoriser
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER NAVIGATION -->
+    <footer class=\"footer py-2\">
+        <div class=\"d-flex justify-content-around align-items-center\">
+            <a href=\"{{ path('app_home') }}\" class=\"active-link\">
+                <i class=\"bi bi-house-door-fill\"></i>
+                <span>Accueil</span>
+            </a>
+            <a href=\"{{ path('app_bank_history') }}\" class=\"footer-link\">
+                <i class=\"bi bi-clock-history\"></i>
+                <span>Historique</span>
+            </a>
+            <a href=\"{{ path('app_my_qr') }}\" class=\"footer-link\">
+                <i class=\"bi bi-qr-code-scan\"></i>
+                <span>QR</span>
+            </a>
+            <a href=\"{{ path('app_rewards') }}\" class=\"footer-link\">
+                <i class=\"bi bi-gift\"></i>
+                <span>Récompenses</span>
+            </a>
+            <a href=\"{{ path('app_profile') }}\" class=\"footer-link\">
+                <i class=\"bi bi-person\"></i><span>Profil</span></a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const newBalance = sessionStorage.getItem('newBalance');
+            if (newBalance) {
+                const balanceEl = document.getElementById('balance');
+                if (balanceEl) {
+                    balanceEl.textContent = parseFloat(newBalance).toLocaleString('fr-FR', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €';
+                }
+                sessionStorage.removeItem('newBalance');
+            }
+
+            const refreshTransactions = sessionStorage.getItem('refreshTransactions');
+            if (refreshTransactions) {
+                sessionStorage.removeItem('refreshTransactions');
+                window.location.reload();
+            }
+
+            loadManagedCard();
+            // Notifications
+            const badge = document.querySelector('.notification-badge');
+            const notificationLink = document.querySelector('.notification-link');
+
+            function toggleNotificationBadge(show) {
+                if (!badge) return;
+                badge.classList.toggle('d-none', !show);
+            }
+            toggleNotificationBadge(true);
+
+            if (notificationLink) {
+                notificationLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    toggleNotificationBadge(false);
+                    const offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasNotification'));
+                    offcanvas.show();
+                });
+            }
+
+            // Gestion modal autorisation notification
+            const hasMadeChoice = localStorage.getItem(\"notificationChoiceMade\");
+            if (!hasMadeChoice) {
+                const notificationModal = new bootstrap.Modal(document.getElementById('notificationModal'));
+                notificationModal.show();
+            }
+            document.getElementById('allowNotifications').addEventListener('click', () => localStorage.setItem(\"notificationChoiceMade\", \"true\"));
+            document.getElementById('denyNotifications').addEventListener('click', () => localStorage.setItem(\"notificationChoiceMade\", \"true\"));
+
+            // SCROLL DOTS
+            const scrollContainers = document.querySelectorAll(\".scroll-container\");
+            const allDotsGroups = document.querySelectorAll(\".scroll-dots\");
+
+            scrollContainers.forEach((container, index) => {
+                const dotsGroup = allDotsGroups[index];
+                if (!dotsGroup) return;
+
+                const dots = dotsGroup.querySelectorAll(\".dot\");
+                if (!container || !dots.length) return;
+
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                container.addEventListener(\"scroll\", () => {
+                    const maxScroll = container.scrollWidth - container.offsetWidth;
+                    if (maxScroll <= 0) return;
+
+                    const scrollPercentage = container.scrollLeft / maxScroll;
+                    const activeIndex = Math.round(scrollPercentage * (dots.length - 1));
+
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle(\"active\", i === activeIndex);
+                    });
+                });
+
+                container.addEventListener(\"mousedown\", (e) => {
+                    isDown = true;
+                    startX = e.pageX - container.offsetLeft;
+                    scrollLeft = container.scrollLeft;
+                    container.style.cursor = 'grabbing';
+                });
+
+                container.addEventListener(\"mouseleave\", () => {
+                    isDown = false;
+                    container.style.cursor = 'grab';
+                });
+
+                container.addEventListener(\"mouseup\", () => {
+                    isDown = false;
+                    container.style.cursor = 'grab';
+                });
+
+
+                container.addEventListener(\"mousemove\", (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - container.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    container.scrollLeft = scrollLeft - walk;
+                });
+            });
+
+            // Sélection de carte (visuel uniquement pour l'instant)
+            window.selectCard = function(element) {
+                // Désélectionner les autres
+                document.querySelectorAll('.other-cards-list .check-icon').forEach(icon => {
+                    icon.classList.remove('bi-check-circle-fill', 'text-success');
+                    icon.classList.add('bi-circle', 'text-muted');
+                });
+
+                // Sélectionner l'élément cliqué
+                const icon = element.querySelector('.check-icon');
+                if (icon) {
+                    icon.classList.remove('bi-circle', 'text-muted');
+                    icon.classList.add('bi-check-circle-fill', 'text-success');
+                }
+            };
+        });
+
+        async function loadManagedCard() {
+            try {
+                const response = await fetch('{{ path('get_cards') }}');
+                if (!response.ok) {
+                    throw new Error('Could not fetch cards');
+                }
+                const data = await response.json();
+
+                const cardSelectedDiv = document.querySelector('#manageCardModal .card-selected');
+
+                if (data.success && data.cards && data.cards.length > 0) {
+                    const card = data.cards[0]; // Take the first card
+
+                    const brand = card.card_brand ? card.card_brand.toLowerCase() : '';
+                    const cardLogoSrc = brand.includes('master')
+                      ? 'https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg'
+                      : 'https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg';
+
+                    cardSelectedDiv.innerHTML = `
+                        <div class=\"card-logo bg-white p-2 rounded me-3\">
+                            <img src=\"\${cardLogoSrc}\"
+                                width=\"35\" alt=\"\${card.card_brand}\">
+                        </div>
+                        <div class=\"flex-grow-1\">
+                            <p class=\"mb-0 fw-bold small\">\${card.card_brand}</p>
+                            <p class=\"mb-0 text-muted extra-small\">**** **** **** \${card.last_4_digits}</p>
+                        </div>
+                        <i class=\"bi bi-check-circle-fill text-success active fs-4\"></i>
+                    `;
+                    cardSelectedDiv.style.cursor = 'pointer';
+                    cardSelectedDiv.addEventListener('click', function() {
+                        window.location.href = \"{{ path('app_card_index') }}\";
+                    });
+                } else {
+                    // No cards found, display a message or hide
+                cardSelectedDiv.innerHTML = '<p class=\"text-muted text-center w-100\" style=\"cursor: pointer;\" onclick=\"window.location.href=\\'' + \"{{ path('app_card_index') }}\" + '\\';\">Aucune carte trouvée. Gérer vos cartes <i class=\"bi bi-arrow-right\"></i></p>';
+                }
+
+            } catch (error) {
+                console.error('Error loading card for modal:', error);
+                const cardSelectedDiv = document.querySelector('#manageCardModal .card-selected');
+                if (cardSelectedDiv) {
+                    cardSelectedDiv.innerHTML = '<p class=\"text-danger text-center w-100\" style=\"cursor: pointer;\" onclick=\"window.location.href=\\'' + \"{{ path('app_card_index') }}\" + '\\';\">Erreur de chargement de la carte. <i class=\"bi bi-arrow-right\"></i></p>';
+                }
+            }
+        }
+    </script>
+{% endblock %}
+", "home/index.html.twig", "/home/yangue/Documents/ProjetFilRougeIlaria2025/Backend_bloc3/templates/home/index.html.twig");
+    }
+}

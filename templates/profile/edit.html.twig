@@ -1,0 +1,250 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier le Profil - Budget App{% endblock %}
+
+
+{% block stylesheets %}
+    <style>
+    .profile-photo-wrapper {
+        position: relative;
+        display: inline-block;
+    }
+    .profile-photo-wrapper .camera-overlay {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: #0d6efd;
+        color: white;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 3px solid white;
+        transition: background 0.2s;
+    }
+    .profile-photo-wrapper .camera-overlay:hover {
+        background: #0b5ed7;
+    }
+    #photoInput {
+        display: none;
+    }
+    .loading-spinner {
+        display: none;
+    }
+</style>
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+    <div class="breadcrumb mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ path('app_home') }}">Accueil</a></li>
+                <li class="breadcrumb-item">
+                    <a href="{{ path('app_profile') }}">Profil</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <span class="bi bi-gear text-black" style="font-size: 15px;"></span>
+                    Gérer le profil
+                </li>
+            </ol>
+        </nav>
+    </div>
+    <div class="container-fluid p-3">
+        <!-- Profile Photo Section -->
+        <div class="text-center mb-4">
+            <div class="profile-photo-wrapper">
+                <img src="{{ user.avatar|default('/assets/images/profil.jpg') }}" alt="Profil" class="rounded-circle small-profile-img mb-2"
+                    width="100" height="100" id="userAvatar">
+                <label for="photoInput" class="camera-overlay" title="Changer la photo">
+                    <i class="bi bi-camera"></i>
+                </label>
+            </div>
+            <input type="file" id="photoInput" accept="image/*">
+            <p class="text-muted small mt-2">Cliquez sur l'icône caméra pour changer votre photo</p>
+            <div class="loading-spinner" id="loadingSpinner">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Chargement...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Info Display (Read-only) -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="bi bi-person me-2"></i>Informations du profil</h5>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <label class="form-label text-muted small">Nom complet</label>
+                        <p class="fw-bold" id="displayFullName">{{ user.fullName|default(user.email|split('@')[0]) }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label text-muted small">Email</label>
+                        <p class="fw-bold" id="displayEmail">{{ user.email }}</p>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <label class="form-label text-muted small">Téléphone</label>
+                        <p class="fw-bold" id="displayPhone">{{ user.phone|default('--') }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label text-muted small">Adresse</label>
+                        <p class="fw-bold" id="displayAddress">{{ user.address|default('--') }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <label class="form-label text-muted small">Code postal</label>
+                        <p class="fw-bold" id="displayPostcode">{{ user.postcode|default('--') }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label text-muted small">Ville</label>
+                        <p class="fw-bold" id="displayVille">{{ user.ville|default('--') }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent">
+                <a href="{{ path('app_profile') }}" class="btn btn-primary">
+                    <i class="bi bi-pencil me-1"></i>Modifier le profil
+                </a>
+            </div>
+        </div>
+
+        <!-- Message alerte pour modifier le profil-->
+        <div class="alert alert-info">
+            <i class="bi bi-info-circle me-2"></i>
+            Pour modifier vos informations personnelles, utilisez la page
+            <a href="{{ path('app_profile') }}" class="alert-link">Profil</a>.
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        await loadProfile();
+        setupPhotoUpload();
+    });
+
+    // Charger les informations du profil depuis l'API
+    async function loadProfile() {
+        try {
+            const response = await fetch('{{ path('get_profile') }}');
+
+            // Handle non-OK responses
+            if (!response.ok) {
+                console.error('Erreur chargement profil:', response.status, response.statusText);
+                // Try to parse error message if available
+                try {
+                    const errorData = await response.json();
+                    console.error('Server error:', errorData);
+                } catch (e) {
+                    // Ignore JSON parse errors
+                }
+                return;
+            }
+
+            const result = await response.json();
+
+            if (result.success && result.user) {
+                const profile = result.user;
+                // Mettre à jour l'affichage avec les données du profil
+                document.getElementById('displayFullName').textContent = profile.fullName || 'Non défini';
+                document.getElementById('displayEmail').textContent = profile.email || 'Non défini';
+                document.getElementById('displayPhone').textContent = profile.phone || 'Non défini';
+                document.getElementById('displayAddress').textContent = profile.address || 'Non défini';
+                document.getElementById('displayPostcode').textContent = profile.postcode || 'Non défini';
+                document.getElementById('displayVille').textContent = profile.ville || 'Non défini';
+
+                // Mettre à jour la photo de profil si elle existe
+                if (profile.avatar) {
+                    document.getElementById('userAvatar').src = profile.avatar;
+                }
+            }
+        } catch (error) {
+            console.error('Erreur chargement profil:', error);
+        }
+    }
+
+    // Gérer le téléchargement de la photo de profil
+    function setupPhotoUpload() {
+        const photoInput = document.getElementById('photoInput');
+        const spinner = document.getElementById('loadingSpinner');
+        const avatar = document.getElementById('userAvatar');
+
+        if (!photoInput || !spinner || !avatar) {
+            console.warn('Éléments manquants pour le téléchargement de photo');
+            return;
+        }
+
+        photoInput.addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            // Valider le type de fichier
+            if (!file.type.startsWith('image/')) {
+                alert('Veuillez sélectionner une image');
+                return;
+            }
+
+            // Valider la taille (max 2MB)
+            if (file.size > 2 * 1024 * 1024) {
+                alert('La taille de l\'image ne doit pas dépasser 2MB');
+                return;
+            }
+
+            // Afficher le spinner
+            spinner.style.display = 'block';
+
+            try {
+                // Convertir l'image en base64
+                const base64 = await convertToBase64(file);
+
+                // Appeler l'API pour mettre à jour la photo
+                const response = await fetch('{{ path('update_profile') }}', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ avatar: base64 })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Erreur HTTP: ${response.status}`);
+                }
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Mettre à jour l'image affichée
+                    avatar.src = base64;
+                    alert('Photo de profil mise à jour!');
+                } else {
+                    alert(result.error || 'Erreur lors de la mise à jour');
+                }
+            } catch (error) {
+                console.error('Erreur upload photo:', error);
+                alert('Erreur lors du téléchargement de la photo');
+            } finally {
+                spinner.style.display = 'none';
+                // Réinitialiser l'input
+                photoInput.value = '';
+            }
+        });
+    }
+
+    // Convertir un fichier en base64
+    function convertToBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+        });
+    }
+</script>
+{% endblock %}

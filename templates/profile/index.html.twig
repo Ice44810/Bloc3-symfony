@@ -1,0 +1,367 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil - Budget App{% endblock %}
+
+{% block body %}
+    <!--
+         PAGE: PROFIL
+         Fonctionnalité: Afficher et modifier les informations du profil utilisateur
+     -->
+
+    <div class="container">
+        <div class="breadcrumb mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('app_home') }}">Accueil</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <span class="bi bi-person-fill text-black" style="font-size: 15px;"></span>
+                        Profil
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="container-fluid p-0">
+            <div class="profile-header d-flex align-items-center justify-content-between p-3 my-1 bg-white">
+                <div class="d-flex align-items-center">
+                    <img src="{{ user ? user.avatar|default('/assets/images/profil.jpg') : '/assets/images/profil.jpg' }}" alt="Profil"
+                        class="rounded-circle profile-img me-3" style="width: 60px; height: 60px;" id="userAvatar">
+                    <div>
+                        <a href="{{ path('app_profile_edit') }}">
+                            <h5 class="mb-0 fw-bold" id="userName">{{ user ? user.fullName|default(user.email|split('@')[0]) : 'Utilisateur' }}</h5>
+                        </a>
+                        <p class="cardNumber">
+                            <span class="text-muted small mb-0">ID: <span id="userId">{{ user ? user.id : 'N/A' }}</span>
+                                <i class="bi bi-files text-primary" role="button" title="Copier le numéro"></i></span>
+                        </p>
+                    </div>
+                </div>
+                <a href="{{ path('app_profile_edit') }}"><i class="bi bi-chevron-right fs-5 text-muted"></i></a>
+            </div>
+
+            <div class="list-group list-group-flush">
+
+                <a href="{{ path('app_qr') }}" class="list-group-item d-flex align-items-center justify-content-between py-3">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-square me-3 bg-primary-subtle text-primary"><i class="bi bi-qr-code-scan"></i>
+                        </div>
+                        <span>QR code transfert</span>
+                    </div>
+                    <i class="bi bi-chevron-right text-muted"></i>
+                </a>
+
+                <a href="{{ path('app_bank_history') }}"
+                    class="list-group-item d-flex align-items-center justify-content-between py-3">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-square me-3 bg-warning-subtle text-warning"><i class="bi bi-cash"></i></div>
+                        <span>Balance Compte</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="me-3 fw-bold" id="balanceDisplay">--</span>
+                        <i class="bi bi-chevron-right text-muted"></i>
+                    </div>
+                </a>
+
+                <a href="{{ path('app_rewards') }}" class="list-group-item d-flex align-items-center justify-content-between py-3">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-square me-3 bg-danger-subtle text-danger"><i class="bi bi-gift-fill"></i></div>
+                        <span>Mes Cadeaux</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="me-3 fw-bold" id="rewardsCount">--</span>
+                        <i class="bi bi-chevron-right text-muted"></i>
+                    </div>
+                </a>
+
+                <a href="{{ path('app_banque') }}" class="list-group-item d-flex align-items-center justify-content-between py-3">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-square me-3 bg-info-subtle text-info"><i class="bi bi-bank"></i></div>
+                        <span>Banque</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="me-3 text-muted">1 lien</span>
+                        <i class="bi bi-chevron-right text-muted"></i>
+                    </div>
+                </a>
+
+                <a href="{{ path('app_bill') }}" class="list-group-item d-flex align-items-center justify-content-between py-3">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-square me-3 bg-success-subtle text-success"><i
+                                class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <span>Gestion des Factures</span>
+                    </div>
+                    <i class="bi bi-chevron-right text-muted"></i>
+                </a>
+
+                <a href="{{ path('app_topup') }}" class="list-group-item d-flex align-items-center justify-content-between py-3">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-square me-3 bg-secondary-subtle text-secondary"><i
+                                class="bi bi-credit-card-2-back"></i></div>
+                        <span>Lien Paiement</span>
+                    </div>
+                    <i class="bi bi-chevron-right text-muted"></i>
+                </a>
+
+                <a href="{{ path('app_card_info') }}"
+                    class="list-group-item d-flex align-items-center justify-content-between py-3">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-square me-3 bg-dark-subtle text-dark"><i class="bi bi-credit-card"></i></div>
+                        <span>Carte de Crédit</span>
+                    </div>
+                    <i class="bi bi-chevron-right text-muted"></i>
+                </a>
+
+                <a href="{{ path('app_contact') }}"
+                    class="list-group-item d-flex align-items-center justify-content-between py-3">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-square me-3 bg-primary-subtle text-primary"><i class="bi bi-people-fill"></i>
+                        </div>
+                        <span>Gestion Contacts</span>
+                    </div>
+                    <i class="bi bi-chevron-right text-muted"></i>
+                </a>
+
+                <a href="{{ path('app_settings') }}" class="list-group-item d-flex align-items-center justify-content-between py-3">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-square me-3 bg-secondary-subtle text-secondary"><i class="bi bi-gear-fill"></i>
+                        </div>
+                        <span>Paramètres</span>
+                    </div>
+                    <i class="bi bi-chevron-right text-muted"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--
+         MODAL DE MODIFICATION DU PROFIL
+         Permet de modifier les informations personnelles
+     -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel">Modifier le Profil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProfileForm">
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="profileEmail" value="{{ user.email }}" required>
+                        </div>
+
+                        <!-- Nom complet -->
+                        <div class="mb-3">
+                            <label class="form-label">Nom complet</label>
+                            <input type="text" class="form-control" id="profileFullName" value="{{ user.fullName }}" placeholder="Votre nom complet">
+                        </div>
+
+                        <!-- Téléphone -->
+                        <div class="mb-3">
+                            <label class="form-label">Téléphone</label>
+                            <input type="tel" class="form-control" id="profilePhone" value="{{ user.phone }}" placeholder="Votre numéro de téléphone">
+                        </div>
+
+                        <!-- Adresse -->
+                        <div class="mb-3">
+                            <label class="form-label">Adresse</label>
+                            <input type="text" class="form-control" id="profileAddress" value="{{ user.address }}" placeholder="Votre adresse">
+                        </div>
+
+                        <!-- Code postal et Ville -->
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label class="form-label">Code postal</label>
+                                <input type="text" class="form-control" id="profilePostcode" value="{{ user.postcode }}" placeholder="Code postal">
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label class="form-label">Ville</label>
+                                <input type="text" class="form-control" id="profileVille" value="{{ user.ville }}" placeholder="Ville">
+                            </div>
+                        </div>
+
+                        <!-- Bouton de soumission -->
+                        <button type="submit" class="btn btn-primary w-100">Enregistrer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer py-2">
+        <div class="d-flex justify-content-around align-items-center">
+            <a href="{{ path('app_home') }}" class="footer-link">
+                <i class="bi bi-house-door-fill"></i>
+                <span>Accueil</span>
+            </a>
+            <a href="{{ path('app_transactions_view') }}" class="footer-link">
+                <i class="bi bi-clock-history"></i>
+                <span>Historique</span>
+            </a>
+            <a href="{{ path('app_qr') }}" class="footer-link">
+                <i class="bi bi-qr-code-scan"></i>
+                <span>QR</span>
+            </a>
+            <a href="{{ path('app_rewards') }}" class="footer-link">
+                <i class="bi bi-gift"></i>
+                <span>Récompenses</span>
+            </a>
+            <a href="{{ path('app_profile') }}" class="active-link">
+                <i class="bi bi-person"></i>
+                <span>Profil</span>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // GESTION DU CHARGEMENT DE LA PAGE
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Charger les données du profil
+            await loadProfile();
+
+            // Charger les statistiques
+            await loadStats();
+
+            // Configurer le formulaire de modification
+            setupForm();
+        });
+
+        // Charger les données du profil utilisateur depuis l'API
+
+        async function loadProfile() {
+            try {
+
+                // APPEL API POUR LE PROFIL
+                // Récupère les informations de l'utilisateur connecté
+                const response = await fetch('{{ path('get_profile') }}');
+                const result = await response.json();
+
+                if (result.success && result.user) {
+                    const profile = result.user;
+                    // Mettre à jour les éléments du DOM
+                    document.getElementById('userName').textContent = profile.fullName || profile.email.split('@')[0];
+                    document.getElementById('userEmail').textContent = profile.email;
+                    document.getElementById('userId').textContent = profile.id;
+
+                    // Formater le rôle (admin -> Administrateur)
+                    const roleElement = document.getElementById('userRole');
+                    if (roleElement) {
+                        roleElement.textContent = profile.role === 'admin' || (profile.roles && profile.roles.includes('ROLE_ADMIN')) ? 'Administrateur' : 'Utilisateur';
+                    }
+
+                    // Afficher le nombre de cadeaux
+                    const rewardsCountElement = document.getElementById('rewardsCount');
+                    if (rewardsCountElement) {
+                        // Valeur arbitraire ou récupérée si disponible
+                        rewardsCountElement.textContent = (profile.rewardsCount || 21) + ' Cadeaux';
+                    }
+
+                    // Mettre à jour l'avatar si disponible
+                    if (profile.avatar) {
+                        document.getElementById('userAvatar').src = profile.avatar;
+                    }
+
+                    // REMPLIR LE FORMULAIRE DE MODIFICATION
+
+                    document.getElementById('profileEmail').value = profile.email || '';
+                    document.getElementById('profileFullName').value = profile.fullName || '';
+                    document.getElementById('profilePhone').value = profile.phone || '';
+                    document.getElementById('profileAddress').value = profile.address || '';
+                    document.getElementById('profilePostcode').value = profile.postcode || '';
+                    document.getElementById('profileVille').value = profile.ville || '';
+                }
+            } catch (error) {
+                console.error('Erreur chargement profil:', error);
+                // Afficher des valeurs par défaut en cas d'erreur
+                document.getElementById('userName').textContent = 'Utilisateur';
+                document.getElementById('userEmail').textContent = 'email@exemple.com';
+            }
+        }
+
+        // Charger les statistiques du compte
+
+        async function loadStats() {
+            try {
+                // APPEL API POUR LES STATISTIQUES
+                // Récupère le solde et le nombre de transactions
+
+                const response = await fetch('{{ path('get_dashboard') }}');
+                const stats = await response.json();
+
+                if (stats.success) {
+                    // Formater et afficher le solde
+                    const balance = parseFloat(stats.balance || 0).toFixed(2);
+                    document.getElementById('userBalance').textContent = `${balance} €`;
+                    document.getElementById('balanceDisplay').textContent = `${balance} €`;
+
+                    // Stocker le solde dans le localStorage pour le partager
+                    localStorage.setItem('userBalance', balance);
+
+                    // Afficher le nombre de transactions
+                    // Si transactionCount n'est pas fourni, on compte les transactions récentes
+                    const count = stats.transactionCount || (stats.recent_transactions ? stats.recent_transactions.length : 0);
+                    document.getElementById('transactionCount').textContent = count;
+                }
+            } catch (error) {
+                console.error('Erreur chargement stats:', error);
+                document.getElementById('userBalance').textContent = '0.00 €';
+                document.getElementById('balanceDisplay').textContent = '0.00 €';
+                document.getElementById('transactionCount').textContent = '0';
+            }
+        }
+
+        // Configurer le formulaire de modification du profil
+
+        function setupForm() {
+            const form = document.getElementById('editProfileForm');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                // COLLECTER LES DONNÉES DU FORMULAIRE
+                const data = {
+                    email: document.getElementById('profileEmail').value,
+                    fullName: document.getElementById('profileFullName').value || null,
+                    phone: document.getElementById('profilePhone').value || null,
+                    address: document.getElementById('profileAddress').value || null,
+                    postcode: document.getElementById('profilePostcode').value || null,
+                    ville: document.getElementById('profileVille').value || null
+                };
+
+                try {
+                    // APPEL API POUR METTRE À JOUR LE PROFIL
+                    const response = await fetch('{{ path('update_profile') }}', {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        alert('Profil mis à jour avec succès!');
+
+                        // Fermer le modal
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('editProfileModal'));
+                        modal.hide();
+
+                        // Recharger les données
+                        await loadProfile();
+                    } else {
+                        alert(result.error || 'Erreur lors de la mise à jour');
+                    }
+                } catch (error) {
+                    console.error('Erreur mise à jour profil:', error);
+                    alert('Erreur lors de la mise à jour');
+                }
+            });
+        }
+    </script>
+{% endblock %}
+

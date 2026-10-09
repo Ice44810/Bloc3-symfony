@@ -1,0 +1,1549 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+use Twig\TemplateWrapper;
+
+/* rewards/index.html.twig */
+class __TwigTemplate_afb3e5bc017fc828dfa9b8403c12bd69 extends Template
+{
+    private Source $source;
+    /**
+     * @var array<string, Template>
+     */
+    private array $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->blocks = [
+            'title' => [$this, 'block_title'],
+            'body' => [$this, 'block_body'],
+        ];
+    }
+
+    protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
+    {
+        // line 1
+        return "base.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "rewards/index.html.twig"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "rewards/index.html.twig"));
+
+        $this->parent = $this->load("base.html.twig", 1);
+        yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    // line 3
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_title(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        yield "Mes Récompenses - Budget App";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 5
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_body(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        // line 6
+        yield "      <!-- HEADER -->
+    <div class=\"container\">
+        <div class=\"breadcrumb mt-3 d-flex justify-content-between\">
+            <nav aria-label=\"breadcrumb\">
+                <ol class=\"breadcrumb\">
+                    <li class=\"breadcrumb-item\"><a href=\"";
+        // line 11
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\">Accueil</a></li>
+                    <li class=\"breadcrumb-item active\" aria-current=\"page\">
+                        <span class=\"bi bi-gift text-warning\" style=\"font-size: 15px;\"></span>
+                        Mes Récompenses
+                    </li>
+                </ol>
+            </nav>
+            <!-- Notifications -->
+            <div class=\"header-icons d-flex align-items-center gap-2\">
+                <a href=\"#offcanvasLeft\" class=\"menu-link position-relative\" data-bs-toggle=\"offcanvas\" role=\"button\"
+                    id=\"bellIcon\">
+                    <i class=\"bi bi-bell-fill text-black fs-4\"></i>
+                    <span id=\"notificationBadge\"
+                        class=\"position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle\">
+                        <span class=\"visually-hidden\">Nouvelles notifications</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class=\"search-bar position-relative mb-3 px-3\">
+            <input type=\"text\" class=\"form-control rounded-3 fs-6 ps-5\" placeholder=\"Rechercher des produits...\"
+                style=\"height: 50px;\" />
+            <i class=\"bi bi-search position-absolute top-50 start-0 translate-middle-y ms-4 text-muted\"></i>
+        </div>
+    </div>
+
+    <!-- OFF CANVAS Notification -->
+    <div class=\"offcanvas offcanvas-start top-0\" tabindex=\"-1\" id=\"offcanvasLeft\" style=\" width: 75% !important\">
+        <div class=\"offcanvas-header-rewards bg-white border-bottom\">
+            <div class=\"d-flex align-items-center\">
+                <button type=\"button\" class=\"btn-close border-0 p-2 me-2\" data-bs-dismiss=\"offcanvas\"
+                    aria-label=\"Close\"></button>
+                <h5 class=\"mb-1 fw-bold flex-grow-1 text-center me-4\">Notification</h5>
+            </div>
+        </div>
+        <div class=\"offcanvas-body\" style=\" width: 75% !important\">
+            <ul class=\"nav nav-pills mb-3\" id=\"pills-tab\" role=\"tablist\">
+                <li class=\"nav-item\" role=\"presentation\">
+                    <button class=\"nav-link active\" id=\"pills-allnotification-tab\" data-bs-toggle=\"pill\"
+                        data-bs-target=\"#pills-allnotification\" type=\"button\" role=\"tab\">Toutes</button>
+                </li>
+                <li class=\"nav-item\" role=\"presentation\">
+                    <button class=\"nav-link\" id=\"pills-remind-tab\" data-bs-toggle=\"pill\" data-bs-target=\"#pills-remind\"
+                        type=\"button\" role=\"tab\">Rappel</button>
+                </li>
+                <li class=\"nav-item\" role=\"presentation\">
+                    <button class=\"nav-link\" id=\"pills-transaction-tab\" data-bs-toggle=\"pill\"
+                        data-bs-target=\"#pills-transaction\" type=\"button\" role=\"tab\">Transactions</button>
+                </li>
+                <li class=\"nav-item\" role=\"presentation\">
+                    <button class=\"nav-link\" id=\"pills-promotion-tab\" data-bs-toggle=\"pill\"
+                        data-bs-target=\"#pills-promotion\" type=\"button\" role=\"tab\">Promotions</button>
+                </li>
+            </ul>
+            <div class=\"tab-content d-flex justify-content-center\" id=\"pills-tabContent\">
+                <div class=\"tab-pane fade show active\" id=\"pills-allnotification\" role=\"tabpanel\">
+                    <div class=\"list-group-item d-flex flex-column border rounded p-2\">
+                        <div class=\"d-flex justify-content-between align-items-center mb-1\">
+                            <i class=\"bi bi-bell\"></i>
+                            <span class=\"fw-bold\">Toutes notifications</span>
+                            <small class=\"text-muted\">5 Min</small>
+                        </div>
+                        <p class=\"small mb-0\">Alipay gives you 20% offcoupon for all bills, applicable for bills
+                            paid
+                            through Alipay wallet!
+                        </p>
+                    </div>
+                </div>
+                <div class=\"tab-pane fade\" id=\"pills-remind\" role=\"tabpanel\">
+                    <div class=\"list-group-item d-flex flex-column border rounded p-2\">
+                        <div class=\"d-flex justify-content-between align-items-center mb-1\">
+                            <i class=\"bi bi-bell\"></i>
+                            <span class=\"fw-bold\">Rappel</span>
+                            <small class=\"text-muted\">5 Min</small>
+                        </div>
+                        <p class=\"small mb-0\">Alipay gives you 20% offcoupon for all bills, applicable for bills
+                            paid
+                            through Alipay wallet!
+                        </p>
+                    </div>
+                </div>
+                <div class=\"tab-pane fade\" id=\"pills-transaction\" role=\"tabpanel\">
+                    <div class=\"list-group-item d-flex flex-column border rounded p-2\">
+                        <div class=\"d-flex justify-content-between align-items-center mb-1\">
+                            <i class=\"bi bi-credit-card\"></i>
+                            <span class=\"fw-bold\">Transactions</span>
+                            <small class=\"text-muted\">5 Min</small>
+                        </div>
+                        <p class=\"small mb-0\">Alipay gives you 20% offcoupon for all bills, applicable for bills
+                            paid
+                            through Alipay wallet!
+                        </p>
+                    </div>
+                </div>
+                <div class=\"tab-pane fade\" id=\"pills-promotion\" role=\"tabpanel\">
+                    <div class=\"list-group-item d-flex flex-column border rounded p-2\">
+                        <div class=\"d-flex justify-content-between align-items-center mb-1\">
+                            <i class=\"bi bi-tag\"></i>
+                            <span class=\"fw-bold\">Promotions</span>
+                            <small class=\"text-muted\">12h</small>
+                        </div>
+                        <p class=\"small mb-0\">Alipay gives you 20% offcoupon for all bills, applicable for bills
+                            paid
+                            through Alipay wallet!
+                        </p>
+                    </div>
+                    <div class=\"d-flex justify-content-between align-items-center mb-1\">
+                        <i class=\"bi bi-tag\"></i>
+                        <span class=\"fw-bold\">Promotions</span>
+                        <small class=\"text-muted\">12h</small>
+                    </div>
+                    <p class=\"small mb-0\">Alipay gives you 20% offcoupon for all bills, applicable for bills paid
+                        through Alipay wallet!
+                    </p>
+                    <div class=\"d-flex justify-content-between align-items-center mb-1\">
+                        <i class=\"bi bi-tag\"></i>
+                        <span class=\"fw-bold\">Promotions</span>
+                        <small class=\"text-muted\">12h</small>
+                    </div>
+                    <p class=\"small mb-0\">Alipay gives you 20% offcoupon for all bills, applicable for bills paid
+                        through Alipay wallet!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Partie card -->
+    <div class=\"scroll-container px-2 ms-3 mx-3\">
+        <div class=\"rewards-card-item px-3\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #68c0d1; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center\">
+                    <div class=\"text-center\">
+                        <img src=\"";
+        // line 145
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/iconeshopping.jpg"), "html", null, true);
+        yield "\" alt=\"Mode\" class=\"rounded-3 bg-white\"
+                            style=\"width: 60px; height: 60px; object-fit: contain;\">
+                        <p class=\"small mb-0 fw-bold mt-1 text-dark\">Mode</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2 text-dark\">SHOPPING EN<br>LIGNE</h5>
+                        <button class=\"btn btn-sm btn-dark rounded-pill px-3\">Plus</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #131921; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-white\">
+                    <div>
+                        <i class=\"bi bi-amazon fs-1 text-warning\"></i>
+                        <p class=\"small mb-0 fw-bold\">Amazon</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h6 class=\"fw-bold mb-2\">PRIME DAY<br>DISPONIBLE</h6><a href=\"https://www.amazon.fr\"
+                            class=\"btn btn-sm btn-warning rounded-pill px-3 fw-bold\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #e1bc2a; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-dark\">
+                    <div class=\"text-center\">
+                        <img src=\"";
+        // line 176
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logofnac.png"), "html", null, true);
+        yield "\" alt=\"FNAC\" class=\"rounded-3 bg-white p-1\"
+                            style=\"width: 50px;\">
+                        <p class=\"small mb-0 fw-bold mt-1\">FNAC</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2\">OFFRES<br>ADHÉRENTS</h5><a href=\"https://www.fnac.com\"
+                            class=\"btn btn-sm btn-dark rounded-pill px-3\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #3142ac; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-white\">
+                    <div class=\"text-center\">
+                        <img src=\"";
+        // line 192
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logocdiscount.png"), "html", null, true);
+        yield "\" alt=\"Cdiscount\"
+                            style=\"width: 100px; background-color: white;\" class=\"rounded-3 p-1\">
+                        <p class=\"small mb-0 fw-bold mt-1\">Cdiscount</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2\">Ventes<br>Flash</h5>
+                        <a href=\"https://www.cdiscount.com\"
+                            class=\"btn btn-sm btn-light text-primary rounded-pill px-3 fw-bold\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #e38556; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-white\">
+                    <div class=\"text-center\">
+                        <img src=\"";
+        // line 209
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logoboulanger.png"), "html", null, true);
+        yield "\" alt=\"Boulanger\"
+                            style=\"width: 100px; background-color: white;\" class=\"rounded-3 p-1\">
+                        <p class=\"small mb-0 fw-bold mt-1\">Boulanger</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2\">Ventes<br>Flash</h5>
+                        <a href=\"https://www.boulanger.com\"
+                            class=\"btn btn-sm btn-light text-primary rounded-pill px-3 fw-bold\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scroll ... -->
+    <div class=\"scroll-dots d-flex justify-content-center gap-2\">
+        <div class=\"dot active\"></div>
+        <div class=\"dot\"></div>
+        <div class=\"dot\"></div>
+    </div>
+    <!-- 2ème partie tableau : catégories -->
+    <div class=\"container-fluid service-header mt-4 px-4 ms-3 mx-3\">
+        <div class=\"d-flex justify-content-between align-items-center\">
+            <h5 class=\"service-title mb-2\">Catégories</h5>
+            <a href=\"#\" id=\"toggleCategories\" class=\"view-all-link\" aria-expanded=\"false\"
+                aria-controls=\"containerCategories\">Tout voir</a>
+        </div>
+    </div>
+    <div class=\"container-fluid service-grid mt-2\" id=\"containerCategories\">
+        <div class=\"row row-cols-4 row-cols-md-4 g-3 mb-5\">
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #e1f5fe;\"><i
+                        class=\"bi bi-gift-fill text-danger\"></i>
+                </div>
+                <p class=\"small fw-semibold\">Chèque cadeau</p>
+            </div>
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #fce4ec;\">
+                    <i class=\"bi bi-basket-fill text-warning\"></i>
+                </div>
+                <p class=\"small fw-semibold\">Cosmetique</p>
+            </div>
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #fff9c4;\">
+                    <i class=\"bi bi-shop text-success\"></i>
+                </div>
+                <p class=\"small fw-semibold\">Shopping</p>
+            </div>
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #e0f2f1;\">
+                    <i class=\"bi bi-cake2 text-secondary\"></i>
+                </div>
+                <p class=\"small fw-semibold\">restaurant</p>
+            </div>
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #e0f2f1;\">
+                    <i class=\"bi bi-shop-window text-secondary\"></i>
+                </div>
+                <p class=\"small fw-semibold\">Epicérie</p>
+            </div>
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #e8eaf6;\">
+                    <i class=\"bi bi-airplane text-primary\"></i>
+                </div>
+                <p class=\"small fw-semibold\">Voyages</p>
+            </div>
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #fbe9e7;\">
+                    <i class=\"bi bi-heart-pulse text-danger\"></i>
+                </div>
+                <p class=\"small fw-semibold\">Médicale</p>
+            </div>
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #f3e5f5;\">
+                    <i class=\"bi bi-gem text-primary\"></i>
+                </div>
+                <p class=\"small fw-semibold\">Autre service</p>
+            </div>
+        </div>
+    </div>
+    <!-- 3ème partie tableau : A la Une -->
+    <div class=\"container-fluid service-header mt-4 px-4 ms-3 mx-3\">
+        <div class=\"d-flex justify-content-between align-items-center\">
+            <h5 class=\"service-title mb-2\">A la Une</h5>
+            <a href=\"#\" id=\"toggleOutstanding\" class=\"view-all-link\" aria-expanded=\"false\"
+                aria-controls=\"containeroutstanding\">Tout voir</a>
+        </div>
+    </div>
+    <div class=\"container-fluid service-grid mt-2\" id=\"containeroutstanding\">
+        <div class=\"row text-center mb-5\">
+            <div class=\"col-3\">
+                <a href=\"";
+        // line 299
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_giftcard");
+        yield "\">
+                    <img src=\"";
+        // line 300
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logobk.png"), "html", null, true);
+        yield "\" class=\"brand-logo\" alt=\"Burger King\"
+                        style=\"height: 60px;\"></a>
+                <p class=\"small\">Burger King</p>
+            </div>
+            <div class=\"col-3\">
+                <a href=\"";
+        // line 305
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_giftcard");
+        yield "\">
+                    <img src=\"";
+        // line 306
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logomadco.png"), "html", null, true);
+        yield "\" class=\"brand-logo\" alt=\"MacDonald's\"
+                        style=\"height: 60px;\"></a>
+                <p class=\"small\">MacDonald's</p>
+            </div>
+            <div class=\"col-3\">
+                <a href=\"";
+        // line 311
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_giftcard");
+        yield "\">
+                    <img src=\"";
+        // line 312
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logokfc.png"), "html", null, true);
+        yield "\" class=\"brand-logo\" alt=\"KFC\"
+                        style=\"height: 60px;\"></a>
+                <p class=\"small\">KFC</p>
+            </div>
+            <div class=\"col-3\">
+                <a href=\"";
+        // line 317
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_giftcard");
+        yield "\">
+                    <img src=\"";
+        // line 318
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logosushishop.png"), "html", null, true);
+        yield "\" class=\"brand-logo\" alt=\"Sushi Shop\"
+                        style=\"height: 60px;\"></a>
+                <p class=\"small\">Sushi Shop</p>
+            </div>
+        </div>
+    </div>
+    <!-- 4ème partie tableau : Coupons -->
+    <div class=\"container-fluid service-header mt-4 px-4 ms-3 mx-3\">
+        <div class=\"d-flex justify-content-between align-items-center\">
+            <h5 class=\"service-title mb-2\">Coupons</h5>
+            <a href=\"#ContainerGiftcard\" id=\"toggleContainerGiftcard\" class=\"view-all-link mb-2\" aria-expanded=\"false\"
+                aria-controls=\"ContainerGiftcard\">Tout voir</a>
+        </div>
+    </div>
+    <div class=\"scroll-container px-3\">
+        <div class=\"coupon-card px-2 mb-4\" style=\"margin-right: -0.5rem; margin-left: -0.5rem;\" class=\"col-md-4\">
+            <div class=\"coupon-card\">
+                <div class=\"coupon-left\">
+                    <span class=\"d-block small text-muted\">CUISINE TEST</span>
+                    <span class=\"h5 fw-bold text-success mb-0\">R100</span>
+                    <p class=\"small text-muted mb-0\">COUPON</p>
+                </div>
+                <div class=\"coupon-right\" style=\"background-image: url('";
+        // line 340
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/giftsalade-1.jpg"), "html", null, true);
+        yield "');\">
+                </div>
+            </div>
+        </div>
+
+        <div class=\"coupon-card px-3 mb-4\">
+            <div class=\"coupon-card bg-dark text-white\">
+                <div class=\"coupon-left\">
+                    <span class=\"d-block small text-light\">CUISINE TEST
+                    </span>
+                    <span class=\"h5 fw-bold text-success mb-0\">R100</span>
+                    <p class=\"small text-light mb-0\">COUPON</p>
+                </div>
+                <div class=\"coupon-right\"
+                    style=\"background-image: url('";
+        // line 354
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/giftravioli-2.jpg"), "html", null, true);
+        yield "');text-decoration: none;\">
+                </div>
+            </div>
+        </div>
+        <div class=\"coupon-card px-3 mb-4\" style=\"margin-right: -0.5rem; margin-left: -0.5rem;\" class=\"col-md-4\">
+            <div class=\"coupon-card\">
+                <div class=\"coupon-left\">
+                    <span class=\"d-block small text-muted\">CUISINE TEST
+                    </span>
+                    <span class=\"h5 fw-bold text-success mb-0\">R100</span>
+                    <p class=\"small text-muted mb-0\">COUPON</p>
+                </div>
+                <div class=\"coupon-right\" style=\"background-image: url('";
+        // line 366
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/giftsalade-1.jpg"), "html", null, true);
+        yield "');\">
+                </div>
+            </div>
+        </div>
+        <div class=\"coupon-card px-3 mb-4\">
+            <div class=\"coupon-card bg-dark text-white\">
+                <div class=\"coupon-left\">
+                    <span class=\"d-block small text-light\">CUISINE TEST</span>
+                    <span class=\"h5 fw-bold text-success mb-0\">R100</span>
+                    <p class=\"small text-light mb-0\">COUPON</p>
+                </div>
+                <div class=\"coupon-right\" style=\"background-image: url('";
+        // line 377
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/giftravioli-2.jpg"), "html", null, true);
+        yield "');\">
+                </div>
+            </div>
+        </div>
+        <div class=\"coupon-card px-3 mb-4\" style=\"margin-right: -0.5rem; margin-left: -0.5rem;\" class=\"col-md-4\">
+            <div class=\"coupon-card\">
+                <div class=\"coupon-left\">
+                    <span class=\"d-block small text-muted\">CUISINE TEST</span>
+                    <span class=\"h5 fw-bold text-success mb-0\">R100</span>
+                    <p class=\"small text-muted mb-0\">COUPON</p>
+                </div>
+                <div class=\"coupon-right\" style=\"background-image: url('";
+        // line 388
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/giftsalade-1.jpg"), "html", null, true);
+        yield "');\">
+                </div>
+            </div>
+        </div>
+        <div class=\"coupon-card px-3 mb-4\">
+            <div class=\"coupon-card bg-dark text-white\">
+                <div class=\"coupon-left\">
+                    <span class=\"d-block small text-light\">CUISINE TEST</span>
+                    <span class=\"h5 fw-bold text-success mb-0\">R100</span>
+                    <p class=\"small text-light mb-0\">COUPON</p>
+                </div>
+                <div class=\"coupon-right\" style=\"background-image: url('";
+        // line 399
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/giftravioli-2.jpg"), "html", null, true);
+        yield "');\">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scroll ... -->
+    <div class=\"scroll-dots d-flex justify-content-center gap-2\">
+        <div class=\"dot active\"></div>
+        <div class=\"dot\"></div>
+        <div class=\"dot\"></div>
+    </div>
+
+    <!-- 5e Partie du tableau : Proche de chez vous -->
+    <div class=\"container-fluid service-header mt-4 px-4 ms-3 mx-3\">
+        <div class=\"d-flex justify-content-between align-items-center\">
+            <h5 class=\"service-title mb-2\">A proximité</h5>
+            <a href=\"#\" id=\"toggleDealnearyou\" class=\"view-all-link\" aria-expanded=\"false\"
+                aria-controls=\"containerDealnearyou\">Tout voir</a>
+        </div>
+    </div> <!-- Revoir le scrollbar de cette section-->
+    <div class=\"scroll-container px-2\">
+        <div class=\"d-flex flex-nowrap overflow-auto px-4 pb-3 gap-3 scroll-content\">
+            <div class=\"flex-shrink-0\" style=\"width: 280px; height: 280px;\">
+                <div class=\"card deal-card h-100 shadow-sm border-0\">
+                    <div class=\"discount-badge\">35%</div>
+                    <img src=\"";
+        // line 424
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/burger.png"), "html", null, true);
+        yield "\" class=\"card-img-top\" alt=\"Burger\"
+                        style=\"height: 140px; object-fit: cover;\">
+                    <div class=\"card-body d-flex flex-column justify-content-between\">
+                        <h5 class=\"card-title h6 fw-bold\">
+                            <a href=\"giftcarddetail.html\" class=\"text-decoration-none text-dark stretched-link\">
+                                The Big King Burger - Burger King
+                            </a>
+                        </h5>
+                        <div class=\"d-flex align-items-center mt-auto\">
+                            <span class=\"rating-text\">★★★★☆</span>
+                            <span class=\"ms-1 small fw-bold\">4.1</span>
+                            <span class=\"ms-auto rating-count small text-muted\">100+ notes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=\"flex-shrink-0\" style=\"width: 280px; height: 280px;\">
+                <div class=\"card deal-card h-100 shadow-sm border-0\">
+                    <div class=\"discount-badge\">40%</div>
+                    <img src=\"";
+        // line 443
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/menuduokfc.jpg"), "html", null, true);
+        yield "\" class=\"card-img-top\" alt=\"Fries\"
+                        style=\"height: 140px; object-fit: cover;\">
+                    <div class=\"card-body d-flex flex-column justify-content-between\">
+                        <h5 class=\"card-title h6 fw-bold\">
+                            <a href=\"giftcarddetail.html\" class=\"text-decoration-none text-dark stretched-link\">
+                                NOUVEAUTE Bucket - KFC
+                            </a>
+                        </h5>
+                        <div class=\"d-flex align-items-center mt-auto\">
+                            <span class=\"rating-text\">★★★★☆</span>
+                            <span class=\"ms-1 small fw-bold\">4.1</span>
+                            <span class=\"ms-auto rating-count small text-muted\">100+ notes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=\"flex-shrink-0\" style=\"width: 280px; height: 280px;\">
+                <div class=\"card deal-card h-100 shadow-sm border-0\">
+                    <div class=\"discount-badge\">30%</div>
+                    <img src=\"";
+        // line 462
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/glaceburgerking.png"), "html", null, true);
+        yield "\" class=\"card-img-top\" alt=\"Chicken\"
+                        style=\"height: 140px; object-fit: cover;\">
+                    <div class=\"card-body d-flex flex-column justify-content-between\">
+                        <h5 class=\"card-title h6 fw-bold\">
+                            <a href=\"giftcarddetail.html\" class=\"text-decoration-none text-dark stretched-link\">
+                                King Fusion - Burger King
+                            </a>
+                        </h5>
+                        <div class=\"d-flex align-items-center mt-auto\">
+                            <span class=\"rating-text\">★★★★☆</span>
+                            <span class=\"ms-1 small fw-bold\">4.1</span>
+                            <span class=\"ms-auto rating-count small text-muted\">100+ notes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=\"flex-shrink-0\" style=\"width: 280px; height: 280px;\">
+                <div class=\"card deal-card h-100 shadow-sm border-0\">
+                    <div class=\"discount-badge\">35%</div>
+                    <img src=\"";
+        // line 481
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/krispertenders.png"), "html", null, true);
+        yield "\" class=\"card-img-top\" alt=\"Burger\"
+                        style=\"height: 140px; object-fit: cover;\">
+                    <div class=\"card-body d-flex flex-column justify-content-between\">
+                        <h5 class=\"card-title h6 fw-bold\">
+                            <a href=\"giftcarddetail.html\" class=\"text-decoration-none text-dark stretched-link\">
+                                Krispy Tenders - Burger King
+                            </a>
+                        </h5>
+                        <div class=\"d-flex align-items-center mt-auto\">
+                            <span class=\"rating-text\">★★★★☆</span>
+                            <span class=\"ms-1 small fw-bold\">4.1</span>
+                            <span class=\"ms-auto rating-count small text-muted\">100+ notes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=\"flex-shrink-0\" style=\"width: 280px; height: 280px;\">
+                <div class=\"card deal-card h-100 shadow-sm border-0\">
+                    <div class=\"discount-badge\">40%</div>
+                    <img src=\"";
+        // line 500
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/bucketkfc.jpg"), "html", null, true);
+        yield "\" class=\"card-img-top\" alt=\"Fries\"
+                        style=\"height: 140px; object-fit: cover;\">
+                    <div class=\"card-body d-flex flex-column justify-content-between\">
+                        <h5 class=\"card-title h6 fw-bold\">
+                            <a href=\"giftcarddetail.html\" class=\"text-decoration-none text-dark stretched-link\">
+                                Menu Bucket - KFC
+                            </a>
+                        </h5>
+                        <div class=\"d-flex align-items-center mt-auto\">
+                            <span class=\"rating-text\">★★★★☆</span>
+                            <span class=\"ms-1 small fw-bold\">4.1</span>
+                            <span class=\"ms-auto rating-count small text-muted\">100+ notes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=\"flex-shrink-0\" style=\"width: 280px; height: 280px;\">
+                <div class=\"card deal-card h-100 shadow-sm border-0\">
+                    <div class=\"discount-badge\">30%</div>
+                    <img src=\"";
+        // line 519
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/glaceburgerking.png"), "html", null, true);
+        yield "\" class=\"card-img-top\" alt=\"Chicken\"
+                        style=\"height: 140px; object-fit: cover;\">
+                    <div class=\"card-body d-flex flex-column justify-content-between\">
+                        <h5 class=\"card-title h6 fw-bold\">
+                            <a href=\"giftcarddetail.html\" class=\"text-decoration-none text-dark stretched-link\">
+                                Burger - Macdonald's
+                            </a>
+                        </h5>
+                        <div class=\"d-flex align-items-center mt-auto\">
+                            <span class=\"rating-text\">★★★★☆</span>
+                            <span class=\"ms-1 small fw-bold\">4.1</span>
+                            <span class=\"ms-auto rating-count small text-muted\">100+ notes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scroll ... -->
+    <div class=\"scroll-dots d-flex justify-content-center gap-2\">
+        <div class=\"dot active\"></div>
+        <div class=\"dot\"></div>
+        <div class=\"dot\"></div>
+    </div>
+
+    <!-- FOOTER NAVIGATION -->
+    <footer class=\"footer py-2\">
+        <div class=\"d-flex justify-content-around align-items-center\">
+            <a href=\"";
+        // line 547
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\" class=\"footer-link\">
+                <i class=\"bi bi-house-door-fill\"></i>
+                <span>Accueil</span>
+            </a>
+            <a href=\"";
+        // line 551
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_bank_history");
+        yield "\" class=\"footer-link\">
+                <i class=\"bi bi-clock-history\"></i>
+                <span>Historique</span>
+            </a>
+            <a href=\"";
+        // line 555
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_my_qr");
+        yield "\" class=\"footer-link\">
+                <i class=\"bi bi-qr-code-scan\"></i>
+                <span>QR</span>
+            </a>
+            <a href=\"";
+        // line 559
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_rewards");
+        yield "\" class=\"active-link\">
+                <i class=\"bi bi-gift\"></i>
+                <span>Récompenses</span>
+            </a>
+            <a href=\"";
+        // line 563
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_profile");
+        yield "\" class=\"footer-link\">
+                <i class=\"bi bi-person\"></i><span>Profil</span></a>
+        </div>
+    </footer>
+    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\"></script>
+    <script>
+
+        // JavaScript pour masquer le badge de notification
+        document.addEventListener('DOMContentLoaded', function () {
+            const bellIcon = document.getElementById('bellIcon');
+            const badge = document.getElementById('notificationBadge');
+            const offcanvasEl = document.getElementById('offcanvasLeft');
+
+            if (offcanvasEl && badge) {
+                // Quand l'utilisateur clique sur la cloche ou que l'offcanvas commence à s'afficher
+                offcanvasEl.addEventListener('show.bs.offcanvas', function () {
+                    // Masque le badge avec une petite transition ou directement
+                    badge.style.display = 'none';
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // GESTION DES ONGLETS (NOTIFICATIONS)
+            const triggerTabList = document.querySelectorAll('#pills-tab button');
+            triggerTabList.forEach(triggerEl => {
+                const tabTrigger = new bootstrap.Tab(triggerEl); // (trigger) Quand l'utilisateur clique sur un onglet
+                triggerEl.addEventListener('click', event => {
+                    event.preventDefault();
+                    tabTrigger.show();
+                });
+            });
+
+            // BARRE DE RECHERCHE (FILTRE SIMPLE)
+            // Permet de filtrer visuellement les titres des cartes
+            const searchInput = document.querySelector('.search-bar input');
+            if (searchInput) {
+                searchInput.addEventListener('input', function (e) {
+                    const term = e.target.value.toLowerCase();
+                    const cards = document.querySelectorAll('.card');
+
+                    cards.forEach(card => {
+                        const title = card.innerText.toLowerCase();
+                        if (title.includes(term)) {
+                            card.closest('[class*=\"col\"], .flex-shrink-0').style.display = 'block';
+                        } else {
+                            card.closest('[class*=\"col\"], .flex-shrink-0').style.display = 'none';
+                        }
+                    });
+                });
+            }
+        });
+
+        // SCROLL DOTS
+        // On sélectionne tous les conteneurs de cartes
+        const scrollContainers = document.querySelectorAll(\".scroll-container\");
+        const allDotsGroups = document.querySelectorAll(\".scroll-dots\");
+
+        scrollContainers.forEach((container, index) => {
+            const dotsGroup = allDotsGroups[index];
+            if (!dotsGroup) return;
+
+            const dots = dotsGroup.querySelectorAll(\".dot\");
+            if (!container || !dots.length) return;
+
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            container.addEventListener(\"scroll\", () => {
+                const maxScroll = container.scrollWidth - container.offsetWidth;
+                if (maxScroll <= 0) return;
+
+                const scrollPercentage = container.scrollLeft / maxScroll;
+                const activeIndex = Math.round(scrollPercentage * (dots.length - 1));
+
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle(\"active\", i === activeIndex);
+                });
+            });
+
+            container.addEventListener(\"mousedown\", (e) => {
+                isDown = true;
+                startX = e.pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
+            });
+
+            container.addEventListener(\"mouseleave\", () => isDown = false);
+            container.addEventListener(\"mouseup\", () => isDown = false);
+
+            container.addEventListener(\"mousemove\", (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - container.offsetLeft;
+                const walk = (x - startX) * 2;
+                container.scrollLeft = scrollLeft - walk;
+            });
+        });
+
+    </script>
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName(): string
+    {
+        return "rewards/index.html.twig";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function isTraitable(): bool
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo(): array
+    {
+        return array (  746 => 563,  739 => 559,  732 => 555,  725 => 551,  718 => 547,  687 => 519,  665 => 500,  643 => 481,  621 => 462,  599 => 443,  577 => 424,  549 => 399,  535 => 388,  521 => 377,  507 => 366,  492 => 354,  475 => 340,  450 => 318,  446 => 317,  438 => 312,  434 => 311,  426 => 306,  422 => 305,  414 => 300,  410 => 299,  317 => 209,  297 => 192,  278 => 176,  244 => 145,  107 => 11,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+    }
+
+    public function getSourceContext(): Source
+    {
+        return new Source("{% extends 'base.html.twig' %} 
+
+{% block title %}Mes Récompenses - Budget App{% endblock %}
+
+{% block body %}
+      <!-- HEADER -->
+    <div class=\"container\">
+        <div class=\"breadcrumb mt-3 d-flex justify-content-between\">
+            <nav aria-label=\"breadcrumb\">
+                <ol class=\"breadcrumb\">
+                    <li class=\"breadcrumb-item\"><a href=\"{{ path('app_home') }}\">Accueil</a></li>
+                    <li class=\"breadcrumb-item active\" aria-current=\"page\">
+                        <span class=\"bi bi-gift text-warning\" style=\"font-size: 15px;\"></span>
+                        Mes Récompenses
+                    </li>
+                </ol>
+            </nav>
+            <!-- Notifications -->
+            <div class=\"header-icons d-flex align-items-center gap-2\">
+                <a href=\"#offcanvasLeft\" class=\"menu-link position-relative\" data-bs-toggle=\"offcanvas\" role=\"button\"
+                    id=\"bellIcon\">
+                    <i class=\"bi bi-bell-fill text-black fs-4\"></i>
+                    <span id=\"notificationBadge\"
+                        class=\"position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle\">
+                        <span class=\"visually-hidden\">Nouvelles notifications</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class=\"search-bar position-relative mb-3 px-3\">
+            <input type=\"text\" class=\"form-control rounded-3 fs-6 ps-5\" placeholder=\"Rechercher des produits...\"
+                style=\"height: 50px;\" />
+            <i class=\"bi bi-search position-absolute top-50 start-0 translate-middle-y ms-4 text-muted\"></i>
+        </div>
+    </div>
+
+    <!-- OFF CANVAS Notification -->
+    <div class=\"offcanvas offcanvas-start top-0\" tabindex=\"-1\" id=\"offcanvasLeft\" style=\" width: 75% !important\">
+        <div class=\"offcanvas-header-rewards bg-white border-bottom\">
+            <div class=\"d-flex align-items-center\">
+                <button type=\"button\" class=\"btn-close border-0 p-2 me-2\" data-bs-dismiss=\"offcanvas\"
+                    aria-label=\"Close\"></button>
+                <h5 class=\"mb-1 fw-bold flex-grow-1 text-center me-4\">Notification</h5>
+            </div>
+        </div>
+        <div class=\"offcanvas-body\" style=\" width: 75% !important\">
+            <ul class=\"nav nav-pills mb-3\" id=\"pills-tab\" role=\"tablist\">
+                <li class=\"nav-item\" role=\"presentation\">
+                    <button class=\"nav-link active\" id=\"pills-allnotification-tab\" data-bs-toggle=\"pill\"
+                        data-bs-target=\"#pills-allnotification\" type=\"button\" role=\"tab\">Toutes</button>
+                </li>
+                <li class=\"nav-item\" role=\"presentation\">
+                    <button class=\"nav-link\" id=\"pills-remind-tab\" data-bs-toggle=\"pill\" data-bs-target=\"#pills-remind\"
+                        type=\"button\" role=\"tab\">Rappel</button>
+                </li>
+                <li class=\"nav-item\" role=\"presentation\">
+                    <button class=\"nav-link\" id=\"pills-transaction-tab\" data-bs-toggle=\"pill\"
+                        data-bs-target=\"#pills-transaction\" type=\"button\" role=\"tab\">Transactions</button>
+                </li>
+                <li class=\"nav-item\" role=\"presentation\">
+                    <button class=\"nav-link\" id=\"pills-promotion-tab\" data-bs-toggle=\"pill\"
+                        data-bs-target=\"#pills-promotion\" type=\"button\" role=\"tab\">Promotions</button>
+                </li>
+            </ul>
+            <div class=\"tab-content d-flex justify-content-center\" id=\"pills-tabContent\">
+                <div class=\"tab-pane fade show active\" id=\"pills-allnotification\" role=\"tabpanel\">
+                    <div class=\"list-group-item d-flex flex-column border rounded p-2\">
+                        <div class=\"d-flex justify-content-between align-items-center mb-1\">
+                            <i class=\"bi bi-bell\"></i>
+                            <span class=\"fw-bold\">Toutes notifications</span>
+                            <small class=\"text-muted\">5 Min</small>
+                        </div>
+                        <p class=\"small mb-0\">Alipay gives you 20% offcoupon for all bills, applicable for bills
+                            paid
+                            through Alipay wallet!
+                        </p>
+                    </div>
+                </div>
+                <div class=\"tab-pane fade\" id=\"pills-remind\" role=\"tabpanel\">
+                    <div class=\"list-group-item d-flex flex-column border rounded p-2\">
+                        <div class=\"d-flex justify-content-between align-items-center mb-1\">
+                            <i class=\"bi bi-bell\"></i>
+                            <span class=\"fw-bold\">Rappel</span>
+                            <small class=\"text-muted\">5 Min</small>
+                        </div>
+                        <p class=\"small mb-0\">Alipay gives you 20% offcoupon for all bills, applicable for bills
+                            paid
+                            through Alipay wallet!
+                        </p>
+                    </div>
+                </div>
+                <div class=\"tab-pane fade\" id=\"pills-transaction\" role=\"tabpanel\">
+                    <div class=\"list-group-item d-flex flex-column border rounded p-2\">
+                        <div class=\"d-flex justify-content-between align-items-center mb-1\">
+                            <i class=\"bi bi-credit-card\"></i>
+                            <span class=\"fw-bold\">Transactions</span>
+                            <small class=\"text-muted\">5 Min</small>
+                        </div>
+                        <p class=\"small mb-0\">Alipay gives you 20% offcoupon for all bills, applicable for bills
+                            paid
+                            through Alipay wallet!
+                        </p>
+                    </div>
+                </div>
+                <div class=\"tab-pane fade\" id=\"pills-promotion\" role=\"tabpanel\">
+                    <div class=\"list-group-item d-flex flex-column border rounded p-2\">
+                        <div class=\"d-flex justify-content-between align-items-center mb-1\">
+                            <i class=\"bi bi-tag\"></i>
+                            <span class=\"fw-bold\">Promotions</span>
+                            <small class=\"text-muted\">12h</small>
+                        </div>
+                        <p class=\"small mb-0\">Alipay gives you 20% offcoupon for all bills, applicable for bills
+                            paid
+                            through Alipay wallet!
+                        </p>
+                    </div>
+                    <div class=\"d-flex justify-content-between align-items-center mb-1\">
+                        <i class=\"bi bi-tag\"></i>
+                        <span class=\"fw-bold\">Promotions</span>
+                        <small class=\"text-muted\">12h</small>
+                    </div>
+                    <p class=\"small mb-0\">Alipay gives you 20% offcoupon for all bills, applicable for bills paid
+                        through Alipay wallet!
+                    </p>
+                    <div class=\"d-flex justify-content-between align-items-center mb-1\">
+                        <i class=\"bi bi-tag\"></i>
+                        <span class=\"fw-bold\">Promotions</span>
+                        <small class=\"text-muted\">12h</small>
+                    </div>
+                    <p class=\"small mb-0\">Alipay gives you 20% offcoupon for all bills, applicable for bills paid
+                        through Alipay wallet!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Partie card -->
+    <div class=\"scroll-container px-2 ms-3 mx-3\">
+        <div class=\"rewards-card-item px-3\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #68c0d1; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center\">
+                    <div class=\"text-center\">
+                        <img src=\"{{ asset('assets/images/iconeshopping.jpg') }}\" alt=\"Mode\" class=\"rounded-3 bg-white\"
+                            style=\"width: 60px; height: 60px; object-fit: contain;\">
+                        <p class=\"small mb-0 fw-bold mt-1 text-dark\">Mode</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2 text-dark\">SHOPPING EN<br>LIGNE</h5>
+                        <button class=\"btn btn-sm btn-dark rounded-pill px-3\">Plus</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #131921; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-white\">
+                    <div>
+                        <i class=\"bi bi-amazon fs-1 text-warning\"></i>
+                        <p class=\"small mb-0 fw-bold\">Amazon</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h6 class=\"fw-bold mb-2\">PRIME DAY<br>DISPONIBLE</h6><a href=\"https://www.amazon.fr\"
+                            class=\"btn btn-sm btn-warning rounded-pill px-3 fw-bold\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #e1bc2a; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-dark\">
+                    <div class=\"text-center\">
+                        <img src=\"{{ asset('assets/images/logofnac.png') }}\" alt=\"FNAC\" class=\"rounded-3 bg-white p-1\"
+                            style=\"width: 50px;\">
+                        <p class=\"small mb-0 fw-bold mt-1\">FNAC</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2\">OFFRES<br>ADHÉRENTS</h5><a href=\"https://www.fnac.com\"
+                            class=\"btn btn-sm btn-dark rounded-pill px-3\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #3142ac; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-white\">
+                    <div class=\"text-center\">
+                        <img src=\"{{ asset('assets/images/logocdiscount.png') }}\" alt=\"Cdiscount\"
+                            style=\"width: 100px; background-color: white;\" class=\"rounded-3 p-1\">
+                        <p class=\"small mb-0 fw-bold mt-1\">Cdiscount</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2\">Ventes<br>Flash</h5>
+                        <a href=\"https://www.cdiscount.com\"
+                            class=\"btn btn-sm btn-light text-primary rounded-pill px-3 fw-bold\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"rewards-card-item\">
+            <div class=\"card rounded-4 border-0 p-3 shadow-sm\"
+                style=\"background-color: #e38556; min-height: 160px; width: 300px;\">
+                <div class=\"d-flex justify-content-between align-items-center text-white\">
+                    <div class=\"text-center\">
+                        <img src=\"{{ asset('assets/images/logoboulanger.png') }}\" alt=\"Boulanger\"
+                            style=\"width: 100px; background-color: white;\" class=\"rounded-3 p-1\">
+                        <p class=\"small mb-0 fw-bold mt-1\">Boulanger</p>
+                    </div>
+                    <div class=\"text-end\">
+                        <h5 class=\"fw-bold mb-2\">Ventes<br>Flash</h5>
+                        <a href=\"https://www.boulanger.com\"
+                            class=\"btn btn-sm btn-light text-primary rounded-pill px-3 fw-bold\">Plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scroll ... -->
+    <div class=\"scroll-dots d-flex justify-content-center gap-2\">
+        <div class=\"dot active\"></div>
+        <div class=\"dot\"></div>
+        <div class=\"dot\"></div>
+    </div>
+    <!-- 2ème partie tableau : catégories -->
+    <div class=\"container-fluid service-header mt-4 px-4 ms-3 mx-3\">
+        <div class=\"d-flex justify-content-between align-items-center\">
+            <h5 class=\"service-title mb-2\">Catégories</h5>
+            <a href=\"#\" id=\"toggleCategories\" class=\"view-all-link\" aria-expanded=\"false\"
+                aria-controls=\"containerCategories\">Tout voir</a>
+        </div>
+    </div>
+    <div class=\"container-fluid service-grid mt-2\" id=\"containerCategories\">
+        <div class=\"row row-cols-4 row-cols-md-4 g-3 mb-5\">
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #e1f5fe;\"><i
+                        class=\"bi bi-gift-fill text-danger\"></i>
+                </div>
+                <p class=\"small fw-semibold\">Chèque cadeau</p>
+            </div>
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #fce4ec;\">
+                    <i class=\"bi bi-basket-fill text-warning\"></i>
+                </div>
+                <p class=\"small fw-semibold\">Cosmetique</p>
+            </div>
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #fff9c4;\">
+                    <i class=\"bi bi-shop text-success\"></i>
+                </div>
+                <p class=\"small fw-semibold\">Shopping</p>
+            </div>
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #e0f2f1;\">
+                    <i class=\"bi bi-cake2 text-secondary\"></i>
+                </div>
+                <p class=\"small fw-semibold\">restaurant</p>
+            </div>
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #e0f2f1;\">
+                    <i class=\"bi bi-shop-window text-secondary\"></i>
+                </div>
+                <p class=\"small fw-semibold\">Epicérie</p>
+            </div>
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #e8eaf6;\">
+                    <i class=\"bi bi-airplane text-primary\"></i>
+                </div>
+                <p class=\"small fw-semibold\">Voyages</p>
+            </div>
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #fbe9e7;\">
+                    <i class=\"bi bi-heart-pulse text-danger\"></i>
+                </div>
+                <p class=\"small fw-semibold\">Médicale</p>
+            </div>
+            <div class=\"col category-item\">
+                <div class=\"category-icon\" style=\"background-color: #f3e5f5;\">
+                    <i class=\"bi bi-gem text-primary\"></i>
+                </div>
+                <p class=\"small fw-semibold\">Autre service</p>
+            </div>
+        </div>
+    </div>
+    <!-- 3ème partie tableau : A la Une -->
+    <div class=\"container-fluid service-header mt-4 px-4 ms-3 mx-3\">
+        <div class=\"d-flex justify-content-between align-items-center\">
+            <h5 class=\"service-title mb-2\">A la Une</h5>
+            <a href=\"#\" id=\"toggleOutstanding\" class=\"view-all-link\" aria-expanded=\"false\"
+                aria-controls=\"containeroutstanding\">Tout voir</a>
+        </div>
+    </div>
+    <div class=\"container-fluid service-grid mt-2\" id=\"containeroutstanding\">
+        <div class=\"row text-center mb-5\">
+            <div class=\"col-3\">
+                <a href=\"{{ path('app_giftcard') }}\">
+                    <img src=\"{{ asset('assets/images/logobk.png') }}\" class=\"brand-logo\" alt=\"Burger King\"
+                        style=\"height: 60px;\"></a>
+                <p class=\"small\">Burger King</p>
+            </div>
+            <div class=\"col-3\">
+                <a href=\"{{ path('app_giftcard') }}\">
+                    <img src=\"{{ asset('assets/images/logomadco.png') }}\" class=\"brand-logo\" alt=\"MacDonald's\"
+                        style=\"height: 60px;\"></a>
+                <p class=\"small\">MacDonald's</p>
+            </div>
+            <div class=\"col-3\">
+                <a href=\"{{ path('app_giftcard') }}\">
+                    <img src=\"{{ asset('assets/images/logokfc.png') }}\" class=\"brand-logo\" alt=\"KFC\"
+                        style=\"height: 60px;\"></a>
+                <p class=\"small\">KFC</p>
+            </div>
+            <div class=\"col-3\">
+                <a href=\"{{ path('app_giftcard') }}\">
+                    <img src=\"{{ asset('assets/images/logosushishop.png') }}\" class=\"brand-logo\" alt=\"Sushi Shop\"
+                        style=\"height: 60px;\"></a>
+                <p class=\"small\">Sushi Shop</p>
+            </div>
+        </div>
+    </div>
+    <!-- 4ème partie tableau : Coupons -->
+    <div class=\"container-fluid service-header mt-4 px-4 ms-3 mx-3\">
+        <div class=\"d-flex justify-content-between align-items-center\">
+            <h5 class=\"service-title mb-2\">Coupons</h5>
+            <a href=\"#ContainerGiftcard\" id=\"toggleContainerGiftcard\" class=\"view-all-link mb-2\" aria-expanded=\"false\"
+                aria-controls=\"ContainerGiftcard\">Tout voir</a>
+        </div>
+    </div>
+    <div class=\"scroll-container px-3\">
+        <div class=\"coupon-card px-2 mb-4\" style=\"margin-right: -0.5rem; margin-left: -0.5rem;\" class=\"col-md-4\">
+            <div class=\"coupon-card\">
+                <div class=\"coupon-left\">
+                    <span class=\"d-block small text-muted\">CUISINE TEST</span>
+                    <span class=\"h5 fw-bold text-success mb-0\">R100</span>
+                    <p class=\"small text-muted mb-0\">COUPON</p>
+                </div>
+                <div class=\"coupon-right\" style=\"background-image: url('{{ asset('assets/images/giftsalade-1.jpg') }}');\">
+                </div>
+            </div>
+        </div>
+
+        <div class=\"coupon-card px-3 mb-4\">
+            <div class=\"coupon-card bg-dark text-white\">
+                <div class=\"coupon-left\">
+                    <span class=\"d-block small text-light\">CUISINE TEST
+                    </span>
+                    <span class=\"h5 fw-bold text-success mb-0\">R100</span>
+                    <p class=\"small text-light mb-0\">COUPON</p>
+                </div>
+                <div class=\"coupon-right\"
+                    style=\"background-image: url('{{ asset('assets/images/giftravioli-2.jpg') }}');text-decoration: none;\">
+                </div>
+            </div>
+        </div>
+        <div class=\"coupon-card px-3 mb-4\" style=\"margin-right: -0.5rem; margin-left: -0.5rem;\" class=\"col-md-4\">
+            <div class=\"coupon-card\">
+                <div class=\"coupon-left\">
+                    <span class=\"d-block small text-muted\">CUISINE TEST
+                    </span>
+                    <span class=\"h5 fw-bold text-success mb-0\">R100</span>
+                    <p class=\"small text-muted mb-0\">COUPON</p>
+                </div>
+                <div class=\"coupon-right\" style=\"background-image: url('{{ asset('assets/images/giftsalade-1.jpg') }}');\">
+                </div>
+            </div>
+        </div>
+        <div class=\"coupon-card px-3 mb-4\">
+            <div class=\"coupon-card bg-dark text-white\">
+                <div class=\"coupon-left\">
+                    <span class=\"d-block small text-light\">CUISINE TEST</span>
+                    <span class=\"h5 fw-bold text-success mb-0\">R100</span>
+                    <p class=\"small text-light mb-0\">COUPON</p>
+                </div>
+                <div class=\"coupon-right\" style=\"background-image: url('{{ asset('assets/images/giftravioli-2.jpg') }}');\">
+                </div>
+            </div>
+        </div>
+        <div class=\"coupon-card px-3 mb-4\" style=\"margin-right: -0.5rem; margin-left: -0.5rem;\" class=\"col-md-4\">
+            <div class=\"coupon-card\">
+                <div class=\"coupon-left\">
+                    <span class=\"d-block small text-muted\">CUISINE TEST</span>
+                    <span class=\"h5 fw-bold text-success mb-0\">R100</span>
+                    <p class=\"small text-muted mb-0\">COUPON</p>
+                </div>
+                <div class=\"coupon-right\" style=\"background-image: url('{{ asset('assets/images/giftsalade-1.jpg') }}');\">
+                </div>
+            </div>
+        </div>
+        <div class=\"coupon-card px-3 mb-4\">
+            <div class=\"coupon-card bg-dark text-white\">
+                <div class=\"coupon-left\">
+                    <span class=\"d-block small text-light\">CUISINE TEST</span>
+                    <span class=\"h5 fw-bold text-success mb-0\">R100</span>
+                    <p class=\"small text-light mb-0\">COUPON</p>
+                </div>
+                <div class=\"coupon-right\" style=\"background-image: url('{{ asset('assets/images/giftravioli-2.jpg') }}');\">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scroll ... -->
+    <div class=\"scroll-dots d-flex justify-content-center gap-2\">
+        <div class=\"dot active\"></div>
+        <div class=\"dot\"></div>
+        <div class=\"dot\"></div>
+    </div>
+
+    <!-- 5e Partie du tableau : Proche de chez vous -->
+    <div class=\"container-fluid service-header mt-4 px-4 ms-3 mx-3\">
+        <div class=\"d-flex justify-content-between align-items-center\">
+            <h5 class=\"service-title mb-2\">A proximité</h5>
+            <a href=\"#\" id=\"toggleDealnearyou\" class=\"view-all-link\" aria-expanded=\"false\"
+                aria-controls=\"containerDealnearyou\">Tout voir</a>
+        </div>
+    </div> <!-- Revoir le scrollbar de cette section-->
+    <div class=\"scroll-container px-2\">
+        <div class=\"d-flex flex-nowrap overflow-auto px-4 pb-3 gap-3 scroll-content\">
+            <div class=\"flex-shrink-0\" style=\"width: 280px; height: 280px;\">
+                <div class=\"card deal-card h-100 shadow-sm border-0\">
+                    <div class=\"discount-badge\">35%</div>
+                    <img src=\"{{ asset('assets/images/burger.png') }}\" class=\"card-img-top\" alt=\"Burger\"
+                        style=\"height: 140px; object-fit: cover;\">
+                    <div class=\"card-body d-flex flex-column justify-content-between\">
+                        <h5 class=\"card-title h6 fw-bold\">
+                            <a href=\"giftcarddetail.html\" class=\"text-decoration-none text-dark stretched-link\">
+                                The Big King Burger - Burger King
+                            </a>
+                        </h5>
+                        <div class=\"d-flex align-items-center mt-auto\">
+                            <span class=\"rating-text\">★★★★☆</span>
+                            <span class=\"ms-1 small fw-bold\">4.1</span>
+                            <span class=\"ms-auto rating-count small text-muted\">100+ notes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=\"flex-shrink-0\" style=\"width: 280px; height: 280px;\">
+                <div class=\"card deal-card h-100 shadow-sm border-0\">
+                    <div class=\"discount-badge\">40%</div>
+                    <img src=\"{{ asset('assets/images/menuduokfc.jpg') }}\" class=\"card-img-top\" alt=\"Fries\"
+                        style=\"height: 140px; object-fit: cover;\">
+                    <div class=\"card-body d-flex flex-column justify-content-between\">
+                        <h5 class=\"card-title h6 fw-bold\">
+                            <a href=\"giftcarddetail.html\" class=\"text-decoration-none text-dark stretched-link\">
+                                NOUVEAUTE Bucket - KFC
+                            </a>
+                        </h5>
+                        <div class=\"d-flex align-items-center mt-auto\">
+                            <span class=\"rating-text\">★★★★☆</span>
+                            <span class=\"ms-1 small fw-bold\">4.1</span>
+                            <span class=\"ms-auto rating-count small text-muted\">100+ notes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=\"flex-shrink-0\" style=\"width: 280px; height: 280px;\">
+                <div class=\"card deal-card h-100 shadow-sm border-0\">
+                    <div class=\"discount-badge\">30%</div>
+                    <img src=\"{{ asset('assets/images/glaceburgerking.png') }}\" class=\"card-img-top\" alt=\"Chicken\"
+                        style=\"height: 140px; object-fit: cover;\">
+                    <div class=\"card-body d-flex flex-column justify-content-between\">
+                        <h5 class=\"card-title h6 fw-bold\">
+                            <a href=\"giftcarddetail.html\" class=\"text-decoration-none text-dark stretched-link\">
+                                King Fusion - Burger King
+                            </a>
+                        </h5>
+                        <div class=\"d-flex align-items-center mt-auto\">
+                            <span class=\"rating-text\">★★★★☆</span>
+                            <span class=\"ms-1 small fw-bold\">4.1</span>
+                            <span class=\"ms-auto rating-count small text-muted\">100+ notes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=\"flex-shrink-0\" style=\"width: 280px; height: 280px;\">
+                <div class=\"card deal-card h-100 shadow-sm border-0\">
+                    <div class=\"discount-badge\">35%</div>
+                    <img src=\"{{ asset('assets/images/krispertenders.png') }}\" class=\"card-img-top\" alt=\"Burger\"
+                        style=\"height: 140px; object-fit: cover;\">
+                    <div class=\"card-body d-flex flex-column justify-content-between\">
+                        <h5 class=\"card-title h6 fw-bold\">
+                            <a href=\"giftcarddetail.html\" class=\"text-decoration-none text-dark stretched-link\">
+                                Krispy Tenders - Burger King
+                            </a>
+                        </h5>
+                        <div class=\"d-flex align-items-center mt-auto\">
+                            <span class=\"rating-text\">★★★★☆</span>
+                            <span class=\"ms-1 small fw-bold\">4.1</span>
+                            <span class=\"ms-auto rating-count small text-muted\">100+ notes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=\"flex-shrink-0\" style=\"width: 280px; height: 280px;\">
+                <div class=\"card deal-card h-100 shadow-sm border-0\">
+                    <div class=\"discount-badge\">40%</div>
+                    <img src=\"{{ asset('assets/images/bucketkfc.jpg') }}\" class=\"card-img-top\" alt=\"Fries\"
+                        style=\"height: 140px; object-fit: cover;\">
+                    <div class=\"card-body d-flex flex-column justify-content-between\">
+                        <h5 class=\"card-title h6 fw-bold\">
+                            <a href=\"giftcarddetail.html\" class=\"text-decoration-none text-dark stretched-link\">
+                                Menu Bucket - KFC
+                            </a>
+                        </h5>
+                        <div class=\"d-flex align-items-center mt-auto\">
+                            <span class=\"rating-text\">★★★★☆</span>
+                            <span class=\"ms-1 small fw-bold\">4.1</span>
+                            <span class=\"ms-auto rating-count small text-muted\">100+ notes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=\"flex-shrink-0\" style=\"width: 280px; height: 280px;\">
+                <div class=\"card deal-card h-100 shadow-sm border-0\">
+                    <div class=\"discount-badge\">30%</div>
+                    <img src=\"{{ asset('assets/images/glaceburgerking.png') }}\" class=\"card-img-top\" alt=\"Chicken\"
+                        style=\"height: 140px; object-fit: cover;\">
+                    <div class=\"card-body d-flex flex-column justify-content-between\">
+                        <h5 class=\"card-title h6 fw-bold\">
+                            <a href=\"giftcarddetail.html\" class=\"text-decoration-none text-dark stretched-link\">
+                                Burger - Macdonald's
+                            </a>
+                        </h5>
+                        <div class=\"d-flex align-items-center mt-auto\">
+                            <span class=\"rating-text\">★★★★☆</span>
+                            <span class=\"ms-1 small fw-bold\">4.1</span>
+                            <span class=\"ms-auto rating-count small text-muted\">100+ notes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scroll ... -->
+    <div class=\"scroll-dots d-flex justify-content-center gap-2\">
+        <div class=\"dot active\"></div>
+        <div class=\"dot\"></div>
+        <div class=\"dot\"></div>
+    </div>
+
+    <!-- FOOTER NAVIGATION -->
+    <footer class=\"footer py-2\">
+        <div class=\"d-flex justify-content-around align-items-center\">
+            <a href=\"{{ path('app_home') }}\" class=\"footer-link\">
+                <i class=\"bi bi-house-door-fill\"></i>
+                <span>Accueil</span>
+            </a>
+            <a href=\"{{ path('app_bank_history') }}\" class=\"footer-link\">
+                <i class=\"bi bi-clock-history\"></i>
+                <span>Historique</span>
+            </a>
+            <a href=\"{{ path('app_my_qr') }}\" class=\"footer-link\">
+                <i class=\"bi bi-qr-code-scan\"></i>
+                <span>QR</span>
+            </a>
+            <a href=\"{{ path('app_rewards') }}\" class=\"active-link\">
+                <i class=\"bi bi-gift\"></i>
+                <span>Récompenses</span>
+            </a>
+            <a href=\"{{ path('app_profile') }}\" class=\"footer-link\">
+                <i class=\"bi bi-person\"></i><span>Profil</span></a>
+        </div>
+    </footer>
+    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\"></script>
+    <script>
+
+        // JavaScript pour masquer le badge de notification
+        document.addEventListener('DOMContentLoaded', function () {
+            const bellIcon = document.getElementById('bellIcon');
+            const badge = document.getElementById('notificationBadge');
+            const offcanvasEl = document.getElementById('offcanvasLeft');
+
+            if (offcanvasEl && badge) {
+                // Quand l'utilisateur clique sur la cloche ou que l'offcanvas commence à s'afficher
+                offcanvasEl.addEventListener('show.bs.offcanvas', function () {
+                    // Masque le badge avec une petite transition ou directement
+                    badge.style.display = 'none';
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // GESTION DES ONGLETS (NOTIFICATIONS)
+            const triggerTabList = document.querySelectorAll('#pills-tab button');
+            triggerTabList.forEach(triggerEl => {
+                const tabTrigger = new bootstrap.Tab(triggerEl); // (trigger) Quand l'utilisateur clique sur un onglet
+                triggerEl.addEventListener('click', event => {
+                    event.preventDefault();
+                    tabTrigger.show();
+                });
+            });
+
+            // BARRE DE RECHERCHE (FILTRE SIMPLE)
+            // Permet de filtrer visuellement les titres des cartes
+            const searchInput = document.querySelector('.search-bar input');
+            if (searchInput) {
+                searchInput.addEventListener('input', function (e) {
+                    const term = e.target.value.toLowerCase();
+                    const cards = document.querySelectorAll('.card');
+
+                    cards.forEach(card => {
+                        const title = card.innerText.toLowerCase();
+                        if (title.includes(term)) {
+                            card.closest('[class*=\"col\"], .flex-shrink-0').style.display = 'block';
+                        } else {
+                            card.closest('[class*=\"col\"], .flex-shrink-0').style.display = 'none';
+                        }
+                    });
+                });
+            }
+        });
+
+        // SCROLL DOTS
+        // On sélectionne tous les conteneurs de cartes
+        const scrollContainers = document.querySelectorAll(\".scroll-container\");
+        const allDotsGroups = document.querySelectorAll(\".scroll-dots\");
+
+        scrollContainers.forEach((container, index) => {
+            const dotsGroup = allDotsGroups[index];
+            if (!dotsGroup) return;
+
+            const dots = dotsGroup.querySelectorAll(\".dot\");
+            if (!container || !dots.length) return;
+
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            container.addEventListener(\"scroll\", () => {
+                const maxScroll = container.scrollWidth - container.offsetWidth;
+                if (maxScroll <= 0) return;
+
+                const scrollPercentage = container.scrollLeft / maxScroll;
+                const activeIndex = Math.round(scrollPercentage * (dots.length - 1));
+
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle(\"active\", i === activeIndex);
+                });
+            });
+
+            container.addEventListener(\"mousedown\", (e) => {
+                isDown = true;
+                startX = e.pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
+            });
+
+            container.addEventListener(\"mouseleave\", () => isDown = false);
+            container.addEventListener(\"mouseup\", () => isDown = false);
+
+            container.addEventListener(\"mousemove\", (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - container.offsetLeft;
+                const walk = (x - startX) * 2;
+                container.scrollLeft = scrollLeft - walk;
+            });
+        });
+
+    </script>
+{% endblock %}
+
+", "rewards/index.html.twig", "/home/yangue/Documents/ProjetFilRougeIlaria2025/Backend_bloc3/templates/rewards/index.html.twig");
+    }
+}

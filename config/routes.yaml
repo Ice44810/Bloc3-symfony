@@ -1,0 +1,20 @@
+# Ce fichier est le point d'entrée pour configurer les routes de votre application.
+# Les méthodes avec l'attribut #[Route] sont importées automatiquement.
+# Voir aussi https://symfony.com/doc/current/routing.html
+
+# Pour lister toutes les routes enregistrées, exécutez la commande suivante :
+#   bin/console debug:router
+
+# Supprimons cette ligne car elle n'est pas standard et les routes sont chargées via des attributs
+# controllers:
+#     resource: routing.controllers
+
+# Contrôleurs API et Web chargés à partir des attributs
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+
+# Authentification (surcharges spécifiques si nécessaire)
+auth_routes:
+    resource: 'routes/auth.yaml'
+    prefix: /

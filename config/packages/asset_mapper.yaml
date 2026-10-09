@@ -1,0 +1,11 @@
+framework:
+    asset_mapper:
+        # Les chemins à rendre disponibles pour le mappeur d'actifs.
+        paths:
+            - assets/
+        missing_import_mode: strict
+
+when@prod:
+    framework:
+        asset_mapper:
+            missing_import_mode: warn

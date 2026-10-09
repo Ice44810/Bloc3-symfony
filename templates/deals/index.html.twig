@@ -1,0 +1,414 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Deals et Offres - Budget App{% endblock %}
+
+{% block body %}
+    <!--
+         PAGE: GESTION DES OFFRES (DEALS)
+         Fonctionnalité: Découvrir et gérer les offres et deals
+     -->
+
+    <div class="container">
+        <div class="breadcrumb mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('app_home') }}">Accueil</a></li>
+                    <li class="breadcrumb-item">
+                        <a href="{{ path('app_rewards') }}">Récompenses</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <span class="bi bi-gear text-black" style="font-size: 15px;"></span>
+                        Gérer les offres
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- ============================================
+             ONGLETS: À PROXIMITÉ / BONS D'ACHAT
+             Permet de basculer entre les sections
+             ============================================ -->
+        <ul class="nav nav-tabs nav-fill mb-3" id="managementserviceTabs" role="tablist">
+            <li class="nav-item">
+                <button class="nav-link active" id="dealnearyou-tab" data-bs-toggle="tab" data-bs-target="#dealnearyou"
+                    type="button" role="tab" aria-controls="dealnearyou" aria-selected="true">
+                    À Proximité
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" id="giftcard-tab" data-bs-toggle="tab"
+                    data-bs-target="#giftcard" type="button" role="tab" aria-controls="giftcard"
+                    aria-selected="false">
+                    Bon d'achat
+                </button>
+            </li>
+        </ul>
+
+        <!-- Contenu des onglets -->
+        <div class="tab-content px-3" id="recipientTabsContent">
+            
+            <!-- ============================================
+                 TAB: DEALS À PROXIMITÉ
+                 Liste des offres près de chez l'utilisateur
+                 ============================================ -->
+            <div class="tab-pane fade show active" id="dealnearyou" role="tabpanel" aria-labelledby="dealnearyou-tab">
+                
+                <!-- Grille de cartes d'offres -->
+                <div class="row g-3 px-3 pb-3">
+                    <!-- Carte 1 -->
+                    <div class="col-6">
+                        <div class="card deal-card h-100 shadow-sm border-0">
+                            <div class="discount-badge">35%</div>
+                            <img src="/assets/images/burger.png" class="card-img-top" alt="Burger"
+                                style="height: 280px; object-fit: cover" />
+                            <div class="card-body p-3 d-flex flex-column justify-content-between">
+                                <h5 class="card-title mb-1" style="font-size: 0.85rem; font-weight: 700">
+                                    <a href="{{ path('app_giftcard_detail', {id: 1}) }}"
+                                        class="text-decoration-none text-dark stretched-link">
+                                        The Big King Burger
+                                    </a>
+                                </h5>
+                                <div class="d-flex align-items-center mt-2" style="font-size: 0.7rem">
+                                    <span class="text-warning">★★★★☆</span>
+                                    <span class="ms-1 fw-bold">4.1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte 2 -->
+                    <div class="col-6">
+                        <div class="card deal-card h-100 shadow-sm border-0">
+                            <div class="discount-badge">40%</div>
+                            <img src="/assets/images/frites.jpg" class="card-img-top" alt="Fries"
+                                style="height: 280px; object-fit: cover" />
+                            <div class="card-body p-3 d-flex flex-column justify-content-between">
+                                <h5 class="card-title mb-1" style="font-size: 0.85rem; font-weight: 700">
+                                    <a href="{{ path('app_giftcard_detail', {id: 2}) }}"
+                                        class="text-decoration-none text-dark stretched-link">
+                                        NOUVEAUTÉ Frites
+                                    </a>
+                                </h5>
+                                <div class="d-flex align-items-center mt-2" style="font-size: 0.7rem">
+                                    <span class="text-warning">★★★★☆</span>
+                                    <span class="ms-1 fw-bold">4.1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte 3 -->
+                    <div class="col-6">
+                        <div class="card deal-card h-100 shadow-sm border-0">
+                            <div class="discount-badge">35%</div>
+                            <img src="/assets/images/poulet.jpg" class="card-img-top" alt="Poulet"
+                                style="height: 280px; object-fit: cover" />
+                            <div class="card-body p-3 d-flex flex-column justify-content-between">
+                                <h5 class="card-title mb-1" style="font-size: 0.85rem; font-weight: 700">
+                                    <a href="{{ path('app_giftcard_detail', {id: 3}) }}"
+                                        class="text-decoration-none text-dark stretched-link">
+                                        Poulets Frits King Burger
+                                    </a>
+                                </h5>
+                                <div class="d-flex align-items-center mt-2" style="font-size: 0.7rem">
+                                    <span class="text-warning">★★★★☆</span>
+                                    <span class="ms-1 fw-bold">4.1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte 4 -->
+                    <div class="col-6">
+                        <div class="card deal-card h-100 shadow-sm border-0">
+                            <div class="discount-badge">40%</div>
+                            <img src="/assets/images/spaghetti.jpg" class="card-img-top" alt="Spaghetti"
+                                style="height: 280px; object-fit: cover" />
+                            <div class="card-body p-3 d-flex flex-column justify-content-between">
+                                <h5 class="card-title mb-1" style="font-size: 0.85rem; font-weight: 700">
+                                    <a href="{{ path('app_giftcard_detail', {id: 4}) }}"
+                                        class="text-decoration-none text-dark stretched-link">
+                                        Spaghetti sauce Cheese
+                                    </a>
+                                </h5>
+                                <div class="d-flex align-items-center mt-2" style="font-size: 0.7rem">
+                                    <span class="text-warning">★★★★☆</span>
+                                    <span class="ms-1 fw-bold">4.1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte 5 -->
+                    <div class="col-6">
+                        <div class="card deal-card h-100 shadow-sm border-0">
+                            <div class="discount-badge">35%</div>
+                            <img src="/assets/images/pizza.jpg" class="card-img-top" alt="Pizza"
+                                style="height: 280px; object-fit: cover" />
+                            <div class="card-body p-3 d-flex flex-column justify-content-between">
+                                <h5 class="card-title mb-1" style="font-size: 0.85rem; font-weight: 700">
+                                    <a href="{{ path('app_giftcard_detail', {id: 5}) }}"
+                                        class="text-decoration-none text-dark stretched-link">
+                                        Pizza Tomate Fromage - Italya
+                                    </a>
+                                </h5>
+                                <div class="d-flex align-items-center mt-2" style="font-size: 0.7rem">
+                                    <span class="text-warning">★★★★☆</span>
+                                    <span class="ms-1 fw-bold">4.1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte 6 -->
+                    <div class="col-6">
+                        <div class="card deal-card h-100 shadow-sm border-0">
+                            <div class="discount-badge">40%</div>
+                            <img src="/assets/images/hotdog.jpg" class="card-img-top" alt="Hotdog"
+                                style="height: 280px; object-fit: cover" />
+                            <div class="card-body p-3 d-flex flex-column justify-content-between">
+                                <h5 class="card-title mb-1" style="font-size: 0.85rem; font-weight: 700">
+                                    <a href="{{ path('app_giftcard_detail', {id: 6}) }}"
+                                        class="text-decoration-none text-dark stretched-link">
+                                        Pasti Sedap French Fries - Malaysia
+                                    </a>
+                                </h5>
+                                <div class="d-flex align-items-center mt-2" style="font-size: 0.7rem">
+                                    <span class="text-warning">★★★★☆</span>
+                                    <span class="ms-1 fw-bold">4.1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 TAB: BONS D'ACHAT
+                 Liste des coupons et cartescadeaux
+                 ============================================ -->
+            <div class="tab-pane fade" id="giftcard" role="tabpanel" aria-labelledby="giftcard-tab">
+                
+                <!-- Section: Virtuels -->
+                <p class="fw-semibold mb-2 px-3">Virtuels</p>
+                <div class="scroll-container px-3 mb-2" id="virtualScroll">
+                    <!-- Coupon 1 -->
+                    <div class="coupon-card">
+                        <div class="coupon-left">
+                            <span class="d-block small text-muted">CUISINE TEST</span>
+                            <span class="h5 fw-bold text-success mb-0">R100</span>
+                            <p class="small text-muted mb-0">COUPON</p>
+                        </div>
+                        <div class="coupon-right" style="background-image: url('/assets/images/giftsalade-1.jpg')">
+                        </div>
+                    </div>
+                    
+                    <!-- Coupon 2 -->
+                    <div class="coupon-card bg-dark text-white">
+                        <div class="coupon-left">
+                            <span class="d-block small text-light">CUISINE TEST</span>
+                            <span class="h5 fw-bold text-success mb-0">R100</span>
+                            <p class="small text-light mb-0">COUPON</p>
+                        </div>
+                        <div class="coupon-right" style="background-image: url('/assets/images/giftravioli-2.jpg')">
+                        </div>
+                    </div>
+                    
+                    <!-- Coupon 3 -->
+                    <div class="coupon-card">
+                        <div class="coupon-left">
+                            <span class="d-block small text-muted">CUISINE TEST</span>
+                            <span class="h5 fw-bold text-success mb-0">R100</span>
+                            <p class="small text-muted mb-0">COUPON</p>
+                        </div>
+                        <div class="coupon-right" style="background-image: url('/assets/images/giftsalade-1.jpg')">
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-dots d-flex justify-content-center gap-2">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+
+                <!-- Section: Cuisine -->
+                <p class="fw-semibold mb-2 px-3 mt-3">Cuisine</p>
+                <div class="scroll-container px-3 mb-2" id="kitchenScroll">
+                    <div class="coupon-card">
+                        <div class="coupon-left">
+                            <span class="d-block small text-muted">CUISINE TEST</span>
+                            <span class="h5 fw-bold text-success mb-0">R100</span>
+                            <p class="small text-muted mb-0">COUPON</p>
+                        </div>
+                        <div class="coupon-right" style="background-image: url('/assets/images/giftsalade-1.jpg')">
+                        </div>
+                    </div>
+                    <div class="coupon-card bg-dark text-white">
+                        <div class="coupon-left">
+                            <span class="d-block small text-light">CUISINE TEST</span>
+                            <span class="h5 fw-bold text-success mb-0">R100</span>
+                            <p class="small text-light mb-0">COUPON</p>
+                        </div>
+                        <div class="coupon-right" style="background-image: url('/assets/images/giftravioli-2.jpg')">
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-dots d-flex justify-content-center gap-2">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+
+                <!-- Section: Restaurant -->
+                <p class="fw-semibold mb-2 px-3 mt-3">Restaurant</p>
+                <div class="scroll-container px-3 mb-2" id="restaurantScroll">
+                    <div class="coupon-card">
+                        <div class="coupon-left">
+                            <span class="d-block small text-muted">CUISINE TEST</span>
+                            <span class="h5 fw-bold text-success mb-0">R100</span>
+                            <p class="small text-muted mb-0">COUPON</p>
+                        </div>
+                        <div class="coupon-right" style="background-image: url('/assets/images/giftsalade-1.jpg')">
+                        </div>
+                    </div>
+                    <div class="coupon-card bg-dark text-white">
+                        <div class="coupon-left">
+                            <span class="d-block small text-light">CUISINE TEST</span>
+                            <span class="h5 fw-bold text-success mb-0">R100</span>
+                            <p class="small text-light mb-0">COUPON</p>
+                        </div>
+                        <div class="coupon-right" style="background-image: url('/assets/images/giftravioli-2.jpg')">
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-dots d-flex justify-content-center gap-2">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         JAVASCRIPT - LOGIQUE MÉTIER
+         ============================================ -->
+    <script>
+        /**
+         * GESTION DU CHARGEMENT DE LA PAGE
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialiser les scrolls horizontaux
+            initScrollContainers();
+            
+            // Charger les deals depuis l'API
+            loadDeals();
+        });
+
+        /**
+         * Gestion des conteneurs de scroll horizontal
+         */
+        function initScrollContainers() {
+            // Sélectionner tous les conteneurs de cartes
+            const scrollContainers = document.querySelectorAll(".scroll-container");
+            const allDotsGroups = document.querySelectorAll(".scroll-dots");
+
+            scrollContainers.forEach((container, index) => {
+                const dots = allDotsGroups[index]?.querySelectorAll(".dot");
+                if (!container || !dots?.length) return;
+
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                // === 1. GESTION DES POINTS (INDICATEURS DE SCROLL) ===
+                container.addEventListener("scroll", () => {
+                    const maxScroll = container.scrollWidth - container.offsetWidth;
+                    if (maxScroll <= 0) return;
+
+                    const scrollPercentage = container.scrollLeft / maxScroll;
+                    const activeIndex = Math.round(scrollPercentage * (dots.length - 1));
+
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle("active", i === activeIndex);
+                    });
+                });
+
+                // === 2. GESTION DU GLISSEMENT À LA SOURIS ===
+                container.addEventListener("mousedown", (e) => {
+                    isDown = true;
+                    container.classList.add("active");
+                    startX = e.pageX - container.offsetLeft;
+                    scrollLeft = container.scrollLeft;
+                });
+
+                container.addEventListener("mouseleave", () => isDown = false);
+                container.addEventListener("mouseup", () => isDown = false);
+
+                container.addEventListener("mousemove", (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - container.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    container.scrollLeft = scrollLeft - walk;
+                });
+            });
+        }
+
+        /**
+         * Charger les deals depuis l'API
+         * À implémenter pour récupérer dynamiquement les offres
+         */
+        async function loadDeals() {
+            try {
+                // ============================================
+                // APPEL API POUR LES DEALS
+                // Endpoint à créer: /api/deals
+                // ============================================
+                // const response = await fetch('{{ path('get_deals') }}');
+                // const deals = await response.json();
+                // renderDeals(deals);
+            } catch (error) {
+                console.error('Erreur chargement deals:', error);
+            }
+        }
+
+        /**
+         * Charger les gift cards depuis l'API
+         * À implémenter pour récupérer dynamiquement les cartes cadeau
+         */
+        async function loadGiftCards() {
+            try {
+                // ============================================
+                // APPEL API POUR LES CARTES CADEAU
+                // Endpoint à créer: /api/giftcards
+                // ============================================
+                // const response = await fetch('{{ path('get_giftcards') }}');
+                // const cards = await response.json();
+                // renderGiftCards(cards);
+            } catch (error) {
+                console.error('Erreur chargement giftcards:', error);
+            }
+        }
+
+        /**
+         * Sauvegarder une offre dans les favoris
+         */
+        async function saveFavorite(dealId) {
+            try {
+                // ============================================
+                // APPEL API POUR SAUVEGARDER UN FAVORI
+                // Endpoint à créer: /api/deals/favorite
+                // ============================================
+                // const response = await fetch('{{ path('save_favorite') }}', {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify({ dealId: dealId })
+                // });
+            } catch (error) {
+                console.error('Erreur sauvegarde favori:', error);
+            }
+        }
+    </script>
+{% endblock %}
+

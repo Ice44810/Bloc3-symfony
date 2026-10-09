@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mobile - Budget App{% endblock %}
+
+{% block body %}
+    <!-- Header -->
+    <div class="container">
+        <div class="breadcrumb mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('app_home') }}">Accueil</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('app_bill') }}">Factures</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <span class="bi bi-phone" style="font-size: 15px;"></span>
+                        Opérateur Mobile
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <!-- Contenu de la facture -->
+        <div class="container">
+            <div class="text-center py-5 bg-white rounded-4 shadow-sm">
+                <div class="bill-icon mb-4">
+                    <img src="/assets/images/verifier.png" alt="bill icon">
+                </div>
+                <h3 class="fw-bold text-danger">€70.0</h3>
+                <p class="fs-5 fw-semibold">Montant à payer</p>
+                <p class="text-muted">Mise à jour par l'opérateur</p>
+            </div><br>
+            <div class="text-center rounded-4 shadow-sm p-4">
+                <p class="fw-bold mb-4">Informations Client</p>
+                <div class="d-flex justify-content-between">
+                    <!-- Colonne gauche -->
+                    <div class="text-start">
+                        <p>Code client</p>
+                        <p>Nom client</p>
+                        <p>Mail</p>
+                    </div>
+                    <!-- Colonne droite -->
+                    <div class="text-end">
+                        <p>{{ app.user.phone|default('Non défini') }}</p>
+                        <p>{{ app.user.fullName|default('Non défini') }}</p>
+                        <p>{{ app.user.email|default('Non défini') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="mt-3">
+                <a href="{{ path('app_transfert_confirm', {
+                    'recipient': 'Orange',
+                    'recipientName': 'Orange Mobile',
+                    'amount': '70.00',
+                    'description': 'Paiement facture mobile',
+                    'type': 'bill'
+                }) }}" class="btn btn-primary w-25 fs-6">Paiement Facture</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,332 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes cartes - Budget App{% endblock %}
+
+{% block head %}
+<style>
+.btn-primary {
+    display : flex;
+    justify-content : end;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+        <!--
+         PAGE: MES CARTES
+         Fonctionnalité: Gérer les cartes bancaires
+         -->
+
+   <div class="container">
+        <div class="breadcrumb mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('app_home') }}">Accueil</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <span class="bi bi-credit-card text-primary" style="font-size: 15px;"></span>
+                        Carte Bancaire
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="container">
+            <!-- Cartes bancaires de l'utilisateur -->
+            <h6 class="fw-semibold mb-3">Mes Cartes</h6>
+            <div id="cards-container" class="vstack gap-3 mb-4">
+                <div class="text-center py-4">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Chargement...</span>
+                    </div>
+                    <p class="mt-2 text-muted">Chargement de vos cartes...</p>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 mb-4">
+                <a href="{{ path('app_card_new') }}" class="btn btn-primary w-25">
+                    <i class="bi bi-plus-circle me-2"></i>Ajouter une carte
+                </a>
+            </div>
+
+            <hr class="my-4">
+
+            <h6 class="fw-semibold mb-3">Banques populaires</h6>
+            <div class="row g-3 mb-4" id="creditcard">
+                <div class="col-6 col-md-3">
+                    <a href="{{ path('app_transfer_by_bank') }}" class="bank-card">
+                        <img src="{{ asset('assets/images/icons8-visa-48.png') }}">
+                        <span>Global card</span>
+                    </a>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <a href="{{ path('app_transfer_by_bank') }}" class="bank-card">
+                        <img src="{{ asset('assets/images/Techcombank.png') }}">
+                        <span>Techcombank</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="{{ path('app_transfer_by_bank') }}" class="bank-card">
+                        <img src="{{ asset('assets/images/acbbank.png') }}">
+                        <span>ACB</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="{{ path('app_transfer_by_bank') }}" class="bank-card">
+                        <img src="{{ asset('assets/images/fivestarbank.jpeg') }}">
+                        <span>Five star bank</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="{{ path('app_transfer_by_bank') }}" class="bank-card">
+                        <img src="{{ asset('assets/images/citigroup.png') }}">
+                        <span>Citibank</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="{{ path('app_transfer_by_bank') }}" class="bank-card">
+                        <img src="{{ asset('assets/images/ICBC.png') }}">
+                        <span>ICBCBank</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="{{ path('app_transfer_by_bank') }}" class="bank-card">
+                        <img src="{{ asset('assets/images/chasebank.jpeg') }}">
+                        <span>Chasebank</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="{{ path('app_transfer_by_bank') }}" class="bank-card">
+                        <img src="{{ asset('assets/images/vietinbank.png') }}">
+                        <span>Vietinbank</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Toutes les banques-->
+            <h6 class="fw-semibold mb-3">Toutes les banques (40)</h6>
+            <div class="bank-list">
+                <a href="{{ path('app_transfer_by_bank') }}" class="bank-item">
+                    <img src="{{ asset('assets/images/icons8-visa-48.png') }}">
+                    <span>Visa</span>
+                </a>
+
+                <a href="{{ path('app_transfer_by_bank') }}" class="bank-item">
+                    <img src="{{ asset('assets/images/Techcombank.png') }}">
+                    <span>Techcombank</span>
+                </a>
+
+                <a href="{{ path('app_transfer_by_bank') }}" class="bank-item">
+                    <img src="{{ asset('assets/images/acbbank.png') }}">
+                    <span>ACB</span>
+                </a>
+
+                <a href="{{ path('app_transfer_by_bank') }}" class="bank-item">
+                    <img src="{{ asset('assets/images/fivestarbank.jpeg') }}">
+                    <span>Five star bank</span>
+                </a>
+
+                <a href="{{ path('app_transfer_by_bank') }}" class="bank-item">
+                    <img src="{{ asset('assets/images/citigroup.png') }}">
+                    <span>Citibank</span>
+                </a>
+
+                <a href="{{ path('app_transfer_by_bank') }}" class="bank-item">
+                    <img src="{{ asset('assets/images/ICBC.png') }}">
+                    <span>ICBCBank</span>
+                </a>
+
+                <a href="{{ path('app_transfer_by_bank') }}" class="bank-item">
+                    <img src="{{ asset('assets/images/chasebank.jpeg') }}">
+                    <span>Chasebank</span>
+                </a>
+
+                <a href="{{ path('app_transfer_by_bank') }}" class="bank-item">
+                    <img src="{{ asset('assets/images/vietinbank.png') }}">
+                    <span>Vietinbank</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+      // GESTION DU CHARGEMENT DES CARTES ET DU SOLDE
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Charger les données du tableau de bord
+            loadDashboard();
+
+            // Charger les cartes
+            loadCards();
+        });
+
+    // Charger les données du tableau de bord (solde)
+
+        async function loadDashboard() {
+            try {
+                const response = await fetch('{{ path('get_dashboard') }}');
+                const stats = await response.json();
+
+                // Mettre à jour le solde
+                document.getElementById('cardBalance').textContent = stats.balance + ' €';
+
+                // Stocker le solde dans le localStorage
+                localStorage.setItem('userBalance', stats.balance);
+            } catch (error) {
+                console.error('Erreur chargement tableau de bord:', error);
+                document.getElementById('cardBalance').textContent = '0 €';
+            }
+        }
+
+
+      // Charger et afficher les cartes bancaires
+
+      async function loadCards() {
+          const cardsContainer = document.getElementById('cards-container');
+
+          try {
+              const response = await fetch('{{ path('get_cards') }}');
+
+              if (!response.ok) {
+                  throw new Error('Erreur lors de la récupération des cartes');
+              }
+
+              const data = await response.json();
+
+              if (!data.success || !data.data.length === 0) {
+                  cardsContainer.innerHTML = '<p class="text-center text-muted">Aucune carte enregistrée.</p>';
+                  return;
+              }
+
+              cardsContainer.innerHTML = '';
+
+              data.data.forEach(card => {
+                  const cardElement = document.createElement('div');
+                  cardElement.className = 'card-item-container border rounded mb-3';
+                  cardElement.style.cursor = 'pointer';
+                  cardElement.dataset.cardId = card.id;
+
+                  const brand = card.card?.brand || 'visa';
+                  const cardLogo = brand.toLowerCase().includes('master') 
+                      ? 'https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg'
+                      : 'https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg';
+
+                  cardElement.innerHTML = `
+                    <div class="p-3 d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="${cardLogo}" width="35" alt="${brand}">
+                            <div>
+                                <h6 class="mb-0">${brand.toUpperCase()} **** ${card.card.last4}</h6>
+                                <small class="text-muted">Exp: ${card.card.exp_month}/${card.card.exp_year}</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-sm btn-outline-danger delete-btn">
+                            <i class="bi bi-trash3"></i>
+                        </button>
+                    </div>
+                    `;
+
+                  cardsContainer.appendChild(cardElement);
+              });
+
+          } catch (error) {
+              console.error('Erreur:', error);
+              cardsContainer.innerHTML = '<p class="text-center text-danger">Impossible de charger vos cartes.</p>';
+          }
+
+          setupDeleteHandlers();
+          setupCardClickHandlers();
+      }
+
+        /**
+         * Configurer les gestionnaires de suppression
+         */
+        function setupDeleteHandlers() {
+            const cardsContainer = document.getElementById('cards-container');
+
+            cardsContainer.addEventListener('click', function(e) {
+                const deleteButton = e.target.closest('.delete-btn');
+
+                if (deleteButton) {
+                    e.preventDefault();
+                    const cardElement = deleteButton.closest('.card-item-container');
+                    const cardId = cardElement.dataset.cardId;
+
+                    // Demander confirmation avant suppression
+                    if (confirm('Êtes-vous sûr de vouloir supprimer cette carte ?')) {
+                        deleteCard(cardId, cardElement);
+                    }
+                }
+            });
+        }
+
+        /**
+         * Configurer les clics sur les cartes pour navigation vers info
+         */
+        function setupCardClickHandlers() {
+            const cardsContainer = document.getElementById('cards-container');
+            cardsContainer.addEventListener('click', function(e) {
+                const cardElement = e.target.closest('.card-item-container');
+                const deleteButton = e.target.closest('.delete-btn');
+                
+                if (cardElement && !deleteButton) {
+                    e.preventDefault();
+                    const cardId = cardElement.dataset.cardId;
+                    window.location.href = `/card/info?id=${cardId}`;
+                }
+            });
+        }
+        function setupDeleteHandlers() {
+            const cardsContainer = document.getElementById('cards-container');
+
+            cardsContainer.addEventListener('click', function(e) {
+                const deleteButton = e.target.closest('.delete-btn');
+
+                if (deleteButton) {
+                    e.preventDefault();
+                    const cardElement = deleteButton.closest('.card-item-container');
+                    const cardId = cardElement.dataset.cardId;
+
+                    // Demander confirmation avant suppression
+                    if (confirm('Êtes-vous sûr de vouloir supprimer cette carte ?')) {
+                        deleteCard(cardId, cardElement);
+                    }
+                }
+            });
+        }
+
+      // Supprimer une carte via l'API
+
+        async function deleteCard(cardId, cardElement) {
+            try {
+                // APPEL API POUR SUPPRIMER UNE CARTE
+                // Endpoint: DELETE /api/cards/{id}
+
+                const response = await fetch(`/api/cards/${cardId}`, {
+                    method: 'DELETE'
+                });
+
+                if (!response.ok) {
+                    throw new Error('La suppression a échoué.');
+                }
+
+                const data = await response.json();
+
+                // Supprimer l'élément du DOM
+                cardElement.remove();
+
+                // Afficher un message si la liste est vide
+                const cardsContainer = document.getElementById('cards-container');
+                if (cardsContainer.children.length === 0) {
+                    cardsContainer.innerHTML = '<p class="text-center text-muted">Aucune carte enregistrée.</p>';
+                }
+
+                alert('Carte supprimée avec succès!');
+            } catch (error) {
+                console.error('Erreur de suppression:', error);
+                alert(error.message);
+            }
+        }
+    </script>
+{% endblock %}
+

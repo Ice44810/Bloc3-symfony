@@ -1,0 +1,371 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Factures - Budget App{% endblock %}
+
+{% block body %}
+        <!-- 
+         PAGE: FACTURES
+         Fonctionnalité: Gérer et payer les factures
+          -->
+
+    <div class="container">
+        <!-- Fil d'Arianne -->
+        <div class="breadcrumb mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('app_home') }}">Accueil</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <span class="bi bi-receipt text-warning" style="font-size: 15px;"></span>
+                        Factures
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="container py-2">
+                <!--
+                 BARRE DE RECHERCHE
+                 Permet de rechercher une facture
+                 -->
+            <div class="d-flex align-items-center mb-3 gap-1">
+                <div class="position-relative flex-grow-1 w-100">
+                    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 fw-bold text-muted"></i>
+                    <input type="text" id="billsearch" class="form-control ps-5 py-2 border-1 rounded-3"
+                        placeholder="Rechercher une facture">
+                </div>
+                <!-- Bouton pour scanner un QR code -->
+                <div class="bg-white rounded-3 d-flex align-items-center justify-content-center"
+                    style="width: 42px; height: 42px; cursor: pointer;" id="scanQrBtn">
+                    <i class="bi bi-qr-code-scan fs-3 text-dark"></i>
+                </div>
+            </div>
+
+                <!--
+                 SECTION: FACTURES ENREGISTRÉES
+                 Liste des factures en attente de paiement
+                 -->
+            <section class="mb-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h6 class="fw-semibold mb-0">Factures enregistrées</h6>
+                    <a href="{{ path('app_bill') }}" class="text-primary text-decoration-none small">Tout voir</a>
+                </div>
+
+                <div class="bg-white rounded-3">
+                    <!-- Facture Électricité -->
+                    <div class="d-flex align-items-center p-3 border-bottom bill-item">
+                        <div class="icon-box text-warning me-3">
+                            <i class="bi bi-lightbulb-fill fs-4"></i>
+                        </div>
+                        <a href="{{ path('app_services_electricity') }}" class="flex-grow-1 text-decoration-none">
+                            <h6 class="mb-0 fw-bold small text-dark">Fournisseur électrique</h6>
+                            <p class="mb-0 text-muted extra-small">{{ app.user.fullName|default('Non défini') }}</p>
+                            <p class="mb-0 text-muted extra-small">{{ app.user.phone|default('Non défini') }}</p>
+                        </a>
+                        <div class="text-danger extra-small">Paiement Dû</div>
+                    </div>
+
+                    <!-- Facture Eau -->
+                    <div class="d-flex align-items-center p-3 border-bottom bill-item">
+                        <div class="icon-box text-primary me-3">
+                            <i class="bi bi-droplet-fill fs-4"></i>
+                        </div>
+                        <a href="{{ path('app_services_water') }}" class="flex-grow-1 text-decoration-none">
+                            <h6 class="mb-0 fw-bold small text-dark">Fournisseur d'eau</h6>
+                            <p class="mb-0 text-muted extra-small">{{ app.user.fullName|default('Non défini') }}</p>
+                            <p class="mb-0 text-muted extra-small">{{ app.user.phone|default('Non défini') }}</p>
+                        </a>
+                        <div class="text-muted extra-small">À payer</div>
+                    </div>
+
+                    <!-- Facture Internet -->
+                    <div class="d-flex align-items-center p-3 bill-item">
+                        <div class="icon-box text-primary me-3">
+                            <i class="bi bi-wifi fs-4"></i>
+                        </div>
+                        <a href="{{ path('app_services_internet') }}" class="flex-grow-1 text-decoration-none">
+                            <h6 class="mb-0 fw-bold small text-dark">Opérateur Telecom</h6>
+                            <p class="mb-0 text-muted extra-small">{{ app.user.fullName|default('Non défini') }}</p>
+                            <p class="mb-0 text-muted extra-small">{{ app.user.phone|default('Non défini') }}</p>
+                        </a>
+                        <div class="text-primary extra-small">Paiement Intégral</div>
+                    </div>
+                </div>
+            </section>
+
+                <!-- 
+                 SECTION: LIENS UTILES
+                 Accès rapide aux statistiques et gestion des dépenses
+                  -->
+            <section class="mb-4">
+                <div class="list-group gap-2 border-0">
+                    <!-- Lien vers les statistiques -->
+                    <a href="{{ path('app_stats_view') }}"
+                        class="list-group-item list-group-item-action d-flex align-items-center border-1 rounded-2 p-2 shadow-sm">
+                        <div class="icon-box text-danger me-3">
+                            <i class="bi bi-pie-chart-fill fs-5"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-0 fw-bold small">Voir les Statistiques</h6>
+                            <small class="text-muted">Suivez vos dépenses mensuelles</small>
+                        </div>
+                        <i class="bi bi-chevron-right text-muted"></i>
+                    </a>
+                    
+                    <!-- Lien vers les deals -->
+                    <a href="{{ path('app_deals') }}"
+                        class="list-group-item list-group-item-action d-flex align-items-center border-1 rounded-2 p-2 shadow-sm">
+                        <div class="icon-box text-primary me-3">
+                            <i class="bi bi-gear-wide-connected fs-5"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-0 fw-bold small">Gérez vos dépenses</h6>
+                            <small class="text-muted">Acheter Malins avec Budget App</small>
+                        </div>
+                        <i class="bi bi-chevron-right text-muted"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 
+                 SECTION: SERVICE EXCEPTIONNEL
+                 Accès rapide aux services de paiement
+             -->
+            <section class="mb-4">
+                <h6 class="fw-bold mb-3">Service exceptionnel</h6>
+                <div class="row g-3">
+                    <div class="col-6">
+                        <a href="{{ path('app_services_electricity') }}" class="text-decoration-none">
+                            <div class="bg-white p-2 rounded-3 shadow-sm d-flex align-items-center">
+                                <div class="icon-box text-warning me-2">
+                                    <i class="bi bi-lightbulb-fill fs-3"></i>
+                                </div>
+                                <span class="small fw-medium text-dark">Électricité</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a href="{{ path('app_services_water') }}" class="text-decoration-none">
+                            <div class="bg-white p-2 rounded-3 shadow-sm d-flex align-items-center">
+                                <div class="icon-box text-primary me-2 fs-3">
+                                    <i class="bi bi-droplet-fill"></i>
+                                </div>
+                                <span class="small fw-medium text-dark">Eau</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a href="{{ path('app_services_internet') }}" class="text-decoration-none">
+                            <div class="bg-white p-2 rounded-3 shadow-sm d-flex align-items-center">
+                                <div class="icon-box me-2 fs-3 text-success">
+                                    <i class="bi bi-wifi"></i>
+                                </div>
+                                <span class="small fw-medium text-dark">Internet</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a href="{{ path('app_services_mobile') }}" class="text-decoration-none">
+                            <div class="bg-white p-2 rounded-3 shadow-sm d-flex align-items-center">
+                                <div class="icon-box text-info me-2 fs-3">
+                                    <i class="bi bi-phone"></i>
+                                </div>
+                                <span class="small fw-medium text-dark">Mobile</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 
+                 SECTION: LISTE DES SERVICES
+                 Grille des services disponibles
+            -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <p class="service-title fw-semibold">Liste des services</p>
+                <a href="{{ path('app_bill') }}" class="text-primary small">Tout voir</a>
+            </div>
+            <div class="row row-cols-4 row-cols-md-4 g-3">
+                <!-- Mobile -->
+                <div class="col category-item">
+                    <div class="category-icon" style="background-color: #e1f5fe;">
+                        <a href="{{ path('app_services_mobile') }}" class="text-decoration-none">
+                            <i class="bi bi-phone text-primary"></i>
+                        </a>
+                    </div>
+                    <p class="small">Mobile</p>
+                </div>
+                <!-- Internet -->
+                <div class="col category-item">
+                    <div class="category-icon" style="background-color: #98c1ea;">
+                        <a href="{{ path('app_services_internet') }}" class="text-decoration-none">
+                            <i class="bi bi-wifi text-primary"></i>
+                        </a>
+                    </div>
+                    <p class="small">Internet</p>
+                </div>
+                <!-- Factures -->
+                <div class="col category-item">
+                    <div class="category-icon" style="background-color: #bfe4df;">
+                        <a href="{{ path('app_bill') }}" class="text-decoration-none">
+                            <i class="bi bi-receipt text-warning"></i>
+                        </a>
+                    </div>
+                    <p class="small">Factures</p>
+                </div>
+                <!-- Electricité -->
+                <div class="col category-item">
+                    <div class="category-icon" style="background-color: #e1f5fe;">
+                        <a href="{{ path('app_services_electricity') }}" class="text-decoration-none">
+                            <i class="bi bi-lightning-fill text-warning"></i>
+                        </a>
+                    </div>
+                    <p class="small">Electricité</p>
+                </div>
+                <!-- Film -->
+                <div class="col category-item">
+                    <div class="category-icon" style="background-color: #d6d5c4;">
+                        <a href="{{ path('app_services_film') }}" class="text-decoration-none">
+                            <i class="bi bi-film text-danger"></i>
+                        </a>
+                    </div>
+                    <p class="small">Film</p>
+                </div>
+                <!-- Eau -->
+                <div class="col category-item">
+                    <div class="category-icon" style="background-color: #d9dcdf;">
+                        <a href="{{ path('app_services_water') }}" class="text-decoration-none">
+                            <i class="bi bi-droplet-fill text-primary"></i>
+                        </a>
+                    </div>
+                    <p class="small">Facture d'eau</p>
+                </div>
+                <!-- Réductions -->
+                <div class="col category-item">
+                    <div class="category-icon" style="background-color: #d5c4bc;">
+                        <a href="{{ path('app_rewards') }}" class="text-decoration-none">
+                            <i class="bi bi-wallet2 text-danger"></i>
+                        </a>
+                    </div>
+                    <p class="small">Réductions</p>
+                </div>
+                <!-- Marché -->
+                <div class="col category-item">
+                    <div class="category-icon" style="background-color: #e0ecf3;">
+                        <a href="{{ path('app_market') }}" class="text-decoration-none">
+                            <i class="bi bi-cart2 text-danger"></i>
+                        </a>
+                    </div>
+                    <p class="small">Marchés</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer py-2">
+            <div class="d-flex justify-content-around align-items-center">
+                <a href="{{ path('app_home') }}" class="active-link">
+                    <i class="bi bi-house-door-fill"></i>
+                    <span>Accueil</span>
+                </a>
+                <a href="{{ path('app_bank_history') }}" class="footer-link">
+                    <i class="bi bi-clock-history"></i>
+                    <span>Historique</span>
+                </a>
+                <a href="{{ path('app_qr') }}" class="footer-link">
+                    <i class="bi bi-qr-code-scan"></i>
+                    <span>QR</span>
+                </a>
+                <a href="{{ path('app_rewards') }}" class="footer-link">
+                    <i class="bi bi-gift"></i>
+                    <span>Récompenses</span>
+                </a>
+                <a href="{{ path('app_profile') }}" class="footer-link">
+                    <i class="bi bi-person"></i>
+                    <span>Profil</span>
+                </a>
+            </div>
+        </footer>
+        
+        <script>
+                // GESTION DU CHARGEMENT DE LA PAGE
+             
+            document.addEventListener('DOMContentLoaded', function () {
+                // Initialiser la recherche
+                initSearch();
+                
+                // Initialiser le bouton QR
+                initQrScanner();
+            });
+
+            // Fonctionnalité de recherche de factures
+            // Filtre les factures et services en temps réel
+            
+            function initSearch() {
+                const searchInput = document.getElementById('billsearch');
+
+                if (searchInput) {
+                    searchInput.addEventListener('input', function (e) {
+                        const term = e.target.value.toLowerCase();
+
+                        // Filtrer les factures enregistrées
+                        const bills = document.querySelectorAll('.bill-item');
+                        bills.forEach(bill => {
+                            const text = bill.innerText.toLowerCase();
+                            bill.style.display = text.includes(term) ? 'flex' : 'none';
+                        });
+
+                        // Filtrer la liste des services
+                        const services = document.querySelectorAll('.category-item');
+                        services.forEach(service => {
+                            const text = service.innerText.toLowerCase();
+                            service.style.display = text.includes(term) ? 'block' : 'none';
+                        });
+                    });
+                }
+            }
+            
+            // stion du scan QR Code
+            // vre la caméra pour scanner un code QR de facture
+            
+            function initQrScanner() {
+                const qrBtn = document.getElementById('scanQrBtn');
+                
+                if (qrBtn) {
+                    qrBtn.addEventListener('click', function () {
+                        // SCAN QR CODE POUR FACTURE
+                        // Note: À implémenter avec une bibliothèque
+                        // comme Instascan ou html5-qrcode
+                        
+                        alert("Ouverture de l'appareil photo pour scanner le code QR de la facture...");
+                        
+                        // Exemple d'implémentation future:
+                        // const html5QrCode = new Html5Qrcode("reader");
+                        // html5QrCode.start(
+                        //   { facingMode: "environment" }, 
+                        //   { fps: 10, qrbox: 250 },
+                        //   onScanSuccess
+                        // );
+                    });
+                }
+            }
+
+            
+             // arger les factures depuis l'API
+             // implémenter pour récupérer dynamiquement les factures
+             
+            async function loadBills() {
+                try {
+                    // APPEL API POUR LES FACTURES
+                    // Endpoint à créer: /api/bills
+                    // const response = await fetch('{{ path('get_bills') }}');
+                    // const bills = await response.json();
+                    // renderBills(bills);
+                } catch (error) {
+                    console.error('Erreur chargement factures:', error);
+                }
+            }
+        </script>
+    </div>
+{% endblock %}
+

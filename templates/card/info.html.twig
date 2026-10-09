@@ -1,0 +1,233 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Informations Carte - Budget App{% endblock %}
+
+{% block head %}
+<style>
+    .disabled-link {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="breadcrumb mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ path('app_home') }}">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="{{ path('app_banque') }}">Compte Bancaire</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <span class="bi bi-credit-card text-primary" style="font-size: 15px;">
+                    </span>Informations Carte
+                </li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Informations de la carte -->
+    <div class="card-container">
+        <div class="credit-card shadow-sm mb-3 p-3 position-relative" id="cardInfo">
+            <div class="d-flex justify-content-between align-items-start mb-4">
+                <img src="/assets/images/icons8-visa-48.png" alt="visa logo" style="width: 60px;" id="cardLogo" />
+                <i class="bi bi-trash3 text-white" id="deleteinfo" data-bs-toggle="offcanvas"
+                    data-bs-target="#deleteCardSheet" style="cursor: pointer;"></i>
+            </div>
+            <div class="mb-2">
+                <span class="card-number" id="cardNumber">**** **** **** ----</span>
+            </div>
+            <div class="card-footer-info d-flex justify-content-between">
+                <div>
+                    <small class="d-block">Exp Date</small>
+                    <strong id="cardExpiry">--/--</strong>
+                </div>
+                <div class="text-end">
+                    <small class="d-block">CVV Num</small>
+                    <strong id="cardCvv">***</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services de la carte -->
+        <h6 class="fw-bold mb-3">Service Carte</h6>
+        <div class="card shadow-sm border-0 p-3">
+            <div class="service-row text-muted">
+                <span class="small">Recharge minimum</span>
+                <strong class="text-dark" id="minRecharge">€...</strong>
+            </div>
+            <div class="service-row text-muted">
+                <span class="small">Limite Recharge</span>
+                <strong class="text-dark" id="rechargeLimit">€...</strong>
+            </div>
+            <div class="service-row text-muted">
+                <span class="small">Limite paiement</span>
+                <strong class="text-dark" id="paymentLimit">€...</strong>
+            </div>
+            <div class="service-row text-muted border-0">
+                <span class="small">Limite journalière</span>
+                <strong class="text-dark" id="dailyLimit">€...</strong>
+            </div>
+        </div>
+
+        <!-- Services avancés -->
+        <h6 class="fw-bold mt-3 mb-3">Services avancés</h6>
+        <div id="increaseLimitBtn" class="card shadow-sm border-0 p-2 mb-2 d-flex flex-row justify-content-between align-items-center disabled-link"
+             role="button" onclick="increaseLimit()">
+            <span>Augmentation de la Limite</span>
+            <i class="bi bi-chevron-right"></i>
+        </div>
+        <div id="manageRechargeBtn" class="card shadow-sm border-0 p-2 d-flex flex-row justify-content-between align-items-center disabled-link"
+             role="button" onclick="manageRecharge()">
+            <span>Gérer la recharge</span>
+            <i class="bi bi-chevron-right"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Offcanvas pour supprimer la carte -->
+<div class="offcanvas offcanvas-bottom action-sheet-ios" tabindex="-1" id="deleteCardSheet">
+    <div class="offcanvas-body small">
+        <div class="list-group rounded-4 mb-2">
+            <div class="list-group-item text-center py-2">
+                <small class="mb-0 text-muted extra-small">
+                    Êtes-vous sûr de vouloir supprimer cette carte ?
+                </small>
+            </div>
+            <button type="button"
+                class="list-group-item list-group-item-action text-center text-danger fw-semibold py-3"
+                id="confirmDelete">
+                Supprimer la carte
+            </button>
+        </div>
+
+        <button type="button" class="btn btn-white w-100 rounded-4 py-3 fw-bold text-primary-ios"
+            data-bs-dismiss="offcanvas">
+            Annuler
+        </button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        // Charger les informations de la carte depuis l'API
+        await loadCardDetails();
+
+        // Configurer la suppression de la carte
+        setupDeleteCard();
+    });
+
+    // Charger les détails de la carte depuis l'API
+    async function loadCardDetails() {
+    try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const cardId = urlParams.get('id');
+        let cardData = null;
+
+        // Récupération des données
+        const route = cardId 
+            ? `{{ path('get_card', {'id': 'PLACEHOLDER'}) }}`.replace('PLACEHOLDER', cardId)
+            : '{{ path('get_cards') }}';
+
+        const response = await fetch(route);
+        const result = await response.json();
+
+        if (result.success) {
+            cardData = cardId ? result.card : result.cards[0];
+        }
+
+        if (cardData) {
+            // Stocker l'ID de la carte
+            document.getElementById('cardInfo').dataset.cardId = cardData.id;
+
+            // Remplissage des champs de la carte
+            document.getElementById('cardNumber').textContent = `**** **** **** ${cardData.last_4_digits}`;
+            document.getElementById('cardExpiry').textContent = cardData.expiry_date;
+            document.getElementById('cardCvv').textContent = '***';
+
+            // Remplissage des Services Carte (Règles)
+            document.getElementById('minRecharge').textContent = `€${cardData.min_recharge}`;
+            document.getElementById('rechargeLimit').textContent = `€${cardData.recharge_limit}`;
+            document.getElementById('paymentLimit').textContent = `€${cardData.payment_limit}`;
+            document.getElementById('dailyLimit').textContent = `€${cardData.daily_limit}`;
+
+            // Gestion dynamique du logo
+            const brand = (cardData.card_brand || 'visa').toLowerCase();
+            const logoImg = document.getElementById('cardLogo');
+            
+            // Chemin vers vos icônes (assurez-vous qu'elles sont dans public/assets/images/)
+            logoImg.src = `/assets/images/icons8-${brand}-48.png`;
+            
+            // Activer les boutons de service avancé
+            document.getElementById('increaseLimitBtn').classList.remove('disabled-link');
+            document.getElementById('manageRechargeBtn').classList.remove('disabled-link');
+        }
+    } catch (error) {
+        console.error('Erreur :', error);
+    }
+}
+
+    // Configurer la suppression de la carte
+    function setupDeleteCard() {
+        const confirmBtn = document.getElementById('confirmDelete');
+
+        confirmBtn.addEventListener('click', async function () {
+            const cardInfo = document.getElementById('cardInfo');
+            const cardId = cardInfo.dataset.cardId;
+
+            // Animation de sortie
+            cardInfo.style.transition = "all 0.4s ease";
+            cardInfo.style.opacity = "0";
+            cardInfo.style.transform = "scale(0.9)";
+
+            // Fermer l'Offcanvas
+            const offcanvasElement = document.getElementById('deleteCardSheet');
+            const instance = bootstrap.Offcanvas.getInstance(offcanvasElement);
+            instance.hide();
+
+            // Supprimer après animation
+            setTimeout(async () => {
+                // Appel API pour supprimer la carte
+                try {
+                    const response = await fetch(`{{ path('delete_card', {'id': 'PLACEHOLDER'}) }}`.replace('PLACEHOLDER', cardId), {
+                        method: 'DELETE'
+                    });
+                    const result = await response.json();
+
+                    if (result.success) {
+                        alert('Carte supprimée avec succès');
+                        // Rediriger vers la liste des cartes
+                        window.location.href = '{{ path('app_card_index') }}';
+                    } else {
+                        alert('Erreur lors de la suppression');
+                    }
+                } catch (error) {
+                    console.error('Erreur:', error);
+                    alert('Erreur lors de la suppression');
+                }
+            }, 400);
+        });
+    }
+
+    // Fonction pour augmenter la limite
+    function increaseLimit() {
+        const cardId = document.getElementById('cardInfo').dataset.cardId;
+        if (cardId) {
+            window.location.href = `{{ path('app_card_increase_limit', {'id': 'PLACEHOLDER'}) }}`.replace('PLACEHOLDER', cardId);
+        } else {
+            console.error('Aucun ID de carte disponible');
+        }
+    }
+
+    // Fonction pour gérer la recharge
+    function manageRecharge() {
+        const cardId = document.getElementById('cardInfo').dataset.cardId;
+        if (cardId) {
+            window.location.href = `{{ path('app_card_manage_recharge', {'id': 'PLACEHOLDER'}) }}`.replace('PLACEHOLDER', cardId);
+        } else {
+            console.error('Aucun ID de carte disponible');
+        }
+    }
+</script>
+{% endblock %}

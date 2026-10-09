@@ -1,0 +1,171 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion - Budget App{% endblock %}
+
+{% block body %}
+    <!--
+         PAGE: CONNEXION
+         Fonctionnalité: Authentifier l'utilisateur
+    -->
+
+    <header>
+        <h5 class="text-center fw-semibold mb-4 fs-4 mt-5">Connexion</h5>
+    </header>
+
+    <!--
+         FORMULAIRE DE CONNEXION
+         Utilise les routes Symfony pour l'authentification
+     -->
+    {# Utilisation de path() pour les routes Symfony #}
+    <form class="mb-3 mx-3 mt-5" id="loginForm" action="{{ path('app_login') }}" method="post">
+
+        {# Affichage des erreurs de connexion Symfony #}
+        {% if error is defined and error %}
+            <div class="alert alert-danger mx-3">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        <!-- Champ Email -->
+        <div class="mb-4 position-relative">
+            <label class="position-absolute px-2 ms-3 text-muted fs-6 bg-white" style="top: -13px; left: 0; z-index: 5;">
+                Email
+            </label>
+            <div class="border shadow-sm rounded-3 px-3 d-flex align-items-center" style="height: 50px;">
+                <input type="email" id="userIdentifier" name="_username" value="{{ last_username|default('') }}"
+                       class="form-control border-0 bg-transparent"
+                       placeholder="Exemple@gmail.com" style="box-shadow: none;" required autofocus>
+            </div>
+        </div>
+
+        <!-- Champ Mot de passe -->
+        <div class="mb-4 position-relative">
+            <label class="position-absolute px-2 ms-3 text-muted fs-6 bg-white" style="top: -13px; left: 0; z-index: 5;">
+                Mot de passe
+            </label>
+            <div class="border shadow-sm rounded-3 px-3 d-flex align-items-center" style="height: 50px;">
+                <input type="password" id="passwordInput" name="_password"
+                       class="form-control border-0 bg-transparent"
+                       placeholder="Mot de passe" style="box-shadow: none;" required>
+                <!-- Icône pour afficher/masquer le mot de passe -->
+                <i class="bi bi-eye text-muted" id="togglePassword" style="cursor: pointer;"></i>
+            </div>
+        </div>
+
+        {# Champ CSRF pour la sécurité (Recommandé par Symfony) #}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+        <!-- Bouton de soumission et lien mot de passe oublié -->
+        <div class="mb-3 d-flex justify-content-between align-items-center">
+            <a href="{{ path('app_reset_password_view') }}" class="text-decoration-none">
+                <p class="text-muted mb-0 fs-6">Mot de passe oublié ?</p>
+            </a>
+            <button type="submit" class="btn btn-primary" style="background-color: #6c5ce7; border-color: #6c5ce7;">
+                Se connecter
+            </button>
+        </div>
+    </form>
+
+    <div class="d-flex justify-content-center align-items-center my-4">
+        <hr class="w-100 mx-3">
+        <p class="text-muted fs-6 mb-0 position-absolute px-2">Ou</p>
+    </div>
+
+    <div class="buttons-group px-3 mt-3">
+        <!-- Facebook -->
+        <button class="btn btn-primary mt-2 w-100 fs-5" style="background-color: #1877f2; border-color: #1877f2;">
+            <i class="bi bi-facebook"></i> Se connecter avec Facebook
+        </button>
+
+        <!-- Google -->
+        <button class="btn btn-danger mt-2 w-100 fs-5" style="background-color: #db4437; border-color: #db4437;">
+            <i class="bi bi-google"></i> Se connecter avec Google
+        </button>
+
+        <!-- Apple -->
+        <button class="btn btn-dark mt-2 w-100 fs-5">
+            <i class="bi bi-apple"></i> Se connecter avec Apple
+        </button>
+
+        <!-- Lien vers inscription -->
+        <div class="text-center mt-3">
+            <small class="text-muted">Vous n'avez pas de compte ?</small>
+            <a href="{{ path('app_register') }}" class="text-decoration-none">S'inscrire ici</a>
+        </div>
+    </div>
+
+    <script>
+        // GESTION DE LA SOUMISSION DU FORMULAIRE
+
+        const form = document.getElementById("loginForm");
+        const emailInput = document.getElementById("userIdentifier");
+        const passwordInput = document.getElementById("passwordInput");
+
+        form.addEventListener("submit", function (e) {
+            // Empêcher la soumission par défaut
+            e.preventDefault();
+
+            // VALIDATION CÔTÉ CLIENT
+
+            const email = emailInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            if (!email || !password) {
+                alert("Veuillez remplir tous les champs.");
+                return;
+            }
+
+            // ENVOI DES DONNÉES À L'API
+            // Récupérer le token CSRF du champ caché
+            const csrfToken = document.querySelector('input[name="_csrf_token"]').value;
+
+            const formData = new URLSearchParams();
+            formData.append('_username', email);
+            formData.append('_password', password);
+            formData.append('_csrf_token', csrfToken);
+
+            fetch('{{ path('app_login') }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: formData,
+                credentials: 'same-origin'
+            })
+            .then(response => {
+                // GESTION DE LA RÉPONSE
+                // Si redirection: la connexion a réussi
+                if (response.redirected) {
+                    window.location.href = response.url;
+                } else {
+                    // Ce bloc peut être utilisé pour gérer les échecs de connexion
+                    alert("La connexion a échoué. Veuillez réessayer.");
+                }
+            })
+            .catch(error => {
+                console.error('Erreur lors de la connexion:', error);
+                alert('Une erreur est survenue lors de la tentative de connexion.');
+            });
+        });
+
+        // GESTION DE L'AFFICHAGE/MASQUAGE DU MOT DE PASSE
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const passwordInput = document.getElementById('passwordInput');
+            const toggleIcon = document.getElementById('togglePassword');
+
+            if (!passwordInput || !toggleIcon) return;
+
+            // Au clic sur l'icône: basculer entre mot de passe visible et masqué
+            toggleIcon.addEventListener('click', () => {
+                const isPassword = passwordInput.type === 'password';
+
+                // Basculer le type d'input
+                passwordInput.type = isPassword ? 'text' : 'password';
+
+                // Basculer l'icône
+                toggleIcon.classList.toggle('bi-eye', !isPassword);
+                toggleIcon.classList.toggle('bi-eye-slash', isPassword);
+            });
+        });
+    </script>
+{% endblock %}
+

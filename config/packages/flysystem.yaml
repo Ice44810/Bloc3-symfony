@@ -1,0 +1,8 @@
+# Ce fichier a été vidé car le package 'league/flysystem-bundle' n'est pas installé.
+# Pour le réactiver, installez le package et décommentez les lignes suivantes :
+# flysystem:
+#     storages:
+#         default.storage:
+#             adapter: 'local'
+#             options:
+#                 directory: '%kernel.project_dir%/var/storage/default'

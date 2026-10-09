@@ -1,0 +1,35 @@
+app_login:
+    path: /login
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'auth/login.html.twig'
+
+app_register:
+    path: /register
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'auth/register.html.twig'
+
+app_register_alias:
+    path: /inscription
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: app_register
+        permanent: false
+
+app_register_legacy_html:
+    path: /inscription.html
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: app_register
+        permanent: false
+
+app_reset_password:
+    path: /reset-password
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'auth/reset_password.html.twig'
+
+app_logout:
+    path: /logout
+    methods: [GET]
